@@ -12,7 +12,7 @@ namespace Project
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
-            char test = "test";
+            string test = "test"; // just testing things out
         }
     }
 }
