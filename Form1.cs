@@ -11,7 +11,7 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string test = "test success!";
+            string test = "test failed!";
             button1.Text = test;
 
         }
