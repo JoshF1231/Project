@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             comboBox1 = new ComboBox();
             createButton = new Button();
@@ -36,6 +37,7 @@
             textBox1 = new TextBox();
             test2 = new TextBox();
             saveButton = new Button();
+            imageList1 = new ImageList(components);
             SuspendLayout();
             // 
             // label1
@@ -97,7 +99,7 @@
             // 
             // test2
             // 
-            test2.Location = new Point(12, 236);
+            test2.Location = new Point(12, 264);
             test2.Name = "test2";
             test2.Size = new Size(100, 23);
             test2.TabIndex = 7;
@@ -111,6 +113,12 @@
             saveButton.Text = "Save";
             saveButton.UseVisualStyleBackColor = true;
             saveButton.Click += saveButton_Click;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth8Bit;
+            imageList1.ImageSize = new Size(16, 16);
+            imageList1.TransparentColor = Color.Transparent;
             // 
             // Form1
             // 
@@ -141,5 +149,6 @@
         private TextBox textBox1;
         private TextBox test2;
         private Button saveButton;
+        private ImageList imageList1;
     }
 }

@@ -28,25 +28,34 @@ namespace Project
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = comboBox1.SelectedIndex;
-            textBox1.Text = textFromBox(index);
+            textBox1.Text = textFromBoxByIndex(index);
         }
 
         private void createButton_Click(object sender, EventArgs e)
         {
             currentBranches.AddNewBranch(comboBox1.Text);
+            comboBox1.Text = "";
             refreshComboBox();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
             int index = comboBox1.SelectedIndex;
-            if (index < currentBranches.AmountOfBranches())
+            if (index >= 0)
             {
-                currentBranches.RemoveBranch(index);
+                string temp = textFromBoxByIndex(index);
+                if (comboBox1.Text.Length > 0)
+                {
+                    if (currentBranches.FindBranchByName(temp) != null)
+                    {
+                        currentBranches.RemoveBranch(temp);
+                    }
+                }
             }
+            comboBox1.Text = "";
             refreshComboBox();
         }
-        private string textFromBox(int index)
+        private string textFromBoxByIndex(int index)
         {
             string result = "";
             if (currentBranches[index] != null)
@@ -65,7 +74,6 @@ namespace Project
 
         private void loadButton_Click(object sender, EventArgs e)
         {
-            currentBranches.RemoveBranch(textFromBox(1));
         }
 
         private void saveButton_Click(object sender, EventArgs e)

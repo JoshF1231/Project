@@ -27,7 +27,7 @@ namespace Menu
             listOfBranches.RemoveAt(index);
         }
 
-        Branch? FindBranchByName(string branchName)
+        public Branch? FindBranchByName(string branchName)
         {
             int listSize = listOfBranches.Count;
             for (int i = 0; i < listSize; i++)

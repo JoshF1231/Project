@@ -2,10 +2,12 @@
 {
     [Serializable]
 
-    abstract public class Food
+    abstract public class Dish
     {
         private double price;
         public string picture = "";
+        public string name = "";
+        public string description = "";
         public double Price {get=>price;set=>price=value;}
         public abstract string GetPicture();
     }
