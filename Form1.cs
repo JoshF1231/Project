@@ -1,3 +1,4 @@
+using Menu;
 using System.Collections.Specialized;
 
 namespace Project
@@ -9,13 +10,6 @@ namespace Project
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string test = "test !";
-            button1.Text = test;
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -24,6 +18,21 @@ namespace Project
         private void textBox1_Enter(object sender, EventArgs e)
         {
             Console.WriteLine("test");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
