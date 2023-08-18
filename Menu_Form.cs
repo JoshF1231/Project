@@ -22,5 +22,10 @@ namespace Project
 
         }
 
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            // close tihs form and go back to main form
+            this.Close();
+        }
     }
 }

@@ -104,6 +104,7 @@
             backButton.Size = new Size(33, 33);
             backButton.TabIndex = 6;
             backButton.UseVisualStyleBackColor = true;
+            backButton.Click += backButton_Click;
             // 
             // Menu_Form
             // 

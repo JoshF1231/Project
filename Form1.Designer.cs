@@ -35,9 +35,9 @@
             loadButton = new Button();
             deleteButton = new Button();
             textBox1 = new TextBox();
-            test2 = new TextBox();
             saveButton = new Button();
             imageList1 = new ImageList(components);
+            goButton = new Button();
             SuspendLayout();
             // 
             // label1
@@ -61,7 +61,7 @@
             // 
             // createButton
             // 
-            createButton.Location = new Point(581, 235);
+            createButton.Location = new Point(581, 264);
             createButton.Name = "createButton";
             createButton.Size = new Size(75, 23);
             createButton.TabIndex = 3;
@@ -71,7 +71,7 @@
             // 
             // loadButton
             // 
-            loadButton.Location = new Point(581, 293);
+            loadButton.Location = new Point(581, 351);
             loadButton.Name = "loadButton";
             loadButton.Size = new Size(75, 23);
             loadButton.TabIndex = 4;
@@ -81,7 +81,7 @@
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(581, 264);
+            deleteButton.Location = new Point(581, 293);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(75, 23);
             deleteButton.TabIndex = 5;
@@ -96,13 +96,6 @@
             textBox1.Size = new Size(171, 23);
             textBox1.TabIndex = 6;
             textBox1.Text = "test box";
-            // 
-            // test2
-            // 
-            test2.Location = new Point(12, 264);
-            test2.Name = "test2";
-            test2.Size = new Size(100, 23);
-            test2.TabIndex = 7;
             // 
             // saveButton
             // 
@@ -120,13 +113,23 @@
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
             // 
+            // goButton
+            // 
+            goButton.Location = new Point(581, 235);
+            goButton.Name = "goButton";
+            goButton.Size = new Size(75, 23);
+            goButton.TabIndex = 9;
+            goButton.Text = "Go";
+            goButton.UseVisualStyleBackColor = true;
+            goButton.Click += goButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(932, 557);
+            Controls.Add(goButton);
             Controls.Add(saveButton);
-            Controls.Add(test2);
             Controls.Add(textBox1);
             Controls.Add(deleteButton);
             Controls.Add(loadButton);
@@ -147,8 +150,8 @@
         private Button loadButton;
         private Button deleteButton;
         private TextBox textBox1;
-        private TextBox test2;
         private Button saveButton;
         private ImageList imageList1;
+        private Button goButton;
     }
 }

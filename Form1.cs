@@ -1,13 +1,16 @@
 using Menu;
 using System;
 using System.Collections.Specialized;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Project
 {
 
     public partial class Form1 : Form
     {
-        Branches currentBranches;
+        static Branches currentBranches;
+        BindingSource branchesBindingSource = new BindingSource();
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +24,10 @@ namespace Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // load branches list from file
+            // bind the branches list to the combo box (comboBox1)
+            //branchesBindingSource.DataSource = currentBranches;
+            //comboBox1.DataSource= branchesBindingSource; 
             refreshComboBox();
         }
 
@@ -28,7 +35,7 @@ namespace Project
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = comboBox1.SelectedIndex;
-            textBox1.Text = textFromBoxByIndex(index);
+            textBox1.Text = currentBranches[index].ToString();
         }
 
         private void createButton_Click(object sender, EventArgs e)
@@ -43,7 +50,7 @@ namespace Project
             int index = comboBox1.SelectedIndex;
             if (index >= 0)
             {
-                string temp = textFromBoxByIndex(index);
+                string temp = currentBranches[index].ToString();
                 if (comboBox1.Text.Length > 0)
                 {
                     if (currentBranches.FindBranchByName(temp) != null)
@@ -55,14 +62,8 @@ namespace Project
             comboBox1.Text = "";
             refreshComboBox();
         }
-        private string textFromBoxByIndex(int index)
-        {
-            string result = "";
-            if (currentBranches[index] != null)
-                result = currentBranches[index].ToString();
-            return result;
-        }
-        private void refreshComboBox()
+
+        private void refreshComboBox() // recreates the objects in the combobox
         {
             comboBox1.Items.Clear();
             int listSize = currentBranches.AmountOfBranches();
@@ -74,11 +75,50 @@ namespace Project
 
         private void loadButton_Click(object sender, EventArgs e)
         {
+            // load from file
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+            openFileDialog1.Filter = "branch files (*.brc)| *.brc| All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.RestoreDirectory = true;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Stream stream = File.Open(openFileDialog1.FileName, FileMode.Open);
+                var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                currentBranches=(Branches)binaryFormatter.Deserialize(stream);
+                stream.Close();
+            }
+            refreshComboBox();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            // save to file
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialog1.Filter = "branch files (*.brc)| *.brc| All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 1;
+            saveFileDialog1.RestoreDirectory = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                IFormatter formatter = new BinaryFormatter();
+                using (Stream stream = new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    formatter.Serialize(stream, currentBranches);
+                    stream.Close();
 
+                }
+
+            }
+            refreshComboBox();
+
+        }
+
+        private void goButton_Click(object sender, EventArgs e)
+        {
+            // opens next form when clicked
+            Menu_Form Form2 = new Menu_Form();
+            Form2.ShowDialog();
         }
     }
 }
