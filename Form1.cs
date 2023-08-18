@@ -3,23 +3,18 @@ using System;
 using System.Collections.Specialized;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-
+using System.Windows.Forms;
 namespace Project
 {
 
-    public partial class Form1 : Form
+    public partial class BranchesForm : Form
     {
         static Branches currentBranches;
         BindingSource branchesBindingSource = new BindingSource();
-        public Form1()
+        public BranchesForm()
         {
             InitializeComponent();
             currentBranches = new Branches();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,7 +30,6 @@ namespace Project
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = comboBox1.SelectedIndex;
-            textBox1.Text = currentBranches[index].ToString();
         }
 
         private void createButton_Click(object sender, EventArgs e)
@@ -85,7 +79,7 @@ namespace Project
             {
                 Stream stream = File.Open(openFileDialog1.FileName, FileMode.Open);
                 var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                currentBranches=(Branches)binaryFormatter.Deserialize(stream);
+                currentBranches = (Branches)binaryFormatter.Deserialize(stream);
                 stream.Close();
             }
             refreshComboBox();
@@ -112,13 +106,6 @@ namespace Project
             }
             refreshComboBox();
 
-        }
-
-        private void goButton_Click(object sender, EventArgs e)
-        {
-            // opens next form when clicked
-            Menu_Form Form2 = new Menu_Form();
-            Form2.ShowDialog();
         }
     }
 }

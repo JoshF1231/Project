@@ -14,7 +14,7 @@ namespace Project
             // see https://aka.ms/applicationconfiguration.
             Branches branches = new Branches();
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

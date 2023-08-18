@@ -1,6 +1,6 @@
 ﻿namespace Project
 {
-    partial class Form1
+    partial class BranchesForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -34,17 +34,15 @@
             createButton = new Button();
             loadButton = new Button();
             deleteButton = new Button();
-            textBox1 = new TextBox();
             saveButton = new Button();
             imageList1 = new ImageList(components);
-            goButton = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(379, 196);
+            label1.Location = new Point(241, 203);
             label1.Name = "label1";
             label1.Size = new Size(146, 22);
             label1.TabIndex = 1;
@@ -53,7 +51,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(379, 235);
+            comboBox1.Location = new Point(241, 242);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(173, 23);
             comboBox1.TabIndex = 2;
@@ -61,7 +59,7 @@
             // 
             // createButton
             // 
-            createButton.Location = new Point(581, 264);
+            createButton.Location = new Point(439, 242);
             createButton.Name = "createButton";
             createButton.Size = new Size(75, 23);
             createButton.TabIndex = 3;
@@ -71,7 +69,7 @@
             // 
             // loadButton
             // 
-            loadButton.Location = new Point(581, 351);
+            loadButton.Location = new Point(439, 329);
             loadButton.Name = "loadButton";
             loadButton.Size = new Size(75, 23);
             loadButton.TabIndex = 4;
@@ -81,7 +79,7 @@
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(581, 293);
+            deleteButton.Location = new Point(439, 271);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(75, 23);
             deleteButton.TabIndex = 5;
@@ -89,17 +87,9 @@
             deleteButton.UseVisualStyleBackColor = true;
             deleteButton.Click += deleteButton_Click;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(12, 522);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(171, 23);
-            textBox1.TabIndex = 6;
-            textBox1.Text = "test box";
-            // 
             // saveButton
             // 
-            saveButton.Location = new Point(581, 322);
+            saveButton.Location = new Point(439, 300);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 23);
             saveButton.TabIndex = 8;
@@ -113,30 +103,20 @@
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
             // 
-            // goButton
-            // 
-            goButton.Location = new Point(581, 235);
-            goButton.Name = "goButton";
-            goButton.Size = new Size(75, 23);
-            goButton.TabIndex = 9;
-            goButton.Text = "Go";
-            goButton.UseVisualStyleBackColor = true;
-            goButton.Click += goButton_Click;
-            // 
-            // Form1
+            // BranchesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(932, 557);
-            Controls.Add(goButton);
             Controls.Add(saveButton);
-            Controls.Add(textBox1);
             Controls.Add(deleteButton);
             Controls.Add(loadButton);
             Controls.Add(createButton);
             Controls.Add(comboBox1);
             Controls.Add(label1);
-            Name = "Form1";
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "BranchesForm";
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
@@ -149,9 +129,7 @@
         private Button createButton;
         private Button loadButton;
         private Button deleteButton;
-        private TextBox textBox1;
         private Button saveButton;
         private ImageList imageList1;
-        private Button goButton;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Project
 {
-    partial class Menu_Form
+    partial class DishesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,24 +35,22 @@
             // 
             Temporary.AutoSize = true;
             Temporary.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            Temporary.Location = new Point(275, 190);
+            Temporary.Location = new Point(298, 208);
             Temporary.Name = "Temporary";
-            Temporary.Size = new Size(158, 27);
-            Temporary.TabIndex = 1;
-            Temporary.Text = "MENU FORM";
+            Temporary.Size = new Size(177, 27);
+            Temporary.TabIndex = 0;
+            Temporary.Text = "DISHES FORM";
             // 
-            // Menu_Form
+            // DishesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(797, 496);
-            ControlBox = false;
+            ClientSize = new Size(800, 450);
             Controls.Add(Temporary);
             FormBorderStyle = FormBorderStyle.None;
-            KeyPreview = true;
-            Name = "Menu_Form";
-            Text = "Menu_Form";
+            Name = "DishesForm";
+            Text = "DishesForm";
             ResumeLayout(false);
             PerformLayout();
         }
