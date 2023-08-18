@@ -3,8 +3,10 @@ using System.Collections.Specialized;
 
 namespace Project
 {
+
     public partial class Form1 : Form
     {
+        Branches currentBranches = new Branches();
         public Form1()
         {
             InitializeComponent();
@@ -37,7 +39,9 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string temp = comboBox1.Text;
+            currentBranches.AddNewBranch(comboBox1.Text);
+            textBox1.Text = currentBranches[0].BranchName;
         }
+        
     }
 }

@@ -1,6 +1,7 @@
 using Menu;
 namespace Project
 {
+
     internal static class Program
     {
         /// <summary>

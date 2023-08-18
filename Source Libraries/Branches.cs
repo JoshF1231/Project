@@ -10,31 +10,37 @@ namespace Menu
         public Branches() {
             listOfBranches = new List<Branch>();
         }
-        public void addNewBranch(string branchName)
+        public void AddNewBranch(string branchName)
         {
             listOfBranches.Add(new Branch(branchName));
         }
-        public void removeBranch(string branchName)
+        public void RemoveBranch(string branchName)
         {
-            Branch temp = findBranchByName(branchName);
+            Branch temp = FindBranchByName(branchName);
             if (temp != null)
             {
                 listOfBranches.Remove(temp);
             }
         }
-        Branch? findBranchByName(string branchName)
+        Branch? FindBranchByName(string branchName)
         {
             int listSize = listOfBranches.Count;
-            for (int i=0;i<listSize ; i++)
+            for (int i = 0; i < listSize; i++)
             {
                 if (listOfBranches[i].BranchName == branchName)
                     return listOfBranches[i];
             }
             return null;
         }
-        int amountOfBranches()
+        int AmountOfBranches()
         {
             return listOfBranches.Count;
         }
+        public Branch this[int index]
+        {
+            get { return listOfBranches[index]; }   
+        }
+
+        
     }
 }
