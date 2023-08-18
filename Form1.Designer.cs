@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             label1 = new Label();
             comboBox1 = new ComboBox();
-            branchBindingSource = new BindingSource(components);
-            branchesBindingSource2 = new BindingSource(components);
-            branchesBindingSource = new BindingSource(components);
-            branchesBindingSource1 = new BindingSource(components);
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            createButton = new Button();
+            loadButton = new Button();
+            deleteButton = new Button();
             textBox1 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)branchBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)branchesBindingSource2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)branchesBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)branchesBindingSource1).BeginInit();
+            test2 = new TextBox();
+            saveButton = new Button();
             SuspendLayout();
             // 
             // label1
@@ -54,11 +47,9 @@
             label1.Size = new Size(146, 22);
             label1.TabIndex = 1;
             label1.Text = "Select a branch:";
-            label1.Click += label1_Click;
             // 
             // comboBox1
             // 
-            comboBox1.DataSource = branchBindingSource;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(379, 235);
             comboBox1.Name = "comboBox1";
@@ -66,75 +57,77 @@
             comboBox1.TabIndex = 2;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // branchBindingSource
+            // createButton
             // 
-            branchBindingSource.DataSource = typeof(Menu.Branch);
+            createButton.Location = new Point(581, 235);
+            createButton.Name = "createButton";
+            createButton.Size = new Size(75, 23);
+            createButton.TabIndex = 3;
+            createButton.Text = "Create";
+            createButton.UseVisualStyleBackColor = true;
+            createButton.Click += createButton_Click;
             // 
-            // branchesBindingSource2
+            // loadButton
             // 
-            branchesBindingSource2.DataSource = typeof(Menu.Branches);
+            loadButton.Location = new Point(581, 293);
+            loadButton.Name = "loadButton";
+            loadButton.Size = new Size(75, 23);
+            loadButton.TabIndex = 4;
+            loadButton.Text = "Load";
+            loadButton.UseVisualStyleBackColor = true;
+            loadButton.Click += loadButton_Click;
             // 
-            // branchesBindingSource
+            // deleteButton
             // 
-            branchesBindingSource.DataSource = typeof(Menu.Branches);
-            // 
-            // branchesBindingSource1
-            // 
-            branchesBindingSource1.DataSource = typeof(Menu.Branches);
-            // 
-            // button1
-            // 
-            button1.Location = new Point(581, 235);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Create";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(581, 264);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 4;
-            button2.Text = "Load";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(581, 293);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 5;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
+            deleteButton.Location = new Point(581, 264);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(75, 23);
+            deleteButton.TabIndex = 5;
+            deleteButton.Text = "Delete";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(110, 235);
+            textBox1.Location = new Point(12, 522);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(171, 23);
             textBox1.TabIndex = 6;
+            textBox1.Text = "test box";
+            // 
+            // test2
+            // 
+            test2.Location = new Point(12, 236);
+            test2.Name = "test2";
+            test2.Size = new Size(100, 23);
+            test2.TabIndex = 7;
+            // 
+            // saveButton
+            // 
+            saveButton.Location = new Point(581, 322);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(75, 23);
+            saveButton.TabIndex = 8;
+            saveButton.Text = "Save";
+            saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(932, 557);
+            Controls.Add(saveButton);
+            Controls.Add(test2);
             Controls.Add(textBox1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(deleteButton);
+            Controls.Add(loadButton);
+            Controls.Add(createButton);
             Controls.Add(comboBox1);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)branchBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)branchesBindingSource2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)branchesBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)branchesBindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,13 +135,11 @@
         #endregion
         private Label label1;
         private ComboBox comboBox1;
-        private BindingSource branchesBindingSource1;
-        private BindingSource branchesBindingSource;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private BindingSource branchesBindingSource2;
-        private BindingSource branchBindingSource;
+        private Button createButton;
+        private Button loadButton;
+        private Button deleteButton;
         private TextBox textBox1;
+        private TextBox test2;
+        private Button saveButton;
     }
 }

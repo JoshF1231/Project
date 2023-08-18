@@ -22,6 +22,11 @@ namespace Menu
                 listOfBranches.Remove(temp);
             }
         }
+        public void RemoveBranch(int index)
+        {
+            listOfBranches.RemoveAt(index);
+        }
+
         Branch? FindBranchByName(string branchName)
         {
             int listSize = listOfBranches.Count;
@@ -32,13 +37,16 @@ namespace Menu
             }
             return null;
         }
-        int AmountOfBranches()
+        public int AmountOfBranches()
         {
             return listOfBranches.Count;
         }
         public Branch this[int index]
         {
-            get { return listOfBranches[index]; }   
+            get { if (index < listOfBranches.Count) return listOfBranches[index];
+                else return null;
+
+            }
         }
 
         

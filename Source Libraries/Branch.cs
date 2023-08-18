@@ -14,5 +14,13 @@
             Menu = new List<Food>();
             BranchName = branchName;
         }
+        override public string ToString()
+        {
+            if (Menu != null)
+            {
+                return BranchName;
+            }
+            else return "None";
+        }
     }
 }
