@@ -2,6 +2,7 @@
 
 namespace Menu
 {
+    [Serializable]
     abstract public class MeatBased : Food
     {
         private string meatType="None";

@@ -34,5 +34,10 @@ namespace Project
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string temp = comboBox1.Text;
+        }
     }
 }

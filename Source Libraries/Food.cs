@@ -1,5 +1,7 @@
 ﻿namespace Menu
 {
+    [Serializable]
+
     abstract public class Food
     {
         private double price;

@@ -1,5 +1,6 @@
 ﻿namespace Menu
 {
+    [Serializable]
     public class Hamburger : MeatBased
     {
 
