@@ -7,16 +7,22 @@ using System.Windows.Forms;
 namespace Project
 {
 
-    public partial class BranchesForm : Form
+    public partial class BranchesForm : MyForm
     {
-        static Branches currentBranches;
-        BindingSource branchesBindingSource = new BindingSource();
+        public Branches currentBranches;
+        public int index;
+        public Form callingForm;
+        //BindingSource branchesBindingSource = new BindingSource();
         public BranchesForm()
         {
             InitializeComponent();
             currentBranches = new Branches();
+            index = -1;
         }
-
+        public override int receiveData()
+        {
+            return index;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             // load branches list from file
@@ -29,7 +35,7 @@ namespace Project
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = comboBox1.SelectedIndex;
+            index = comboBox1.SelectedIndex;
         }
 
         private void createButton_Click(object sender, EventArgs e)

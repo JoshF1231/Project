@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Temporary = new Label();
+            test = new TextBox();
             SuspendLayout();
             // 
             // Temporary
@@ -41,6 +42,14 @@
             Temporary.TabIndex = 1;
             Temporary.Text = "MENU FORM";
             // 
+            // test
+            // 
+            test.Location = new Point(314, 312);
+            test.Name = "test";
+            test.Size = new Size(100, 23);
+            test.TabIndex = 2;
+            test.Click += test_Click;
+            // 
             // Menu_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -48,6 +57,7 @@
             BackColor = Color.White;
             ClientSize = new Size(797, 496);
             ControlBox = false;
+            Controls.Add(test);
             Controls.Add(Temporary);
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
@@ -60,5 +70,6 @@
         #endregion
 
         private Label Temporary;
+        private TextBox test;
     }
 }

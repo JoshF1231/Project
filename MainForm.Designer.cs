@@ -65,7 +65,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 557);
             panel1.TabIndex = 10;
-            panel1.Paint += panel1_Paint;
             // 
             // dishesButton
             // 
