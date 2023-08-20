@@ -7,8 +7,13 @@ namespace Menu
     public class Branches
     {
         public List<Branch> listOfBranches;
+        public int branchesListIndex;
+        public int branchIndex;
+
         public Branches() {
             listOfBranches = new List<Branch>();
+            branchIndex = -1;
+            branchesListIndex = -1;
         }
         public void AddNewBranch(string branchName)
         {

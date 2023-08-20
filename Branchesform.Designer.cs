@@ -32,9 +32,7 @@
             label1 = new Label();
             comboBox1 = new ComboBox();
             createButton = new Button();
-            loadButton = new Button();
             deleteButton = new Button();
-            saveButton = new Button();
             imageList1 = new ImageList(components);
             SuspendLayout();
             // 
@@ -67,16 +65,6 @@
             createButton.UseVisualStyleBackColor = true;
             createButton.Click += createButton_Click;
             // 
-            // loadButton
-            // 
-            loadButton.Location = new Point(439, 329);
-            loadButton.Name = "loadButton";
-            loadButton.Size = new Size(75, 23);
-            loadButton.TabIndex = 4;
-            loadButton.Text = "Load";
-            loadButton.UseVisualStyleBackColor = true;
-            loadButton.Click += loadButton_Click;
-            // 
             // deleteButton
             // 
             deleteButton.Location = new Point(439, 271);
@@ -86,16 +74,6 @@
             deleteButton.Text = "Delete";
             deleteButton.UseVisualStyleBackColor = true;
             deleteButton.Click += deleteButton_Click;
-            // 
-            // saveButton
-            // 
-            saveButton.Location = new Point(439, 300);
-            saveButton.Name = "saveButton";
-            saveButton.Size = new Size(75, 23);
-            saveButton.TabIndex = 8;
-            saveButton.Text = "Save";
-            saveButton.UseVisualStyleBackColor = true;
-            saveButton.Click += saveButton_Click;
             // 
             // imageList1
             // 
@@ -109,9 +87,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(932, 557);
-            Controls.Add(saveButton);
             Controls.Add(deleteButton);
-            Controls.Add(loadButton);
             Controls.Add(createButton);
             Controls.Add(comboBox1);
             Controls.Add(label1);
@@ -127,9 +103,7 @@
         private Label label1;
         private ComboBox comboBox1;
         private Button createButton;
-        private Button loadButton;
         private Button deleteButton;
-        private Button saveButton;
         private ImageList imageList1;
     }
 }

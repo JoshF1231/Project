@@ -32,6 +32,8 @@
             textBox1 = new TextBox();
             imageList1 = new ImageList(components);
             panel1 = new Panel();
+            loadButton = new Button();
+            saveButton = new Button();
             dishesButton = new Button();
             menuButton = new Button();
             Branches = new Button();
@@ -57,6 +59,8 @@
             // panel1
             // 
             panel1.BackColor = Color.LightSlateGray;
+            panel1.Controls.Add(loadButton);
+            panel1.Controls.Add(saveButton);
             panel1.Controls.Add(dishesButton);
             panel1.Controls.Add(menuButton);
             panel1.Controls.Add(Branches);
@@ -65,6 +69,38 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 557);
             panel1.TabIndex = 10;
+            // 
+            // loadButton
+            // 
+            loadButton.BackgroundImageLayout = ImageLayout.None;
+            loadButton.FlatStyle = FlatStyle.Flat;
+            loadButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            loadButton.Image = Properties.Resources.branches1;
+            loadButton.ImageAlign = ContentAlignment.MiddleLeft;
+            loadButton.Location = new Point(6, 485);
+            loadButton.Name = "loadButton";
+            loadButton.Size = new Size(185, 51);
+            loadButton.TabIndex = 16;
+            loadButton.Text = "LOAD";
+            loadButton.TextAlign = ContentAlignment.MiddleRight;
+            loadButton.UseVisualStyleBackColor = true;
+            loadButton.Click += loadButton_Click;
+            // 
+            // saveButton
+            // 
+            saveButton.BackgroundImageLayout = ImageLayout.None;
+            saveButton.FlatStyle = FlatStyle.Flat;
+            saveButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            saveButton.Image = Properties.Resources.branches1;
+            saveButton.ImageAlign = ContentAlignment.MiddleLeft;
+            saveButton.Location = new Point(6, 428);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(185, 51);
+            saveButton.TabIndex = 15;
+            saveButton.Text = "SAVE";
+            saveButton.TextAlign = ContentAlignment.MiddleRight;
+            saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
             // 
             // dishesButton
             // 
@@ -157,5 +193,7 @@
         private Button dishesButton;
         private Button menuButton;
         private Panel mainpanel;
+        private Button loadButton;
+        private Button saveButton;
     }
 }

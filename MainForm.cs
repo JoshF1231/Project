@@ -9,11 +9,11 @@ namespace Project
 
     public partial class MainForm : Form
     {
-        public Branch mainBranch;
-        public Branches currentBranches { get; set; }
-        public MyForm activeForm { get; set; }
+
+        public Branches? branchesList { get; set; }
         public MainForm()
         {
+            branchesList = new Branches();
             InitializeComponent();
         }
 
@@ -33,15 +33,16 @@ namespace Project
         {
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.Clear();
-
-            mainBranch = new Branch();
-            BranchesForm f = new BranchesForm(mainBranch);
-
+            if (branchesList == null)
+            {
+                branchesList = new Branches();
+            }
+            BranchesForm f = new BranchesForm(branchesList);
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
 
             // Subscribe to the event in the sub-form
-            f.BranchUpdated += BranchesForm_BranchUpdated;
+            f.BranchIndexChanged += BranchesForm_BranchUpdated;
 
             this.mainpanel.Controls.Add(f);
             this.mainpanel.Tag = f;
@@ -52,7 +53,16 @@ namespace Project
 
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.Clear();
-            Menu_Form f = new Menu_Form(mainBranch);
+            Menu_Form f;
+            if (branchesList.branchesListIndex >= 0)
+            {
+                f = new Menu_Form(branchesList[branchesList.branchesListIndex]);
+
+            }
+            else
+            {
+                f = new Menu_Form();
+            }
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
             this.mainpanel.Controls.Add(f);
@@ -63,7 +73,7 @@ namespace Project
         private void BranchesForm_BranchUpdated(object sender, BranchEventArgs e)
         {
             // Update the main form based on the changes made in the sub-form
-            mainBranch = e.UpdatedBranch;
+            branchesList.branchesListIndex = e.BranchIndex;
             // Update UI elements or perform any necessary actions
         }
 
@@ -82,6 +92,45 @@ namespace Project
         private void menuButton_Click(object sender, EventArgs e)
         {
             OpenMenuForm();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            // save to file
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialog1.Filter = "branch files (*.brc)| *.brc| All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 1;
+            saveFileDialog1.RestoreDirectory = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                IFormatter formatter = new BinaryFormatter();
+                using (Stream stream = new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    formatter.Serialize(stream, branchesList);
+                    stream.Close();
+
+                }
+
+            }
+        }
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            // load from file
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+            openFileDialog1.Filter = "branch files (*.brc)| *.brc| All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.RestoreDirectory = true;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Stream stream = File.Open(openFileDialog1.FileName, FileMode.Open);
+                var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                branchesList = (Branches)binaryFormatter.Deserialize(stream);
+                stream.Close();
+            }
+            if (this.mainpanel.Controls.Count > 0)
+                this.mainpanel.Controls.Clear();
         }
     }
 }

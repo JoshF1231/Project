@@ -1,4 +1,4 @@
-using Menu;
+﻿using Menu;
 using System;
 using System.Collections.Specialized;
 using System.Runtime.Serialization;
@@ -8,50 +8,21 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace Project
 {
-    public class BranchEventArgs : EventArgs
-    {
-        public Menu.Branch UpdatedBranch { get; }
-
-        public BranchEventArgs(Menu.Branch updatedBranch)
-        {
-            UpdatedBranch = updatedBranch;
-        }
-    }
-
-
-    public partial class BranchesForm : MyForm
+    public partial class BranchesForm : Form
     {
         public Branches currentBranches;
         public int index;
-        public MainForm callingForm;
-        public Menu.Branch branchFromMain;
-        public event EventHandler<BranchEventArgs> BranchUpdated; // Declare an event
+        public event EventHandler<BranchEventArgs> BranchIndexChanged; // Event that tells subscribers that the active index has been changed
 
-        //BindingSource branchesBindingSource = new BindingSource();
-        public BranchesForm()
+        public BranchesForm(Branches branchesList)
         {
             InitializeComponent();
-            currentBranches = new Branches();
+            currentBranches = branchesList;
             index = -1;
         }
 
-        public BranchesForm(Menu.Branch fromMain)
-        {
-            InitializeComponent();
-            currentBranches = new Branches();
-            index = -1;
-            branchFromMain = fromMain;
-        }
-        public override int receiveData()
-        {
-            return index;
-        }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // load branches list from file
-            // bind the branches list to the combo box (comboBox1)
-            //branchesBindingSource.DataSource = currentBranches;
-            //comboBox1.DataSource= branchesBindingSource; 
             refreshComboBox();
         }
 
@@ -59,8 +30,7 @@ namespace Project
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             index = comboBox1.SelectedIndex;
-            branchFromMain = currentBranches[index]; // this might be the cause try to find and set.
-            BranchUpdated?.Invoke(this, new BranchEventArgs(branchFromMain));
+            BranchIndexChanged?.Invoke(this, new BranchEventArgs(index));
             // Raise the event to notify the main form about the update
         }
 
@@ -72,7 +42,6 @@ namespace Project
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            int index = comboBox1.SelectedIndex;
             if (index >= 0)
             {
                 string temp = currentBranches[index].ToString();
@@ -96,47 +65,6 @@ namespace Project
             {
                 comboBox1.Items.Add(currentBranches[i]);
             }
-        }
-
-        private void loadButton_Click(object sender, EventArgs e)
-        {
-            // load from file
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
-            openFileDialog1.Filter = "branch files (*.brc)| *.brc| All files (*.*)|*.*";
-            openFileDialog1.FilterIndex = 1;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                Stream stream = File.Open(openFileDialog1.FileName, FileMode.Open);
-                var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                currentBranches = (Branches)binaryFormatter.Deserialize(stream);
-                stream.Close();
-            }
-            refreshComboBox();
-        }
-
-        private void saveButton_Click(object sender, EventArgs e)
-        {
-            // save to file
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
-            saveFileDialog1.Filter = "branch files (*.brc)| *.brc| All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 1;
-            saveFileDialog1.RestoreDirectory = true;
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                IFormatter formatter = new BinaryFormatter();
-                using (Stream stream = new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.ReadWrite))
-                {
-                    formatter.Serialize(stream, currentBranches);
-                    stream.Close();
-
-                }
-
-            }
-            refreshComboBox();
-
         }
     }
 }
