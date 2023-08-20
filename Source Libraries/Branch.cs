@@ -16,11 +16,7 @@
         }
         override public string ToString()
         {
-            if (Menu != null)
-            {
-                return BranchName;
-            }
-            else return "None";
+            return BranchName;
         }
     }
 }
