@@ -52,8 +52,9 @@ namespace Project
         {
             if (Branch != null)
             {
-                if (dishNameTextbox.Text.Length > 0) { 
-                Branch.Menu.Add(new Hamburger(dishNameTextbox.Text));
+                if (dishNameTextbox.Text.Length > 0)
+                {
+                    Branch.Menu.Add(new Hamburger(dishNameTextbox.Text));
                 }
             }
             else warning.Visible = true;

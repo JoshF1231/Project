@@ -36,6 +36,7 @@
             tempLabel = new Label();
             dishNameTextbox = new TextBox();
             warning = new Label();
+            dishNameLabel = new Label();
             SuspendLayout();
             // 
             // Temporary
@@ -111,6 +112,15 @@
             warning.Text = "Select a branch first";
             warning.Visible = false;
             // 
+            // dishNameLabel
+            // 
+            dishNameLabel.AutoSize = true;
+            dishNameLabel.Location = new Point(18, 96);
+            dishNameLabel.Name = "dishNameLabel";
+            dishNameLabel.Size = new Size(66, 15);
+            dishNameLabel.TabIndex = 9;
+            dishNameLabel.Text = "Dish name:";
+            // 
             // Menu_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -118,6 +128,7 @@
             BackColor = Color.White;
             ClientSize = new Size(797, 496);
             ControlBox = false;
+            Controls.Add(dishNameLabel);
             Controls.Add(warning);
             Controls.Add(dishNameTextbox);
             Controls.Add(tempLabel);
@@ -144,5 +155,6 @@
         private Label tempLabel;
         private TextBox dishNameTextbox;
         private Label warning;
+        private Label dishNameLabel;
     }
 }
