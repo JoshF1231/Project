@@ -4,19 +4,48 @@ using System.Collections.Specialized;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
+
 namespace Project
 {
-
-    public partial class BranchesForm : Form
+    public class BranchEventArgs : EventArgs
     {
-        static Branches currentBranches;
-        BindingSource branchesBindingSource = new BindingSource();
+        public Menu.Branch UpdatedBranch { get; }
+
+        public BranchEventArgs(Menu.Branch updatedBranch)
+        {
+            UpdatedBranch = updatedBranch;
+        }
+    }
+
+
+    public partial class BranchesForm : MyForm
+    {
+        public Branches currentBranches;
+        public int index;
+        public MainForm callingForm;
+        public Menu.Branch branchFromMain;
+        public event EventHandler<BranchEventArgs> BranchUpdated; // Declare an event
+
+        //BindingSource branchesBindingSource = new BindingSource();
         public BranchesForm()
         {
             InitializeComponent();
             currentBranches = new Branches();
+            index = -1;
         }
 
+        public BranchesForm(Menu.Branch fromMain)
+        {
+            InitializeComponent();
+            currentBranches = new Branches();
+            index = -1;
+            branchFromMain = fromMain;
+        }
+        public override int receiveData()
+        {
+            return index;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             // load branches list from file
@@ -29,13 +58,15 @@ namespace Project
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = comboBox1.SelectedIndex;
+            index = comboBox1.SelectedIndex;
+            branchFromMain = currentBranches[index]; // this might be the cause try to find and set.
+            BranchUpdated?.Invoke(this, new BranchEventArgs(branchFromMain));
+            // Raise the event to notify the main form about the update
         }
 
         private void createButton_Click(object sender, EventArgs e)
         {
             currentBranches.AddNewBranch(comboBox1.Text);
-            comboBox1.Text = "";
             refreshComboBox();
         }
 
@@ -53,17 +84,17 @@ namespace Project
                     }
                 }
             }
-            comboBox1.Text = "";
             refreshComboBox();
         }
 
         private void refreshComboBox() // recreates the objects in the combobox
         {
+            comboBox1.Text = "";
             comboBox1.Items.Clear();
             int listSize = currentBranches.AmountOfBranches();
             for (int i = 0; i < listSize; i++)
             {
-                comboBox1.Items.Add(currentBranches[i].ToString());
+                comboBox1.Items.Add(currentBranches[i]);
             }
         }
 
