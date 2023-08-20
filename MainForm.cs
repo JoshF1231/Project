@@ -9,7 +9,6 @@ namespace Project
 
     public partial class MainForm : Form
     {
-
         public Branches? branchesList { get; set; }
         public MainForm()
         {

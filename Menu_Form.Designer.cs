@@ -30,13 +30,19 @@
         {
             Temporary = new Label();
             test = new TextBox();
+            listBoxDishes = new ListBox();
+            addButton = new Button();
+            removeButton = new Button();
+            tempLabel = new Label();
+            dishNameTextbox = new TextBox();
+            warning = new Label();
             SuspendLayout();
             // 
             // Temporary
             // 
             Temporary.AutoSize = true;
             Temporary.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            Temporary.Location = new Point(275, 190);
+            Temporary.Location = new Point(101, 41);
             Temporary.Name = "Temporary";
             Temporary.Size = new Size(158, 27);
             Temporary.TabIndex = 1;
@@ -44,11 +50,66 @@
             // 
             // test
             // 
-            test.Location = new Point(314, 312);
+            test.Location = new Point(550, 128);
             test.Name = "test";
             test.Size = new Size(100, 23);
             test.TabIndex = 2;
-            test.Click += test_Click;
+            // 
+            // listBoxDishes
+            // 
+            listBoxDishes.FormattingEnabled = true;
+            listBoxDishes.ItemHeight = 15;
+            listBoxDishes.Location = new Point(101, 128);
+            listBoxDishes.Name = "listBoxDishes";
+            listBoxDishes.Size = new Size(120, 289);
+            listBoxDishes.TabIndex = 3;
+            // 
+            // addButton
+            // 
+            addButton.Location = new Point(264, 127);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(75, 23);
+            addButton.TabIndex = 4;
+            addButton.Text = "Add";
+            addButton.UseVisualStyleBackColor = true;
+            addButton.Click += addButton_Click;
+            // 
+            // removeButton
+            // 
+            removeButton.Location = new Point(264, 156);
+            removeButton.Name = "removeButton";
+            removeButton.Size = new Size(75, 23);
+            removeButton.TabIndex = 5;
+            removeButton.Text = "Remove";
+            removeButton.UseVisualStyleBackColor = true;
+            // 
+            // tempLabel
+            // 
+            tempLabel.AutoSize = true;
+            tempLabel.Location = new Point(550, 101);
+            tempLabel.Name = "tempLabel";
+            tempLabel.Size = new Size(63, 15);
+            tempLabel.TabIndex = 6;
+            tempLabel.Text = "tempLabel";
+            // 
+            // dishNameTextbox
+            // 
+            dishNameTextbox.Location = new Point(101, 93);
+            dishNameTextbox.Name = "dishNameTextbox";
+            dishNameTextbox.Size = new Size(100, 23);
+            dishNameTextbox.TabIndex = 7;
+            // 
+            // warning
+            // 
+            warning.AutoSize = true;
+            warning.BackColor = Color.White;
+            warning.ForeColor = Color.IndianRed;
+            warning.Location = new Point(264, 101);
+            warning.Name = "warning";
+            warning.Size = new Size(110, 15);
+            warning.TabIndex = 8;
+            warning.Text = "Select a branch first";
+            warning.Visible = false;
             // 
             // Menu_Form
             // 
@@ -57,6 +118,12 @@
             BackColor = Color.White;
             ClientSize = new Size(797, 496);
             ControlBox = false;
+            Controls.Add(warning);
+            Controls.Add(dishNameTextbox);
+            Controls.Add(tempLabel);
+            Controls.Add(removeButton);
+            Controls.Add(addButton);
+            Controls.Add(listBoxDishes);
             Controls.Add(test);
             Controls.Add(Temporary);
             FormBorderStyle = FormBorderStyle.None;
@@ -71,5 +138,11 @@
 
         private Label Temporary;
         private TextBox test;
+        private ListBox listBoxDishes;
+        private Button addButton;
+        private Button removeButton;
+        private Label tempLabel;
+        private TextBox dishNameTextbox;
+        private Label warning;
     }
 }

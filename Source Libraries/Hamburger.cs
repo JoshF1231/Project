@@ -7,5 +7,9 @@
         {
             return this.picture;
         }
+        public Hamburger(string Name)
+        {
+            this.name= Name;
+        }
     }
 }
