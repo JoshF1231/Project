@@ -53,6 +53,9 @@ namespace Project
                     if (currentBranches.FindBranchByName(temp) != null)
                     {
                         currentBranches.RemoveBranch(temp);
+                        index = -1;
+                        BranchIndexChanged?.Invoke(this, new BranchEventArgs(index));
+
                     }
                 }
             }

@@ -55,10 +55,11 @@ namespace Project
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.Clear();
             Menu_Form f;
-            if (branchesList.branchesListIndex >= 0)
-            {
+            if (branchesList != null &&
+                branchesList.branchesListIndex >= 0 && branchesList.branchesListIndex < branchesList.listOfBranches.Count &&
+                branchesList[branchesList.branchesListIndex] != null)
+                {
                 f = new Menu_Form(branchesList[branchesList.branchesListIndex]);
-
             }
             else
             {
@@ -102,7 +103,8 @@ namespace Project
         {
             // Update the main form based on the changes made in the sub-form
             branchesList.branchesListIndex = e.BranchIndex;
-            branchLabel.Text = branchesList[branchesList.branchesListIndex].BranchName;
+            if (e.BranchIndex >= 0) branchLabel.Text = branchesList[branchesList.branchesListIndex].BranchName;
+            else branchLabel.Text = "None";
             // Update UI elements or perform any necessary actions
         }
         private void DishesForm_DishUpdated(object sender, DishEventArgs e)
