@@ -30,14 +30,14 @@
         {
             Temporary = new Label();
             panel1 = new Panel();
+            tempLabel = new Label();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
             panel2 = new Panel();
             button4 = new Button();
             button5 = new Button();
-            tempLabel = new Label();
-            tempTextBox = new TextBox();
+            dishesListBox = new ListBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -55,18 +55,27 @@
             // panel1
             // 
             panel1.BackColor = Color.DimGray;
-            panel1.Controls.Add(tempTextBox);
+            panel1.Controls.Add(dishesListBox);
             panel1.Controls.Add(tempLabel);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(143, 450);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
+            // 
+            // tempLabel
+            // 
+            tempLabel.AutoSize = true;
+            tempLabel.Location = new Point(19, 174);
+            tempLabel.Name = "tempLabel";
+            tempLabel.Size = new Size(48, 15);
+            tempLabel.TabIndex = 6;
+            tempLabel.Text = "DISHES:";
             // 
             // button3
             // 
@@ -75,7 +84,7 @@
             button3.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
             button3.Location = new Point(0, 18);
-            button3.Margin = new Padding(2, 2, 2, 2);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(143, 46);
             button3.TabIndex = 5;
@@ -89,7 +98,7 @@
             button2.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
             button2.Location = new Point(0, 118);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(143, 46);
             button2.TabIndex = 4;
@@ -104,7 +113,7 @@
             button1.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
             button1.Location = new Point(0, 68);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(143, 46);
             button1.TabIndex = 3;
@@ -118,7 +127,7 @@
             panel2.Controls.Add(Temporary);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(143, 0);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(657, 64);
             panel2.TabIndex = 2;
@@ -130,7 +139,7 @@
             button4.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
             button4.Location = new Point(332, 229);
-            button4.Margin = new Padding(2, 2, 2, 2);
+            button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(143, 46);
             button4.TabIndex = 6;
@@ -144,7 +153,7 @@
             button5.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
             button5.Location = new Point(338, 316);
-            button5.Margin = new Padding(2, 2, 2, 2);
+            button5.Margin = new Padding(2);
             button5.Name = "button5";
             button5.Size = new Size(143, 46);
             button5.TabIndex = 4;
@@ -152,21 +161,14 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
-            // tempLabel
+            // dishesListBox
             // 
-            tempLabel.AutoSize = true;
-            tempLabel.Location = new Point(19, 174);
-            tempLabel.Name = "tempLabel";
-            tempLabel.Size = new Size(91, 15);
-            tempLabel.TabIndex = 6;
-            tempLabel.Text = "SELECTED DISH:";
-            // 
-            // tempTextBox
-            // 
-            tempTextBox.Location = new Point(19, 203);
-            tempTextBox.Name = "tempTextBox";
-            tempTextBox.Size = new Size(100, 23);
-            tempTextBox.TabIndex = 7;
+            dishesListBox.FormattingEnabled = true;
+            dishesListBox.ItemHeight = 15;
+            dishesListBox.Location = new Point(12, 194);
+            dishesListBox.Name = "dishesListBox";
+            dishesListBox.Size = new Size(120, 199);
+            dishesListBox.TabIndex = 7;
             // 
             // DishesForm
             // 
@@ -198,7 +200,7 @@
         private Button button4;
         private Button button3;
         private Button button2;
-        private TextBox tempTextBox;
         private Label tempLabel;
+        private ListBox dishesListBox;
     }
 }

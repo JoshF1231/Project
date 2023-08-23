@@ -13,18 +13,19 @@ namespace Project
 {
     public partial class DishesForm : Form
     {
-        public Dish? SelectedDish;
+        public Branch? SelectedBranchMenu;
         public DishesForm()
         {
             InitializeComponent();
         }
 
-        public DishesForm(Dish selectedDish)
+        public DishesForm(Branch selectedBranchMenu)
         {
             InitializeComponent();
-            if (selectedDish != null) { 
-                SelectedDish= selectedDish;
-            tempTextBox.Text = SelectedDish.ToString();
+            if (selectedBranchMenu != null)
+            {
+                SelectedBranchMenu = selectedBranchMenu;
+                resetListBox();
             }
         }
 
@@ -32,7 +33,17 @@ namespace Project
         {
 
         }
-
+        private void resetListBox()
+        {
+            if (SelectedBranchMenu != null && SelectedBranchMenu.Menu != null&& SelectedBranchMenu.Menu.Count>0)
+            {
+                dishesListBox.Items.Clear();
+                    for (int i = 0; i < SelectedBranchMenu.Menu.Count; i++)
+                    {
+                    dishesListBox.Items.Add(SelectedBranchMenu.Menu[i].name);
+                    }
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 

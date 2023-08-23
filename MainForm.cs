@@ -85,7 +85,7 @@ namespace Project
                 branchesList[branchesList.branchesListIndex] != null &&
                 branchesList.dishIndex >= 0 && branchesList.dishIndex < branchesList[branchesList.branchesListIndex].Menu.Count)
             {
-                f = new DishesForm(branchesList[branchesList.branchesListIndex][branchesList.dishIndex]);
+                f = new DishesForm(branchesList[branchesList.branchesListIndex]);
             }
             else
             {
