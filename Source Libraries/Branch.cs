@@ -22,7 +22,7 @@
         {
             get
             {
-                if (index < Menu.Count) return Menu[index];
+                if (index < Menu.Count && index>=0) return Menu[index];
                 else return null;
 
             }

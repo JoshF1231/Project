@@ -40,7 +40,7 @@ namespace Project
                 dishesListBox.Items.Clear();
                     for (int i = 0; i < SelectedBranchMenu.Menu.Count; i++)
                     {
-                    dishesListBox.Items.Add(SelectedBranchMenu.Menu[i].name);
+                    dishesListBox.Items.Add(SelectedBranchMenu[i].name);
                     }
             }
         }
