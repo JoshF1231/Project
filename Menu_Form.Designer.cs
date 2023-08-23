@@ -64,6 +64,7 @@
             listBoxDishes.Name = "listBoxDishes";
             listBoxDishes.Size = new Size(120, 289);
             listBoxDishes.TabIndex = 3;
+            listBoxDishes.SelectedIndexChanged += listBoxDishes_SelectedIndexChanged;
             // 
             // addButton
             // 
@@ -83,6 +84,7 @@
             removeButton.TabIndex = 5;
             removeButton.Text = "Remove";
             removeButton.UseVisualStyleBackColor = true;
+            removeButton.Click += removeButton_Click;
             // 
             // tempLabel
             // 
@@ -99,6 +101,7 @@
             dishNameTextbox.Name = "dishNameTextbox";
             dishNameTextbox.Size = new Size(100, 23);
             dishNameTextbox.TabIndex = 7;
+            dishNameTextbox.KeyDown += dishNameTextbox_KeyDown;
             // 
             // warning
             // 

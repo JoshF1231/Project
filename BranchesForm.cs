@@ -36,8 +36,11 @@ namespace Project
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            currentBranches.AddNewBranch(comboBox1.Text);
-            refreshComboBox();
+            if ( comboBox1.Text.Length>0)
+            {
+                currentBranches.AddNewBranch(comboBox1.Text);
+                refreshComboBox();
+            }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

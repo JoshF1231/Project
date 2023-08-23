@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace Project
 {
     public partial class Menu_Form : Form
     {
+        public event EventHandler<DishEventArgs> DishIndexChanged;
         public Branch? Branch { get; set; }
         public Menu_Form()
         {
@@ -55,10 +57,37 @@ namespace Project
                 if (dishNameTextbox.Text.Length > 0)
                 {
                     Branch.Menu.Add(new Hamburger(dishNameTextbox.Text));
+                    dishNameTextbox.Clear();
                 }
             }
             else warning.Visible = true;
             resetListBox();
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            if (Branch != null)
+            {
+                if (listBoxDishes.Items.Count > 0)
+                {
+                    Branch.Menu.Remove(Branch[listBoxDishes.SelectedIndex]);
+                }
+            }
+            else warning.Visible = true;
+            resetListBox();
+        }
+
+        private void dishNameTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                addButton_Click(sender, e);
+            }
+        }
+
+        private void listBoxDishes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DishIndexChanged?.Invoke(this, new DishEventArgs(listBoxDishes.SelectedIndex));
         }
     }
 }

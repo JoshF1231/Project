@@ -18,5 +18,14 @@
         {
             return BranchName;
         }
+        public Dish this[int index]
+        {
+            get
+            {
+                if (index < Menu.Count) return Menu[index];
+                else return null;
+
+            }
+        }
     }
 }

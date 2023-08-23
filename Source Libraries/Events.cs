@@ -15,4 +15,13 @@ namespace Project
             BranchIndex = index;
         }
     }
+    public class DishEventArgs : EventArgs
+    {
+        public int DishIndex { get; }
+
+        public DishEventArgs(int index)
+        {
+            DishIndex = index;
+        }
+    }
 }

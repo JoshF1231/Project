@@ -8,11 +8,11 @@ namespace Menu
     {
         public List<Branch> listOfBranches;
         public int branchesListIndex;
-        public int branchIndex;
+        public int dishIndex;
 
         public Branches() {
             listOfBranches = new List<Branch>();
-            branchIndex = -1;
+            dishIndex = -1;
             branchesListIndex = -1;
         }
         public void AddNewBranch(string branchName)
@@ -53,7 +53,5 @@ namespace Menu
 
             }
         }
-
-        
     }
 }

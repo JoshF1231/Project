@@ -37,9 +37,12 @@
             dishesButton = new Button();
             menuButton = new Button();
             Branches = new Button();
-            panel2 = new Panel();
+            topPanel = new Panel();
+            branchLabel = new Label();
+            headerLabel = new Label();
             mainpanel = new Panel();
             panel1.SuspendLayout();
+            topPanel.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
@@ -58,13 +61,13 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Left;
             panel1.BackColor = Color.LightSlateGray;
             panel1.Controls.Add(loadButton);
             panel1.Controls.Add(saveButton);
             panel1.Controls.Add(dishesButton);
             panel1.Controls.Add(menuButton);
             panel1.Controls.Add(Branches);
-            panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 557);
@@ -150,21 +153,46 @@
             Branches.UseVisualStyleBackColor = true;
             Branches.Click += Branches_Click;
             // 
-            // panel2
+            // topPanel
             // 
-            panel2.Anchor = AnchorStyles.Top;
-            panel2.BackColor = Color.SlateGray;
-            panel2.Location = new Point(-55, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(987, 24);
-            panel2.TabIndex = 11;
+            topPanel.BackColor = Color.SlateGray;
+            topPanel.Controls.Add(branchLabel);
+            topPanel.Controls.Add(headerLabel);
+            topPanel.Dock = DockStyle.Top;
+            topPanel.Location = new Point(0, 0);
+            topPanel.Name = "topPanel";
+            topPanel.Size = new Size(932, 35);
+            topPanel.TabIndex = 11;
+            // 
+            // branchLabel
+            // 
+            branchLabel.AutoSize = true;
+            branchLabel.BackColor = Color.LightSlateGray;
+            branchLabel.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            branchLabel.Location = new Point(830, 7);
+            branchLabel.Name = "branchLabel";
+            branchLabel.RightToLeft = RightToLeft.No;
+            branchLabel.Size = new Size(50, 19);
+            branchLabel.TabIndex = 1;
+            branchLabel.Text = "None";
+            branchLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // headerLabel
+            // 
+            headerLabel.AutoSize = true;
+            headerLabel.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            headerLabel.Location = new Point(652, 7);
+            headerLabel.Name = "headerLabel";
+            headerLabel.Size = new Size(178, 19);
+            headerLabel.TabIndex = 0;
+            headerLabel.Text = "SELECTED BRANCH:";
             // 
             // mainpanel
             // 
-            mainpanel.Dock = DockStyle.Fill;
-            mainpanel.Location = new Point(200, 0);
+            mainpanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainpanel.Location = new Point(197, 29);
             mainpanel.Name = "mainpanel";
-            mainpanel.Size = new Size(732, 557);
+            mainpanel.Size = new Size(735, 528);
             mainpanel.TabIndex = 12;
             // 
             // MainForm
@@ -173,13 +201,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(932, 557);
-            Controls.Add(mainpanel);
-            Controls.Add(panel2);
+            Controls.Add(topPanel);
             Controls.Add(panel1);
             Controls.Add(textBox1);
+            Controls.Add(mainpanel);
             Name = "MainForm";
             Text = "Form1";
             panel1.ResumeLayout(false);
+            topPanel.ResumeLayout(false);
+            topPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,12 +218,14 @@
         private TextBox textBox1;
         private ImageList imageList1;
         private Panel panel1;
-        private Panel panel2;
+        private Panel topPanel;
         private Button Branches;
         private Button dishesButton;
         private Button menuButton;
         private Panel mainpanel;
         private Button loadButton;
         private Button saveButton;
+        private Label branchLabel;
+        private Label headerLabel;
     }
 }

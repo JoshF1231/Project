@@ -10,5 +10,9 @@
         public string description = "";
         public double Price {get=>price;set=>price=value;}
         public abstract string GetPicture();
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }

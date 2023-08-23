@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Menu;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace Project
 {
     public partial class DishesForm : Form
     {
+        public Dish? SelectedDish;
         public DishesForm()
         {
             InitializeComponent();
+        }
+
+        public DishesForm(Dish selectedDish)
+        {
+            InitializeComponent();
+            if (selectedDish != null) { 
+                SelectedDish= selectedDish;
+            tempTextBox.Text = SelectedDish.ToString();
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

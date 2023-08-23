@@ -14,6 +14,8 @@ namespace Project
         {
             branchesList = new Branches();
             InitializeComponent();
+            branchLabel.Text = "None";
+
         }
 
         public void loadform(object Form) // to be replaced with a specific function for each form
@@ -62,6 +64,33 @@ namespace Project
             {
                 f = new Menu_Form();
             }
+            f.DishIndexChanged += DishesForm_DishUpdated;
+
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.mainpanel.Controls.Add(f);
+            this.mainpanel.Tag = f;
+            f.Show();
+        }
+        private void OpenDishesForm()
+        {
+            if (this.mainpanel.Controls.Count > 0)
+                this.mainpanel.Controls.Clear();
+
+            DishesForm f;
+
+            if (branchesList != null &&
+                branchesList.branchesListIndex >= 0 && branchesList.branchesListIndex < branchesList.listOfBranches.Count &&
+                branchesList[branchesList.branchesListIndex] != null &&
+                branchesList.dishIndex >= 0 && branchesList.dishIndex < branchesList[branchesList.branchesListIndex].Menu.Count)
+            {
+                f = new DishesForm(branchesList[branchesList.branchesListIndex][branchesList.dishIndex]);
+            }
+            else
+            {
+                f = new DishesForm();
+            }
+
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
             this.mainpanel.Controls.Add(f);
@@ -73,6 +102,13 @@ namespace Project
         {
             // Update the main form based on the changes made in the sub-form
             branchesList.branchesListIndex = e.BranchIndex;
+            branchLabel.Text = branchesList[branchesList.branchesListIndex].BranchName;
+            // Update UI elements or perform any necessary actions
+        }
+        private void DishesForm_DishUpdated(object sender, DishEventArgs e)
+        {
+            // Update the main form based on the changes made in the sub-form
+            branchesList.dishIndex = e.DishIndex;
             // Update UI elements or perform any necessary actions
         }
 
@@ -83,7 +119,7 @@ namespace Project
 
         private void dishesButton_Click(object sender, EventArgs e)
         {
-            loadform(new DishesForm()); // needs to be modified to be similar to menu and branches
+            OpenDishesForm(); // needs to be modified to be similar to menu and branches
             // needs to be sent with DishesForm f = new DishesForm(mainDish); . mainDish variable holds
             // the current dish selected from menu
         }
