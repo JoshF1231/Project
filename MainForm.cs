@@ -58,7 +58,7 @@ namespace Project
             if (branchesList != null &&
                 branchesList.branchesListIndex >= 0 && branchesList.branchesListIndex < branchesList.listOfBranches.Count &&
                 branchesList[branchesList.branchesListIndex] != null)
-                {
+            {
                 f = new Menu_Form(branchesList[branchesList.branchesListIndex]);
             }
             else

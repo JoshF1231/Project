@@ -61,7 +61,7 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Left;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.LightSlateGray;
             panel1.Controls.Add(loadButton);
             panel1.Controls.Add(saveButton);
