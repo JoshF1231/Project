@@ -36,18 +36,22 @@
             tempLabel = new Label();
             panel2 = new Panel();
             PanelUserControl = new Panel();
+            FactsLabel = new Label();
+            pictureBox1 = new PictureBox();
+            richTextBox1 = new RichTextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Temporary
             // 
             Temporary.AutoSize = true;
-            Temporary.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            Temporary.Location = new Point(294, 22);
+            Temporary.Font = new Font("David", 36F, FontStyle.Regular, GraphicsUnit.Point);
+            Temporary.Location = new Point(220, 19);
             Temporary.Margin = new Padding(4, 0, 4, 0);
             Temporary.Name = "Temporary";
-            Temporary.Size = new Size(266, 41);
+            Temporary.Size = new Size(502, 71);
             Temporary.TabIndex = 0;
             Temporary.Text = "DISHES FORM";
             // 
@@ -115,7 +119,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Brown;
+            panel2.BackColor = Color.SteelBlue;
             panel2.Controls.Add(Temporary);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(204, 0);
@@ -132,12 +136,41 @@
             PanelUserControl.TabIndex = 3;
             PanelUserControl.Paint += PanelUserControl_Paint;
             // 
+            // FactsLabel
+            // 
+            FactsLabel.AutoSize = true;
+            FactsLabel.Font = new Font("Showcard Gothic", 36F, FontStyle.Regular, GraphicsUnit.Point);
+            FactsLabel.Location = new Point(717, 386);
+            FactsLabel.Name = "FactsLabel";
+            FactsLabel.Size = new Size(269, 89);
+            FactsLabel.TabIndex = 4;
+            FactsLabel.Text = "FACTS:";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(723, 140);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(341, 242);
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(725, 498);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(336, 235);
+            richTextBox1.TabIndex = 7;
+            richTextBox1.Text = "";
+            // 
             // DishesForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1143, 750);
+            Controls.Add(richTextBox1);
+            Controls.Add(pictureBox1);
+            Controls.Add(FactsLabel);
             Controls.Add(PanelUserControl);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -150,7 +183,9 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -163,5 +198,8 @@
         private Button MeatBasedPanelButton;
         private Button DairyPanelButton;
         private Panel PanelUserControl;
+        private Label FactsLabel;
+        private PictureBox pictureBox1;
+        private RichTextBox richTextBox1;
     }
 }

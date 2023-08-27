@@ -103,6 +103,36 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BranchIcon {
+            get {
+                object obj = ResourceManager.GetObject("BranchIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BurgerIcon {
+            get {
+                object obj = ResourceManager.GetObject("BurgerIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DairyIcon {
+            get {
+                object obj = ResourceManager.GetObject("DairyIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dish {
             get {
                 object obj = ResourceManager.GetObject("dish", resourceCulture);
@@ -126,6 +156,46 @@ namespace Project.Properties {
         internal static System.Drawing.Bitmap lunch_png_494712 {
             get {
                 object obj = ResourceManager.GetObject("lunch-png-494712", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MeatIcon {
+            get {
+                object obj = ResourceManager.GetObject("MeatIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuIcon {
+            get {
+                object obj = ResourceManager.GetObject("MenuIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PastaIcon {
+            get {
+                object obj = ResourceManager.GetObject("PastaIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PizzaIcon {
+            get {
+                object obj = ResourceManager.GetObject("PizzaIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -34,8 +34,6 @@
             createButton = new Button();
             deleteButton = new Button();
             imageList1 = new ImageList(components);
-            MeatBasedPanelButton = new Button();
-            DairyPanelButton = new Button();
             SuspendLayout();
             // 
             // label1
@@ -87,40 +85,12 @@
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
             // 
-            // MeatBasedPanelButton
-            // 
-            MeatBasedPanelButton.FlatAppearance.BorderSize = 0;
-            MeatBasedPanelButton.FlatStyle = FlatStyle.Flat;
-            MeatBasedPanelButton.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            MeatBasedPanelButton.ForeColor = Color.White;
-            MeatBasedPanelButton.Location = new Point(840, 294);
-            MeatBasedPanelButton.Name = "MeatBasedPanelButton";
-            MeatBasedPanelButton.Size = new Size(204, 77);
-            MeatBasedPanelButton.TabIndex = 6;
-            MeatBasedPanelButton.Text = "MeatBased";
-            MeatBasedPanelButton.UseVisualStyleBackColor = true;
-            // 
-            // DairyPanelButton
-            // 
-            DairyPanelButton.FlatAppearance.BorderSize = 0;
-            DairyPanelButton.FlatStyle = FlatStyle.Flat;
-            DairyPanelButton.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DairyPanelButton.ForeColor = Color.White;
-            DairyPanelButton.Location = new Point(840, 377);
-            DairyPanelButton.Name = "DairyPanelButton";
-            DairyPanelButton.Size = new Size(204, 77);
-            DairyPanelButton.TabIndex = 7;
-            DairyPanelButton.Text = "Dairy";
-            DairyPanelButton.UseVisualStyleBackColor = true;
-            // 
             // BranchesForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1331, 928);
-            Controls.Add(DairyPanelButton);
-            Controls.Add(MeatBasedPanelButton);
             Controls.Add(deleteButton);
             Controls.Add(createButton);
             Controls.Add(comboBox1);
@@ -140,7 +110,5 @@
         private Button createButton;
         private Button deleteButton;
         private ImageList imageList1;
-        private Button MeatBasedPanelButton;
-        private Button DairyPanelButton;
     }
 }
