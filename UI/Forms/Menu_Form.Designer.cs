@@ -43,34 +43,38 @@
             // 
             Temporary.AutoSize = true;
             Temporary.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            Temporary.Location = new Point(101, 41);
+            Temporary.Location = new Point(144, 68);
+            Temporary.Margin = new Padding(4, 0, 4, 0);
             Temporary.Name = "Temporary";
-            Temporary.Size = new Size(158, 27);
+            Temporary.Size = new Size(238, 41);
             Temporary.TabIndex = 1;
             Temporary.Text = "MENU FORM";
             // 
             // test
             // 
-            test.Location = new Point(550, 128);
+            test.Location = new Point(786, 213);
+            test.Margin = new Padding(4, 5, 4, 5);
             test.Name = "test";
-            test.Size = new Size(100, 23);
+            test.Size = new Size(141, 31);
             test.TabIndex = 2;
             // 
             // listBoxDishes
             // 
             listBoxDishes.FormattingEnabled = true;
-            listBoxDishes.ItemHeight = 15;
-            listBoxDishes.Location = new Point(101, 128);
+            listBoxDishes.ItemHeight = 25;
+            listBoxDishes.Location = new Point(144, 213);
+            listBoxDishes.Margin = new Padding(4, 5, 4, 5);
             listBoxDishes.Name = "listBoxDishes";
-            listBoxDishes.Size = new Size(120, 289);
+            listBoxDishes.Size = new Size(170, 479);
             listBoxDishes.TabIndex = 3;
             listBoxDishes.SelectedIndexChanged += listBoxDishes_SelectedIndexChanged;
             // 
             // addButton
             // 
-            addButton.Location = new Point(264, 127);
+            addButton.Location = new Point(377, 212);
+            addButton.Margin = new Padding(4, 5, 4, 5);
             addButton.Name = "addButton";
-            addButton.Size = new Size(75, 23);
+            addButton.Size = new Size(107, 38);
             addButton.TabIndex = 4;
             addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // 
             // removeButton
             // 
-            removeButton.Location = new Point(264, 156);
+            removeButton.Location = new Point(377, 260);
+            removeButton.Margin = new Padding(4, 5, 4, 5);
             removeButton.Name = "removeButton";
-            removeButton.Size = new Size(75, 23);
+            removeButton.Size = new Size(107, 38);
             removeButton.TabIndex = 5;
             removeButton.Text = "Remove";
             removeButton.UseVisualStyleBackColor = true;
@@ -89,17 +94,19 @@
             // tempLabel
             // 
             tempLabel.AutoSize = true;
-            tempLabel.Location = new Point(550, 101);
+            tempLabel.Location = new Point(786, 168);
+            tempLabel.Margin = new Padding(4, 0, 4, 0);
             tempLabel.Name = "tempLabel";
-            tempLabel.Size = new Size(63, 15);
+            tempLabel.Size = new Size(95, 25);
             tempLabel.TabIndex = 6;
             tempLabel.Text = "tempLabel";
             // 
             // dishNameTextbox
             // 
-            dishNameTextbox.Location = new Point(101, 93);
+            dishNameTextbox.Location = new Point(144, 155);
+            dishNameTextbox.Margin = new Padding(4, 5, 4, 5);
             dishNameTextbox.Name = "dishNameTextbox";
-            dishNameTextbox.Size = new Size(100, 23);
+            dishNameTextbox.Size = new Size(141, 31);
             dishNameTextbox.TabIndex = 7;
             dishNameTextbox.KeyDown += dishNameTextbox_KeyDown;
             // 
@@ -108,9 +115,10 @@
             warning.AutoSize = true;
             warning.BackColor = Color.White;
             warning.ForeColor = Color.IndianRed;
-            warning.Location = new Point(264, 101);
+            warning.Location = new Point(377, 168);
+            warning.Margin = new Padding(4, 0, 4, 0);
             warning.Name = "warning";
-            warning.Size = new Size(110, 15);
+            warning.Size = new Size(166, 25);
             warning.TabIndex = 8;
             warning.Text = "Select a branch first";
             warning.Visible = false;
@@ -118,18 +126,19 @@
             // dishNameLabel
             // 
             dishNameLabel.AutoSize = true;
-            dishNameLabel.Location = new Point(18, 96);
+            dishNameLabel.Location = new Point(26, 160);
+            dishNameLabel.Margin = new Padding(4, 0, 4, 0);
             dishNameLabel.Name = "dishNameLabel";
-            dishNameLabel.Size = new Size(66, 15);
+            dishNameLabel.Size = new Size(100, 25);
             dishNameLabel.TabIndex = 9;
             dishNameLabel.Text = "Dish name:";
             // 
             // Menu_Form
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(797, 496);
+            ClientSize = new Size(1139, 827);
             ControlBox = false;
             Controls.Add(dishNameLabel);
             Controls.Add(warning);
@@ -142,6 +151,7 @@
             Controls.Add(Temporary);
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Menu_Form";
             Text = "Menu_Form";
             ResumeLayout(false);

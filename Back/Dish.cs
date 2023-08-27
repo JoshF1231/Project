@@ -5,6 +5,8 @@
     abstract public class Dish
     {
         private double price;
+        private double content;
+        public bool isVegan { get; set; }
         public string picture = "";
         public string name = "";
         public string description = "";
@@ -14,5 +16,12 @@
         {
             return name;
         }
+        protected Dish(string Name, double Content, bool isVegan)
+        {
+            name = Name;
+            content = Content;
+            this.isVegan = isVegan;
+        }
+
     }
 }

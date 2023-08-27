@@ -36,7 +36,7 @@ namespace Project
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            if ( comboBox1.Text.Length>0)
+            if (comboBox1.Text.Length > 0)
             {
                 currentBranches.AddNewBranch(comboBox1.Text);
                 refreshComboBox();

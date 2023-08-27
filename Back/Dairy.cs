@@ -1,0 +1,29 @@
+﻿namespace Menu
+{
+    [Serializable]
+    public abstract class Dairy : Dish
+    {
+        private string dairyType = "None";
+        public string DairyType { get => dairyType; set => dairyType = value; }
+        public string? DairySource { get; set; }
+        
+        public bool VeganMilk { get; set; }
+
+        protected Dairy(string Name, double Content, bool isVegan) : base(Name, Content, isVegan)
+        {
+            if(isVegan)
+            {
+                this.VeganMilk = true;
+                DairyType = "Vegan";
+            }
+            else
+            {
+                this.VeganMilk = false;
+            }
+        }
+
+
+
+
+    }
+}

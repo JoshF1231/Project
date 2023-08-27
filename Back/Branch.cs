@@ -1,19 +1,38 @@
-﻿namespace Menu
+﻿using Project.Back;
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Menu
 {
     [Serializable]
     public class Branch
     {
-        public List<Dish>? Menu;
+        private static BindingList<Dish>? Menu;
         public string BranchName;
         public Branch() {
-            Menu = new List<Dish>();
+            Menu = new BindingList<Dish>();
             BranchName = "None";
         }
         public Branch(string branchName)
         {
-            Menu = new List<Dish>();
+            Menu = new BindingList<Dish>();
             BranchName = branchName;
         }
+
+        public void RemoveDish(Dish dish)
+        {
+            Menu.Remove(dish);
+        }
+
+        public void AddDish(Dish dish)
+        {
+            Menu.Add(dish);
+        }
+
         override public string ToString()
         {
             return BranchName;
