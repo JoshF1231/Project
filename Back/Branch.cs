@@ -11,7 +11,7 @@ namespace Menu
     [Serializable]
     public class Branch
     {
-        private static BindingList<Dish>? Menu;
+        public BindingList<Dish>? Menu { get; set; }
         public string BranchName;
         public Branch() {
             Menu = new BindingList<Dish>();

@@ -56,7 +56,6 @@ namespace Project
             {
                 if (dishNameTextbox.Text.Length > 0)
                 {
-                    Branch.Menu.Add(new Hamburger(dishNameTextbox.Text));
                     dishNameTextbox.Clear();
                 }
             }
