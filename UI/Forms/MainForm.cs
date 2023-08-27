@@ -17,19 +17,6 @@ namespace Project
             branchLabel.Text = "None";
 
         }
-
-        public void loadform(object Form) // to be replaced with a specific function for each form
-        {
-            if (this.mainpanel.Controls.Count > 0)
-                this.mainpanel.Controls.Clear();
-            Form f = Form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.mainpanel.Controls.Add(f);
-            this.mainpanel.Tag = f;
-            f.Show();
-
-        }
         private void OpenBranchesForm()
         {
             if (this.mainpanel.Controls.Count > 0)
@@ -102,15 +89,18 @@ namespace Project
         private void BranchesForm_BranchUpdated(object sender, BranchEventArgs e)
         {
             // Update the main form based on the changes made in the sub-form
-            branchesList.branchesListIndex = e.BranchIndex;
-            if (e.BranchIndex >= 0) branchLabel.Text = branchesList[branchesList.branchesListIndex].BranchName;
+            if (branchesList != null)
+            {
+                branchesList.branchesListIndex = e.BranchIndex;
+                if (e.BranchIndex >= 0) branchLabel.Text = branchesList[branchesList.branchesListIndex].BranchName;
+            }
             else branchLabel.Text = "None";
             // Update UI elements or perform any necessary actions
         }
         private void DishesForm_DishUpdated(object sender, DishEventArgs e)
         {
             // Update the main form based on the changes made in the sub-form
-            branchesList.dishIndex = e.DishIndex;
+            if (branchesList!= null) branchesList.dishIndex = e.DishIndex;
             // Update UI elements or perform any necessary actions
         }
 
@@ -134,12 +124,13 @@ namespace Project
         private void saveButton_Click(object sender, EventArgs e)
         {
             // save to file
+            if (branchesList == null) return;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
             saveFileDialog1.Filter = "branch files (*.brc)| *.brc| All files (*.*)|*.*";
             saveFileDialog1.FilterIndex = 1;
             saveFileDialog1.RestoreDirectory = true;
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if ( saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 IFormatter formatter = new BinaryFormatter();
                 using (Stream stream = new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.ReadWrite))

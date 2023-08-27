@@ -14,7 +14,7 @@ namespace Project
 {
     public partial class Menu_Form : Form
     {
-        public event EventHandler<DishEventArgs> DishIndexChanged;
+        public event EventHandler<DishEventArgs>? DishIndexChanged;
         public Branch? Branch { get; set; }
         public Menu_Form()
         {
@@ -67,7 +67,7 @@ namespace Project
         {
             if (Branch != null)
             {
-                if (listBoxDishes.Items.Count > 0)
+                if (Branch.Menu!=null && listBoxDishes.Items.Count > 0)
                 {
                     Branch.Menu.Remove(Branch[listBoxDishes.SelectedIndex]);
                 }

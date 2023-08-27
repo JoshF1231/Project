@@ -25,12 +25,12 @@ namespace Menu
 
         public void RemoveDish(Dish dish)
         {
-            Menu.Remove(dish);
+            if (Menu != null) Menu.Remove(dish);
         }
 
         public void AddDish(Dish dish)
         {
-            Menu.Add(dish);
+            if (Menu != null) Menu.Add(dish);
         }
 
         override public string ToString()
@@ -41,7 +41,7 @@ namespace Menu
         {
             get
             {
-                if (index < Menu.Count && index>=0) return Menu[index];
+                if (Menu!= null && index < Menu.Count && index>=0) return Menu[index];
                 else return null;
 
             }

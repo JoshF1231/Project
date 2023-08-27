@@ -21,7 +21,7 @@ namespace Menu
         }
         public void RemoveBranch(string branchName)
         {
-            Branch temp = FindBranchByName(branchName);
+            Branch? temp = FindBranchByName(branchName);
             if (temp != null)
             {
                 listOfBranches.Remove(temp);
