@@ -13,8 +13,7 @@ namespace Menu
 
         private string meatType="None";
         public string MeatType { get => meatType; set => meatType = value; }
-
-        protected MeatBased(string Name, double Content, double Price, bool addCheese, bool addButter, bool isVegan) : base(Name, Content, isVegan, Price)
+        protected MeatBased(string Name="", double Content=0, double Price=0, bool addCheese=false, bool addButter=false, bool isVegan=false) : base(Name, Content, isVegan, Price)
         {
             if(!isVegan)
             {

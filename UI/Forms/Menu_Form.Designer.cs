@@ -28,53 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Temporary = new Label();
-            test = new TextBox();
-            listBoxDishes = new ListBox();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             addButton = new Button();
             removeButton = new Button();
-            tempLabel = new Label();
-            dishNameTextbox = new TextBox();
             warning = new Label();
-            dishNameLabel = new Label();
+            menuDataGrid = new DataGridView();
+            name = new DataGridViewTextBoxColumn();
+            Type = new DataGridViewTextBoxColumn();
+            branchBindingSource = new BindingSource(components);
+            menuLabel = new Label();
+            isVeganDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            showItemDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+            priceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            weightDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)menuDataGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)branchBindingSource).BeginInit();
             SuspendLayout();
-            // 
-            // Temporary
-            // 
-            Temporary.AutoSize = true;
-            Temporary.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            Temporary.Location = new Point(144, 68);
-            Temporary.Margin = new Padding(4, 0, 4, 0);
-            Temporary.Name = "Temporary";
-            Temporary.Size = new Size(238, 41);
-            Temporary.TabIndex = 1;
-            Temporary.Text = "MENU FORM";
-            // 
-            // test
-            // 
-            test.Location = new Point(786, 213);
-            test.Margin = new Padding(4, 5, 4, 5);
-            test.Name = "test";
-            test.Size = new Size(141, 31);
-            test.TabIndex = 2;
-            // 
-            // listBoxDishes
-            // 
-            listBoxDishes.FormattingEnabled = true;
-            listBoxDishes.ItemHeight = 25;
-            listBoxDishes.Location = new Point(144, 213);
-            listBoxDishes.Margin = new Padding(4, 5, 4, 5);
-            listBoxDishes.Name = "listBoxDishes";
-            listBoxDishes.Size = new Size(170, 479);
-            listBoxDishes.TabIndex = 3;
-            listBoxDishes.SelectedIndexChanged += listBoxDishes_SelectedIndexChanged;
             // 
             // addButton
             // 
-            addButton.Location = new Point(377, 212);
-            addButton.Margin = new Padding(4, 5, 4, 5);
+            addButton.Location = new Point(654, 69);
             addButton.Name = "addButton";
-            addButton.Size = new Size(107, 38);
+            addButton.Size = new Size(75, 23);
             addButton.TabIndex = 4;
             addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = true;
@@ -82,92 +59,151 @@
             // 
             // removeButton
             // 
-            removeButton.Location = new Point(377, 260);
-            removeButton.Margin = new Padding(4, 5, 4, 5);
+            removeButton.Location = new Point(654, 98);
             removeButton.Name = "removeButton";
-            removeButton.Size = new Size(107, 38);
+            removeButton.Size = new Size(75, 23);
             removeButton.TabIndex = 5;
             removeButton.Text = "Remove";
             removeButton.UseVisualStyleBackColor = true;
             removeButton.Click += removeButton_Click;
-            // 
-            // tempLabel
-            // 
-            tempLabel.AutoSize = true;
-            tempLabel.Location = new Point(786, 168);
-            tempLabel.Margin = new Padding(4, 0, 4, 0);
-            tempLabel.Name = "tempLabel";
-            tempLabel.Size = new Size(95, 25);
-            tempLabel.TabIndex = 6;
-            tempLabel.Text = "tempLabel";
-            // 
-            // dishNameTextbox
-            // 
-            dishNameTextbox.Location = new Point(144, 155);
-            dishNameTextbox.Margin = new Padding(4, 5, 4, 5);
-            dishNameTextbox.Name = "dishNameTextbox";
-            dishNameTextbox.Size = new Size(141, 31);
-            dishNameTextbox.TabIndex = 7;
-            dishNameTextbox.KeyDown += dishNameTextbox_KeyDown;
             // 
             // warning
             // 
             warning.AutoSize = true;
             warning.BackColor = Color.White;
             warning.ForeColor = Color.IndianRed;
-            warning.Location = new Point(377, 168);
-            warning.Margin = new Padding(4, 0, 4, 0);
+            warning.Location = new Point(654, 43);
             warning.Name = "warning";
-            warning.Size = new Size(166, 25);
+            warning.Size = new Size(110, 15);
             warning.TabIndex = 8;
             warning.Text = "Select a branch first";
             warning.Visible = false;
             // 
-            // dishNameLabel
+            // menuDataGrid
             // 
-            dishNameLabel.AutoSize = true;
-            dishNameLabel.Location = new Point(26, 160);
-            dishNameLabel.Margin = new Padding(4, 0, 4, 0);
-            dishNameLabel.Name = "dishNameLabel";
-            dishNameLabel.Size = new Size(100, 25);
-            dishNameLabel.TabIndex = 9;
-            dishNameLabel.Text = "Dish name:";
+            menuDataGrid.AllowUserToAddRows = false;
+            menuDataGrid.AllowUserToDeleteRows = false;
+            menuDataGrid.AutoGenerateColumns = false;
+            menuDataGrid.BorderStyle = BorderStyle.None;
+            menuDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            menuDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            menuDataGrid.Columns.AddRange(new DataGridViewColumn[] { name, Type, isVeganDataGridViewCheckBoxColumn, nameDataGridViewTextBoxColumn, showItemDataGridViewCheckBoxColumn, priceDataGridViewTextBoxColumn, weightDataGridViewTextBoxColumn });
+            menuDataGrid.DataSource = branchBindingSource;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            menuDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            menuDataGrid.Location = new Point(12, 69);
+            menuDataGrid.Name = "menuDataGrid";
+            menuDataGrid.ReadOnly = true;
+            menuDataGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            menuDataGrid.RowTemplate.Height = 25;
+            menuDataGrid.Size = new Size(624, 421);
+            menuDataGrid.TabIndex = 9;
+            // 
+            // name
+            // 
+            name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            name.DataPropertyName = "name";
+            name.HeaderText = "Name";
+            name.Name = "name";
+            name.ReadOnly = true;
+            // 
+            // Type
+            // 
+            Type.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Type.HeaderText = "Type";
+            Type.Name = "Type";
+            Type.ReadOnly = true;
+            // 
+            // branchBindingSource
+            // 
+            branchBindingSource.DataMember = "Menu";
+            branchBindingSource.DataSource = typeof(Menu.Branch);
+            // 
+            // menuLabel
+            // 
+            menuLabel.AutoSize = true;
+            menuLabel.Location = new Point(56, 31);
+            menuLabel.Name = "menuLabel";
+            menuLabel.Size = new Size(0, 15);
+            menuLabel.TabIndex = 10;
+            // 
+            // isVeganDataGridViewCheckBoxColumn
+            // 
+            isVeganDataGridViewCheckBoxColumn.DataPropertyName = "isVegan";
+            isVeganDataGridViewCheckBoxColumn.HeaderText = "isVegan";
+            isVeganDataGridViewCheckBoxColumn.Name = "isVeganDataGridViewCheckBoxColumn";
+            isVeganDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            nameDataGridViewTextBoxColumn.HeaderText = "name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // showItemDataGridViewCheckBoxColumn
+            // 
+            showItemDataGridViewCheckBoxColumn.DataPropertyName = "showItem";
+            showItemDataGridViewCheckBoxColumn.HeaderText = "showItem";
+            showItemDataGridViewCheckBoxColumn.Name = "showItemDataGridViewCheckBoxColumn";
+            showItemDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // weightDataGridViewTextBoxColumn
+            // 
+            weightDataGridViewTextBoxColumn.DataPropertyName = "Weight";
+            weightDataGridViewTextBoxColumn.HeaderText = "Weight";
+            weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
+            weightDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Menu_Form
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1139, 827);
+            BackColor = Color.LightSteelBlue;
+            ClientSize = new Size(797, 496);
             ControlBox = false;
-            Controls.Add(dishNameLabel);
+            Controls.Add(menuLabel);
+            Controls.Add(menuDataGrid);
             Controls.Add(warning);
-            Controls.Add(dishNameTextbox);
-            Controls.Add(tempLabel);
             Controls.Add(removeButton);
             Controls.Add(addButton);
-            Controls.Add(listBoxDishes);
-            Controls.Add(test);
-            Controls.Add(Temporary);
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Menu_Form";
             Text = "Menu_Form";
+            ((System.ComponentModel.ISupportInitialize)menuDataGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)branchBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label Temporary;
-        private TextBox test;
-        private ListBox listBoxDishes;
         private Button addButton;
         private Button removeButton;
-        private Label tempLabel;
-        private TextBox dishNameTextbox;
         private Label warning;
-        private Label dishNameLabel;
+        private DataGridView menuDataGrid;
+        private Label menuLabel;
+        private BindingSource branchBindingSource;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn Type;
+        private DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn isVeganDataGridViewCheckBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn showItemDataGridViewCheckBoxColumn;
+        private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
     }
 }

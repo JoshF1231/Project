@@ -15,7 +15,6 @@ namespace Project
             branchesList = new Branches();
             InitializeComponent();
             branchLabel.Text = "None";
-
         }
         private void OpenBranchesForm()
         {

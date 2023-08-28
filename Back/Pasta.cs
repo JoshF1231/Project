@@ -15,6 +15,10 @@
         {
             return this.picture;
         }
+        public Pasta()
+        {
+
+        }
 
         public Pasta(string Name, double Content, double Price, bool isVegan, bool VeganMilk, bool extraCheese, bool addOlives, bool tomatoSauce, bool addMushrooms, bool addVegetables) : base(Name, Content, isVegan, Price)
         {

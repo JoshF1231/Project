@@ -21,5 +21,9 @@
             AddMushrooms = addMushrooms;
             AddBacon = addBacon;
         }
+
+        public Pizza()
+        {
+        }
     }
 }

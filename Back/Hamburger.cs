@@ -29,5 +29,9 @@
             }
             else { VeganHamburger = false; }
         }
+
+        public Hamburger()
+        {
+        }
     }
 }

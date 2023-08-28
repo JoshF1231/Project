@@ -20,8 +20,8 @@ namespace Project
         {
             InitializeComponent();
             Branch = null;
-            tempLabel.Text = "No branch selected";
-            listBoxDishes.Items.Clear();
+            // tempLabel.Text = "No branch selected";
+            // menuDataGrid.
         }
         public Menu_Form(Branch branch)
         {
@@ -29,23 +29,23 @@ namespace Project
             Branch = branch;
             if (Branch == null)
             {
-                tempLabel.Text = "No branch selected";
+                //   tempLabel.Text = "No branch selected";
             }
             else
             {
-                tempLabel.Text = "Selected branch is:";
+                //   tempLabel.Text = "Selected branch is:";
             }
-            test.Text = branch.ToString();
+            //   test.Text = branch.ToString();
             resetListBox();
         }
         public void resetListBox()
         {
-            listBoxDishes.Items.Clear();
+            // listBoxDishes.Items.Clear();
             if (Branch != null && Branch.Menu != null)
             {
                 for (int i = 0; i < Branch.Menu.Count; i++)
                 {
-                    listBoxDishes.Items.Add(Branch.Menu[i].name);
+                    //     listBoxDishes.Items.Add(Branch.Menu[i].name);
                 }
             }
         }
@@ -54,22 +54,35 @@ namespace Project
         {
             if (Branch != null)
             {
-                if (dishNameTextbox.Text.Length > 0)
-                {
-                    dishNameTextbox.Clear();
-                }
+                OpenMenuItemForm();
             }
             else warning.Visible = true;
-            resetListBox();
+            //resetListBox();  --dont forget to replace
+        }
+
+        private void OpenMenuItemForm()
+        {
+            MenuItemForm f;
+            if (Branch != null)
+            {
+                f = new MenuItemForm(Branch);
+                MessageBox.Show("WORKED");
+            }
+            else
+            {
+                f = new MenuItemForm();
+            }
+            f.ShowDialog();
+            MessageBox.Show(Branch[0].ToString());
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
             if (Branch != null)
             {
-                if (Branch.Menu!=null && listBoxDishes.Items.Count > 0)
+                //    if (Branch.Menu != null && listBoxDishes.Items.Count > 0)
                 {
-                    Branch.Menu.Remove(Branch[listBoxDishes.SelectedIndex]);
+                    //        Branch.Menu.Remove(Branch[listBoxDishes.SelectedIndex]);
                 }
             }
             else warning.Visible = true;
@@ -86,7 +99,7 @@ namespace Project
 
         private void listBoxDishes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DishIndexChanged?.Invoke(this, new DishEventArgs(listBoxDishes.SelectedIndex));
+            //    DishIndexChanged?.Invoke(this, new DishEventArgs(listBoxDishes.SelectedIndex));
         }
     }
 }
