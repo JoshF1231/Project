@@ -28,192 +28,137 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            DairyLabel = new Label();
-            NameLabel = new Label();
-            ContentLabel = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox4 = new TextBox();
-            PriceLabel = new Label();
-            textBox3 = new TextBox();
-            AddButton = new Button();
             ClearButton = new Button();
-            DairyTypeBox = new ComboBox();
-            TypeLabel = new Label();
-            panel1.SuspendLayout();
+            AddButton = new Button();
+            PriceTextBox = new TextBox();
+            PriceLabel = new Label();
+            DescriptionTextBox = new TextBox();
+            ContentTextBox = new TextBox();
+            NameTextBox = new TextBox();
+            DescriptionLabel = new Label();
+            ContentLabel = new Label();
+            NameLabel = new Label();
             SuspendLayout();
             // 
-            // panel1
+            // ClearButton
             // 
-            panel1.BackColor = Color.LightSteelBlue;
-            panel1.Controls.Add(DairyLabel);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(392, 74);
-            panel1.TabIndex = 12;
+            ClearButton.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ClearButton.Location = new Point(205, 299);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(112, 34);
+            ClearButton.TabIndex = 39;
+            ClearButton.Text = "Clear";
+            ClearButton.UseVisualStyleBackColor = true;
             // 
-            // DairyLabel
+            // AddButton
             // 
-            DairyLabel.AutoSize = true;
-            DairyLabel.Font = new Font("David", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            DairyLabel.Location = new Point(117, 14);
-            DairyLabel.Name = "DairyLabel";
-            DairyLabel.Size = new Size(129, 47);
-            DairyLabel.TabIndex = 0;
-            DairyLabel.Text = "Dairy";
+            AddButton.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AddButton.Location = new Point(50, 299);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new Size(112, 34);
+            AddButton.TabIndex = 38;
+            AddButton.Text = "Add";
+            AddButton.UseVisualStyleBackColor = true;
             // 
-            // NameLabel
+            // PriceTextBox
             // 
-            NameLabel.AutoSize = true;
-            NameLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            NameLabel.Location = new Point(42, 157);
-            NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(77, 24);
-            NameLabel.TabIndex = 13;
-            NameLabel.Text = "Name:";
-            // 
-            // ContentLabel
-            // 
-            ContentLabel.AutoSize = true;
-            ContentLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ContentLabel.Location = new Point(42, 205);
-            ContentLabel.Name = "ContentLabel";
-            ContentLabel.Size = new Size(96, 24);
-            ContentLabel.TabIndex = 14;
-            ContentLabel.Text = "Content:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(42, 260);
-            label3.Name = "label3";
-            label3.Size = new Size(88, 24);
-            label3.TabIndex = 15;
-            label3.Text = "Details:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(170, 157);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(151, 31);
-            textBox1.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(170, 205);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(151, 31);
-            textBox2.TabIndex = 17;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(170, 260);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(151, 134);
-            textBox4.TabIndex = 18;
+            PriceTextBox.Location = new Point(178, 247);
+            PriceTextBox.Name = "PriceTextBox";
+            PriceTextBox.Size = new Size(151, 31);
+            PriceTextBox.TabIndex = 37;
             // 
             // PriceLabel
             // 
             PriceLabel.AutoSize = true;
             PriceLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            PriceLabel.Location = new Point(50, 430);
+            PriceLabel.Location = new Point(50, 254);
             PriceLabel.Name = "PriceLabel";
             PriceLabel.Size = new Size(69, 24);
-            PriceLabel.TabIndex = 19;
+            PriceLabel.TabIndex = 36;
             PriceLabel.Text = "Price:";
             // 
-            // textBox3
+            // DescriptionTextBox
             // 
-            textBox3.Location = new Point(170, 430);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(151, 31);
-            textBox3.TabIndex = 20;
+            DescriptionTextBox.Location = new Point(178, 104);
+            DescriptionTextBox.Multiline = true;
+            DescriptionTextBox.Name = "DescriptionTextBox";
+            DescriptionTextBox.Size = new Size(151, 134);
+            DescriptionTextBox.TabIndex = 35;
             // 
-            // AddButton
+            // ContentTextBox
             // 
-            AddButton.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            AddButton.Location = new Point(55, 484);
-            AddButton.Name = "AddButton";
-            AddButton.Size = new Size(112, 34);
-            AddButton.TabIndex = 21;
-            AddButton.Text = "Add";
-            AddButton.UseVisualStyleBackColor = true;
+            ContentTextBox.Location = new Point(178, 57);
+            ContentTextBox.Name = "ContentTextBox";
+            ContentTextBox.Size = new Size(151, 31);
+            ContentTextBox.TabIndex = 34;
             // 
-            // ClearButton
+            // NameTextBox
             // 
-            ClearButton.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ClearButton.Location = new Point(224, 484);
-            ClearButton.Name = "ClearButton";
-            ClearButton.Size = new Size(112, 34);
-            ClearButton.TabIndex = 22;
-            ClearButton.Text = "Clear";
-            ClearButton.UseVisualStyleBackColor = true;
+            NameTextBox.Location = new Point(178, 20);
+            NameTextBox.Name = "NameTextBox";
+            NameTextBox.Size = new Size(151, 31);
+            NameTextBox.TabIndex = 33;
             // 
-            // DairyTypeBox
+            // DescriptionLabel
             // 
-            DairyTypeBox.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DairyTypeBox.FormattingEnabled = true;
-            DairyTypeBox.Location = new Point(170, 110);
-            DairyTypeBox.Name = "DairyTypeBox";
-            DairyTypeBox.Size = new Size(150, 32);
-            DairyTypeBox.TabIndex = 23;
-            DairyTypeBox.SelectedIndexChanged += DairyTypeBox_SelectedIndexChanged;
+            DescriptionLabel.AutoSize = true;
+            DescriptionLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DescriptionLabel.Location = new Point(50, 104);
+            DescriptionLabel.Name = "DescriptionLabel";
+            DescriptionLabel.Size = new Size(132, 24);
+            DescriptionLabel.TabIndex = 32;
+            DescriptionLabel.Text = "Description:";
             // 
-            // TypeLabel
+            // ContentLabel
             // 
-            TypeLabel.AutoSize = true;
-            TypeLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TypeLabel.Location = new Point(42, 110);
-            TypeLabel.Name = "TypeLabel";
-            TypeLabel.Size = new Size(69, 24);
-            TypeLabel.TabIndex = 24;
-            TypeLabel.Text = "Type:";
+            ContentLabel.AutoSize = true;
+            ContentLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ContentLabel.Location = new Point(50, 65);
+            ContentLabel.Name = "ContentLabel";
+            ContentLabel.Size = new Size(96, 24);
+            ContentLabel.TabIndex = 31;
+            ContentLabel.Text = "Content:";
+            // 
+            // NameLabel
+            // 
+            NameLabel.AutoSize = true;
+            NameLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            NameLabel.Location = new Point(50, 27);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(77, 24);
+            NameLabel.TabIndex = 30;
+            NameLabel.Text = "Name:";
             // 
             // Dairy
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(TypeLabel);
-            Controls.Add(DairyTypeBox);
             Controls.Add(ClearButton);
             Controls.Add(AddButton);
-            Controls.Add(textBox3);
+            Controls.Add(PriceTextBox);
             Controls.Add(PriceLabel);
-            Controls.Add(textBox4);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label3);
+            Controls.Add(DescriptionTextBox);
+            Controls.Add(ContentTextBox);
+            Controls.Add(NameTextBox);
+            Controls.Add(DescriptionLabel);
             Controls.Add(ContentLabel);
             Controls.Add(NameLabel);
-            Controls.Add(panel1);
             Name = "Dairy";
-            Size = new Size(392, 558);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Size = new Size(378, 353);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private Label DairyLabel;
-        private Label NameLabel;
-        private Label ContentLabel;
-        private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox4;
-        private Label PriceLabel;
-        private TextBox textBox3;
-        private Button AddButton;
         private Button ClearButton;
-        private ComboBox DairyTypeBox;
-        private Label TypeLabel;
+        private Button AddButton;
+        private TextBox PriceTextBox;
+        private Label PriceLabel;
+        private TextBox DescriptionTextBox;
+        private TextBox ContentTextBox;
+        private TextBox NameTextBox;
+        private Label DescriptionLabel;
+        private Label ContentLabel;
+        private Label NameLabel;
     }
 }

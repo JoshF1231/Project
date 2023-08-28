@@ -9,12 +9,11 @@
         public bool AddPickles { get; set; }
         public bool AddBacon { get; set; }
         public bool VeganHamburger { get; set; }
-
         public override string GetPicture()
         {
             return this.picture;
         }
-        public Hamburger(string Name, double Content, bool addCheese, bool addButter, bool isVegan, bool tomato, bool onion, bool lettuce, bool pickles, bool bacon) : base(Name, Content, isVegan, addButter, addCheese)
+        public Hamburger(string Name, double Content, double Price, bool addCheese, bool addButter, bool isVegan, bool tomato, bool onion, bool lettuce, bool pickles, bool bacon) : base(Name, Content, Price, isVegan, addButter, addCheese)
         {
             AddTomato = tomato;
             AddOnion = onion;

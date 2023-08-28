@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DishesForm));
             Temporary = new Label();
             panel1 = new Panel();
             DairyPanelButton = new Button();
@@ -35,13 +37,20 @@
             dishesListBox = new ListBox();
             tempLabel = new Label();
             panel2 = new Panel();
+            pictureBoxDishes = new PictureBox();
             PanelUserControl = new Panel();
+            AddButton = new Button();
             FactsLabel = new Label();
-            pictureBox1 = new PictureBox();
-            richTextBox1 = new RichTextBox();
+            richTextBoxFacts = new RichTextBox();
+            TitlePanel = new Panel();
+            TypeLabel = new Label();
+            TypeBox = new ComboBox();
+            PanelIngredients = new Panel();
+            imageListDishes = new ImageList(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDishes).BeginInit();
+            PanelUserControl.SuspendLayout();
             SuspendLayout();
             // 
             // Temporary
@@ -120,6 +129,7 @@
             // panel2
             // 
             panel2.BackColor = Color.SteelBlue;
+            panel2.Controls.Add(pictureBoxDishes);
             panel2.Controls.Add(Temporary);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(204, 0);
@@ -127,40 +137,95 @@
             panel2.Size = new Size(939, 107);
             panel2.TabIndex = 2;
             // 
+            // pictureBoxDishes
+            // 
+            pictureBoxDishes.Location = new Point(26, 3);
+            pictureBoxDishes.Name = "pictureBoxDishes";
+            pictureBoxDishes.Size = new Size(100, 100);
+            pictureBoxDishes.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBoxDishes.TabIndex = 1;
+            pictureBoxDishes.TabStop = false;
+            // 
             // PanelUserControl
             // 
             PanelUserControl.BackColor = Color.Gray;
-            PanelUserControl.Location = new Point(226, 136);
+            PanelUserControl.Controls.Add(AddButton);
+            PanelUserControl.Location = new Point(226, 256);
             PanelUserControl.Name = "PanelUserControl";
-            PanelUserControl.Size = new Size(400, 600);
+            PanelUserControl.Size = new Size(400, 350);
             PanelUserControl.TabIndex = 3;
             PanelUserControl.Paint += PanelUserControl_Paint;
+            // 
+            // AddButton
+            // 
+            AddButton.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AddButton.Location = new Point(35, 536);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new Size(112, 34);
+            AddButton.TabIndex = 10;
+            AddButton.Text = "Add";
+            AddButton.UseVisualStyleBackColor = true;
             // 
             // FactsLabel
             // 
             FactsLabel.AutoSize = true;
             FactsLabel.Font = new Font("Showcard Gothic", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            FactsLabel.Location = new Point(717, 386);
+            FactsLabel.Location = new Point(728, 488);
             FactsLabel.Name = "FactsLabel";
             FactsLabel.Size = new Size(269, 89);
             FactsLabel.TabIndex = 4;
             FactsLabel.Text = "FACTS:";
             // 
-            // pictureBox1
+            // richTextBoxFacts
             // 
-            pictureBox1.Location = new Point(723, 140);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(341, 242);
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            richTextBoxFacts.Location = new Point(697, 571);
+            richTextBoxFacts.Name = "richTextBoxFacts";
+            richTextBoxFacts.Size = new Size(336, 157);
+            richTextBoxFacts.TabIndex = 7;
+            richTextBoxFacts.Text = "";
             // 
-            // richTextBox1
+            // TitlePanel
             // 
-            richTextBox1.Location = new Point(725, 498);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(336, 235);
-            richTextBox1.TabIndex = 7;
-            richTextBox1.Text = "";
+            TitlePanel.Location = new Point(227, 117);
+            TitlePanel.Name = "TitlePanel";
+            TitlePanel.Size = new Size(392, 74);
+            TitlePanel.TabIndex = 27;
+            // 
+            // TypeLabel
+            // 
+            TypeLabel.AutoSize = true;
+            TypeLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TypeLabel.Location = new Point(261, 212);
+            TypeLabel.Name = "TypeLabel";
+            TypeLabel.Size = new Size(69, 24);
+            TypeLabel.TabIndex = 31;
+            TypeLabel.Text = "Type:";
+            // 
+            // TypeBox
+            // 
+            TypeBox.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TypeBox.FormattingEnabled = true;
+            TypeBox.Location = new Point(349, 209);
+            TypeBox.Name = "TypeBox";
+            TypeBox.Size = new Size(150, 32);
+            TypeBox.TabIndex = 32;
+            TypeBox.SelectedIndexChanged += TypeBox_SelectedIndexChanged;
+            // 
+            // PanelIngredients
+            // 
+            PanelIngredients.BackColor = Color.Gray;
+            PanelIngredients.Location = new Point(684, 117);
+            PanelIngredients.Name = "PanelIngredients";
+            PanelIngredients.Size = new Size(370, 375);
+            PanelIngredients.TabIndex = 33;
+            // 
+            // imageListDishes
+            // 
+            imageListDishes.ColorDepth = ColorDepth.Depth32Bit;
+            imageListDishes.ImageStream = (ImageListStreamer)resources.GetObject("imageListDishes.ImageStream");
+            imageListDishes.TransparentColor = Color.Transparent;
+            imageListDishes.Images.SetKeyName(0, "BurgerIcon.png");
+            imageListDishes.Images.SetKeyName(1, "icons8-pasta-100.png");
             // 
             // DishesForm
             // 
@@ -168,9 +233,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1143, 750);
-            Controls.Add(richTextBox1);
-            Controls.Add(pictureBox1);
+            Controls.Add(PanelIngredients);
+            Controls.Add(richTextBoxFacts);
+            Controls.Add(TypeBox);
             Controls.Add(FactsLabel);
+            Controls.Add(TypeLabel);
+            Controls.Add(TitlePanel);
             Controls.Add(PanelUserControl);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -183,7 +251,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDishes).EndInit();
+            PanelUserControl.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -199,7 +268,13 @@
         private Button DairyPanelButton;
         private Panel PanelUserControl;
         private Label FactsLabel;
-        private PictureBox pictureBox1;
-        private RichTextBox richTextBox1;
+        private RichTextBox richTextBoxFacts;
+        private Button AddButton;
+        private Panel TitlePanel;
+        private Label TypeLabel;
+        private ComboBox TypeBox;
+        private Panel PanelIngredients;
+        private ImageList imageListDishes;
+        private PictureBox pictureBoxDishes;
     }
 }

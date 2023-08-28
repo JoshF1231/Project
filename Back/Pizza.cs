@@ -13,7 +13,7 @@
         {
             return this.picture;
         }
-        public Pizza(string Name, double Content, bool isVegan, bool VeganMilk, bool addTomato, bool addOnion, bool addTuna, bool addMushrooms, bool addBacon) : base(Name, Content, isVegan)
+        public Pizza(string Name, double Content, double Price, bool isVegan, bool VeganMilk, bool addTomato, bool addOnion, bool addTuna, bool addMushrooms, bool addBacon) : base(Name, Content, isVegan, Price)
         {
             AddTomato = addTomato;
             AddOnion = addOnion;

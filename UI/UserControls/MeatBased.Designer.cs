@@ -38,18 +38,16 @@
             PriceTextBox = new TextBox();
             AddButton = new Button();
             ClearButton = new Button();
-            panel1 = new Panel();
-            MeatLabel = new Label();
-            MeatBasedTypeBox = new ComboBox();
-            TypeLabel = new Label();
-            panel1.SuspendLayout();
+            ButterCheckBox = new CheckBox();
+            label1 = new Label();
+            CheeseCheckBox = new CheckBox();
             SuspendLayout();
             // 
             // NameLabel
             // 
             NameLabel.AutoSize = true;
             NameLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            NameLabel.Location = new Point(42, 157);
+            NameLabel.Location = new Point(42, 26);
             NameLabel.Name = "NameLabel";
             NameLabel.Size = new Size(77, 24);
             NameLabel.TabIndex = 0;
@@ -59,7 +57,7 @@
             // 
             ContentLabel.AutoSize = true;
             ContentLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ContentLabel.Location = new Point(42, 205);
+            ContentLabel.Location = new Point(42, 64);
             ContentLabel.Name = "ContentLabel";
             ContentLabel.Size = new Size(96, 24);
             ContentLabel.TabIndex = 1;
@@ -69,7 +67,7 @@
             // 
             DescriptionLabel.AutoSize = true;
             DescriptionLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DescriptionLabel.Location = new Point(42, 260);
+            DescriptionLabel.Location = new Point(42, 103);
             DescriptionLabel.Name = "DescriptionLabel";
             DescriptionLabel.Size = new Size(132, 24);
             DescriptionLabel.TabIndex = 2;
@@ -78,21 +76,21 @@
             // 
             // NameTextBox
             // 
-            NameTextBox.Location = new Point(170, 157);
+            NameTextBox.Location = new Point(170, 19);
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(151, 31);
             NameTextBox.TabIndex = 3;
             // 
             // ContentTextBox
             // 
-            ContentTextBox.Location = new Point(170, 205);
+            ContentTextBox.Location = new Point(170, 56);
             ContentTextBox.Name = "ContentTextBox";
             ContentTextBox.Size = new Size(151, 31);
             ContentTextBox.TabIndex = 4;
             // 
             // DescriptionTextBox
             // 
-            DescriptionTextBox.Location = new Point(170, 260);
+            DescriptionTextBox.Location = new Point(170, 103);
             DescriptionTextBox.Multiline = true;
             DescriptionTextBox.Name = "DescriptionTextBox";
             DescriptionTextBox.Size = new Size(151, 134);
@@ -102,7 +100,7 @@
             // 
             PriceLabel.AutoSize = true;
             PriceLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            PriceLabel.Location = new Point(42, 430);
+            PriceLabel.Location = new Point(42, 253);
             PriceLabel.Name = "PriceLabel";
             PriceLabel.Size = new Size(69, 24);
             PriceLabel.TabIndex = 7;
@@ -111,7 +109,7 @@
             // 
             // PriceTextBox
             // 
-            PriceTextBox.Location = new Point(170, 430);
+            PriceTextBox.Location = new Point(170, 246);
             PriceTextBox.Name = "PriceTextBox";
             PriceTextBox.Size = new Size(151, 31);
             PriceTextBox.TabIndex = 8;
@@ -119,70 +117,63 @@
             // AddButton
             // 
             AddButton.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            AddButton.Location = new Point(55, 484);
+            AddButton.Location = new Point(42, 298);
             AddButton.Name = "AddButton";
             AddButton.Size = new Size(112, 34);
             AddButton.TabIndex = 9;
             AddButton.Text = "Add";
             AddButton.UseVisualStyleBackColor = true;
+            AddButton.Click += AddButton_Click;
             // 
             // ClearButton
             // 
             ClearButton.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ClearButton.Location = new Point(224, 484);
+            ClearButton.Location = new Point(197, 298);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(112, 34);
             ClearButton.TabIndex = 10;
             ClearButton.Text = "Clear";
             ClearButton.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // ButterCheckBox
             // 
-            panel1.BackColor = Color.Brown;
-            panel1.Controls.Add(MeatLabel);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(392, 74);
-            panel1.TabIndex = 11;
+            ButterCheckBox.AutoSize = true;
+            ButterCheckBox.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ButterCheckBox.Location = new Point(42, 200);
+            ButterCheckBox.Name = "ButterCheckBox";
+            ButterCheckBox.Size = new Size(97, 28);
+            ButterCheckBox.TabIndex = 27;
+            ButterCheckBox.Text = "Butter";
+            ButterCheckBox.UseVisualStyleBackColor = true;
             // 
-            // MeatLabel
+            // label1
             // 
-            MeatLabel.AutoSize = true;
-            MeatLabel.Font = new Font("David", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            MeatLabel.Location = new Point(75, 13);
-            MeatLabel.Name = "MeatLabel";
-            MeatLabel.Size = new Size(235, 47);
-            MeatLabel.TabIndex = 0;
-            MeatLabel.Text = "MeatBased";
+            label1.AutoSize = true;
+            label1.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(42, 139);
+            label1.Name = "label1";
+            label1.Size = new Size(81, 24);
+            label1.TabIndex = 28;
+            label1.Text = "Extras:";
             // 
-            // MeatBasedTypeBox
+            // CheeseCheckBox
             // 
-            MeatBasedTypeBox.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            MeatBasedTypeBox.FormattingEnabled = true;
-            MeatBasedTypeBox.Location = new Point(171, 110);
-            MeatBasedTypeBox.Name = "MeatBasedTypeBox";
-            MeatBasedTypeBox.Size = new Size(150, 32);
-            MeatBasedTypeBox.TabIndex = 24;
-            MeatBasedTypeBox.SelectedIndexChanged += MeatBasedTypeBox_SelectedIndexChanged;
-            // 
-            // TypeLabel
-            // 
-            TypeLabel.AutoSize = true;
-            TypeLabel.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TypeLabel.Location = new Point(42, 110);
-            TypeLabel.Name = "TypeLabel";
-            TypeLabel.Size = new Size(69, 24);
-            TypeLabel.TabIndex = 25;
-            TypeLabel.Text = "Type:";
+            CheeseCheckBox.AutoSize = true;
+            CheeseCheckBox.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CheeseCheckBox.Location = new Point(42, 166);
+            CheeseCheckBox.Name = "CheeseCheckBox";
+            CheeseCheckBox.Size = new Size(106, 28);
+            CheeseCheckBox.TabIndex = 29;
+            CheeseCheckBox.Text = "Cheese";
+            CheeseCheckBox.UseVisualStyleBackColor = true;
             // 
             // MeatBased
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(TypeLabel);
-            Controls.Add(MeatBasedTypeBox);
-            Controls.Add(panel1);
+            Controls.Add(CheeseCheckBox);
+            Controls.Add(label1);
+            Controls.Add(ButterCheckBox);
             Controls.Add(ClearButton);
             Controls.Add(AddButton);
             Controls.Add(PriceTextBox);
@@ -194,9 +185,7 @@
             Controls.Add(ContentLabel);
             Controls.Add(NameLabel);
             Name = "MeatBased";
-            Size = new Size(392, 558);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Size = new Size(378, 353);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -213,9 +202,8 @@
         private TextBox PriceTextBox;
         private Button AddButton;
         private Button ClearButton;
-        private Panel panel1;
-        private Label MeatLabel;
-        private ComboBox MeatBasedTypeBox;
-        private Label TypeLabel;
+        private CheckBox ButterCheckBox;
+        private Label label1;
+        private CheckBox CheeseCheckBox;
     }
 }

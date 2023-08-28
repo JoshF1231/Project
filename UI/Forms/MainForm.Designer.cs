@@ -47,9 +47,10 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(12, 522);
+            textBox1.Location = new Point(17, 870);
+            textBox1.Margin = new Padding(4, 5, 4, 5);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(171, 23);
+            textBox1.Size = new Size(243, 31);
             textBox1.TabIndex = 6;
             textBox1.Text = "test box";
             // 
@@ -69,8 +70,9 @@
             panel1.Controls.Add(menuButton);
             panel1.Controls.Add(Branches);
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 557);
+            panel1.Size = new Size(286, 952);
             panel1.TabIndex = 10;
             // 
             // loadButton
@@ -80,9 +82,10 @@
             loadButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             loadButton.Image = Properties.Resources.branches1;
             loadButton.ImageAlign = ContentAlignment.MiddleLeft;
-            loadButton.Location = new Point(6, 485);
+            loadButton.Location = new Point(9, 808);
+            loadButton.Margin = new Padding(4, 5, 4, 5);
             loadButton.Name = "loadButton";
-            loadButton.Size = new Size(185, 51);
+            loadButton.Size = new Size(264, 85);
             loadButton.TabIndex = 16;
             loadButton.Text = "LOAD";
             loadButton.TextAlign = ContentAlignment.MiddleRight;
@@ -96,9 +99,10 @@
             saveButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             saveButton.Image = Properties.Resources.branches1;
             saveButton.ImageAlign = ContentAlignment.MiddleLeft;
-            saveButton.Location = new Point(6, 428);
+            saveButton.Location = new Point(9, 713);
+            saveButton.Margin = new Padding(4, 5, 4, 5);
             saveButton.Name = "saveButton";
-            saveButton.Size = new Size(185, 51);
+            saveButton.Size = new Size(264, 85);
             saveButton.TabIndex = 15;
             saveButton.Text = "SAVE";
             saveButton.TextAlign = ContentAlignment.MiddleRight;
@@ -112,9 +116,10 @@
             dishesButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             dishesButton.Image = Properties.Resources.test2;
             dishesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            dishesButton.Location = new Point(6, 209);
+            dishesButton.Location = new Point(9, 348);
+            dishesButton.Margin = new Padding(4, 5, 4, 5);
             dishesButton.Name = "dishesButton";
-            dishesButton.Size = new Size(185, 51);
+            dishesButton.Size = new Size(264, 85);
             dishesButton.TabIndex = 14;
             dishesButton.Text = "DISHES";
             dishesButton.TextAlign = ContentAlignment.MiddleRight;
@@ -128,9 +133,10 @@
             menuButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             menuButton.Image = Properties.Resources.branches1;
             menuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            menuButton.Location = new Point(6, 151);
+            menuButton.Location = new Point(9, 252);
+            menuButton.Margin = new Padding(4, 5, 4, 5);
             menuButton.Name = "menuButton";
-            menuButton.Size = new Size(185, 51);
+            menuButton.Size = new Size(264, 85);
             menuButton.TabIndex = 13;
             menuButton.Text = "MENU";
             menuButton.TextAlign = ContentAlignment.MiddleRight;
@@ -144,9 +150,10 @@
             Branches.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             Branches.Image = Properties.Resources.branches1;
             Branches.ImageAlign = ContentAlignment.MiddleLeft;
-            Branches.Location = new Point(6, 93);
+            Branches.Location = new Point(9, 155);
+            Branches.Margin = new Padding(4, 5, 4, 5);
             Branches.Name = "Branches";
-            Branches.Size = new Size(185, 51);
+            Branches.Size = new Size(264, 85);
             Branches.TabIndex = 12;
             Branches.Text = "BRANCHES";
             Branches.TextAlign = ContentAlignment.MiddleRight;
@@ -160,8 +167,9 @@
             topPanel.Controls.Add(headerLabel);
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
+            topPanel.Margin = new Padding(4, 5, 4, 5);
             topPanel.Name = "topPanel";
-            topPanel.Size = new Size(932, 35);
+            topPanel.Size = new Size(1352, 58);
             topPanel.TabIndex = 11;
             // 
             // branchLabel
@@ -169,10 +177,11 @@
             branchLabel.AutoSize = true;
             branchLabel.BackColor = Color.LightSlateGray;
             branchLabel.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            branchLabel.Location = new Point(830, 7);
+            branchLabel.Location = new Point(1186, 12);
+            branchLabel.Margin = new Padding(4, 0, 4, 0);
             branchLabel.Name = "branchLabel";
             branchLabel.RightToLeft = RightToLeft.No;
-            branchLabel.Size = new Size(50, 19);
+            branchLabel.Size = new Size(73, 29);
             branchLabel.TabIndex = 1;
             branchLabel.Text = "None";
             branchLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -181,30 +190,33 @@
             // 
             headerLabel.AutoSize = true;
             headerLabel.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            headerLabel.Location = new Point(652, 7);
+            headerLabel.Location = new Point(931, 12);
+            headerLabel.Margin = new Padding(4, 0, 4, 0);
             headerLabel.Name = "headerLabel";
-            headerLabel.Size = new Size(178, 19);
+            headerLabel.Size = new Size(257, 29);
             headerLabel.TabIndex = 0;
             headerLabel.Text = "SELECTED BRANCH:";
             // 
             // mainpanel
             // 
             mainpanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            mainpanel.Location = new Point(197, 29);
+            mainpanel.Location = new Point(281, 46);
+            mainpanel.Margin = new Padding(4, 5, 4, 5);
             mainpanel.Name = "mainpanel";
-            mainpanel.Size = new Size(735, 528);
+            mainpanel.Size = new Size(1071, 882);
             mainpanel.TabIndex = 12;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(932, 557);
+            ClientSize = new Size(1352, 952);
             Controls.Add(topPanel);
             Controls.Add(panel1);
             Controls.Add(textBox1);
             Controls.Add(mainpanel);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "MainForm";
             Text = "Form1";
             panel1.ResumeLayout(false);

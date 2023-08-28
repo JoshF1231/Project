@@ -9,6 +9,7 @@ namespace Project.Back.Enum
 {
     public enum eDairy
     {
+        None,
         Pasta,
         Pizza,
         Other

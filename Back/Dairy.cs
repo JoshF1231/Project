@@ -9,7 +9,7 @@
         
         public bool VeganMilk { get; set; }
 
-        protected Dairy(string Name, double Content, bool isVegan) : base(Name, Content, isVegan)
+        protected Dairy(string Name, double Content, bool isVegan, double Price) : base(Name, Content, isVegan, Price)
         {
             if(isVegan)
             {

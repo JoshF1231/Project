@@ -100,7 +100,7 @@ namespace Project
         private void DishesForm_DishUpdated(object sender, DishEventArgs e)
         {
             // Update the main form based on the changes made in the sub-form
-            if (branchesList!= null) branchesList.dishIndex = e.DishIndex;
+            if (branchesList != null) branchesList.dishIndex = e.DishIndex;
             // Update UI elements or perform any necessary actions
         }
 
@@ -130,7 +130,7 @@ namespace Project
             saveFileDialog1.Filter = "branch files (*.brc)| *.brc| All files (*.*)|*.*";
             saveFileDialog1.FilterIndex = 1;
             saveFileDialog1.RestoreDirectory = true;
-            if ( saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 IFormatter formatter = new BinaryFormatter();
                 using (Stream stream = new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.ReadWrite))

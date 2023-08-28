@@ -1,4 +1,5 @@
-﻿using Project.Back.Enum;
+﻿using Menu;
+using Project.Back.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,6 @@ namespace Project.UI.UserControls
         public MeatBased()
         {
             InitializeComponent();
-            MeatBasedTypeBox.DataSource = Enum.GetValues(typeof(eMeatBased));
         }
 
         private void PriceLabel_Click(object sender, EventArgs e)
@@ -31,6 +31,16 @@ namespace Project.UI.UserControls
 
         private void MeatBasedTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            string Name = NameTextBox.Text;
+            double Content = Double.Parse(ContentTextBox.Text);
+            string Description = DescriptionTextBox.Text;
+            bool AddCheese = CheeseCheckBox.Checked;
+            bool AddButter = ButterCheckBox.Checked;
+            double Price = Double.Parse(PriceTextBox.Text);
         }
     }
 }

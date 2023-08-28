@@ -1,5 +1,4 @@
-﻿using Project.Back.Enum;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project.UI.UserControls
+namespace Project.UI.Titles
 {
-    public partial class Dairy : UserControl
+    public partial class MeatTitle : UserControl
     {
-        public Dairy()
+        public MeatTitle()
         {
             InitializeComponent();
-        }
-
-        private void DairyTypeBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

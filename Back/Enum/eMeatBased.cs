@@ -8,6 +8,7 @@ namespace Project.Back.Enum
 {
     public enum eMeatBased
     {
+        None,
         Hamburger,
         Other
     }
