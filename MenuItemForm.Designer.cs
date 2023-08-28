@@ -28,225 +28,240 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            nameTextBox = new TextBox();
-            label2 = new Label();
-            enableDishCheckBox = new CheckBox();
-            isVeganCheckBox = new CheckBox();
-            weightTextBox = new TextBox();
-            label3 = new Label();
-            descriptionTextBox = new TextBox();
-            label4 = new Label();
-            applyButton = new Button();
-            cancelButton = new Button();
-            label5 = new Label();
-            typeComboBox = new ComboBox();
-            priceTextBox = new TextBox();
-            label6 = new Label();
-            label7 = new Label();
-            BonusPanel = new TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.enableDishCheckBox = new System.Windows.Forms.CheckBox();
+            this.isVeganCheckBox = new System.Windows.Forms.CheckBox();
+            this.weightTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.applyButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.typeComboBox = new System.Windows.Forms.ComboBox();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.priceWarningLabel = new System.Windows.Forms.Label();
+            this.weightWarningLabel = new System.Windows.Forms.Label();
+            this.BonusPanel = new System.Windows.Forms.TableLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(26, 19);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(111, 97);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 25);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(127, 129);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(158, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(42, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Name:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(181, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Name:";
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(205, 20);
-            nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(583, 23);
-            nameTextBox.TabIndex = 2;
+            this.nameTextBox.Location = new System.Drawing.Point(234, 27);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(666, 27);
+            this.nameTextBox.TabIndex = 2;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(162, 101);
-            label2.Name = "label2";
-            label2.Size = new Size(36, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Price:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(185, 135);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Price:";
             // 
             // enableDishCheckBox
             // 
-            enableDishCheckBox.AutoSize = true;
-            enableDishCheckBox.Location = new Point(701, 62);
-            enableDishCheckBox.Name = "enableDishCheckBox";
-            enableDishCheckBox.RightToLeft = RightToLeft.Yes;
-            enableDishCheckBox.Size = new Size(87, 19);
-            enableDishCheckBox.TabIndex = 5;
-            enableDishCheckBox.Text = "Enable Dish";
-            enableDishCheckBox.TextAlign = ContentAlignment.MiddleCenter;
-            enableDishCheckBox.UseVisualStyleBackColor = true;
+            this.enableDishCheckBox.AutoSize = true;
+            this.enableDishCheckBox.Location = new System.Drawing.Point(801, 83);
+            this.enableDishCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.enableDishCheckBox.Name = "enableDishCheckBox";
+            this.enableDishCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.enableDishCheckBox.Size = new System.Drawing.Size(109, 24);
+            this.enableDishCheckBox.TabIndex = 5;
+            this.enableDishCheckBox.Text = "Enable Dish";
+            this.enableDishCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.enableDishCheckBox.UseVisualStyleBackColor = true;
             // 
             // isVeganCheckBox
             // 
-            isVeganCheckBox.AutoSize = true;
-            isVeganCheckBox.Location = new Point(632, 61);
-            isVeganCheckBox.Name = "isVeganCheckBox";
-            isVeganCheckBox.RightToLeft = RightToLeft.Yes;
-            isVeganCheckBox.Size = new Size(58, 19);
-            isVeganCheckBox.TabIndex = 7;
-            isVeganCheckBox.Text = "Vegan";
-            isVeganCheckBox.UseVisualStyleBackColor = true;
+            this.isVeganCheckBox.AutoSize = true;
+            this.isVeganCheckBox.Location = new System.Drawing.Point(722, 81);
+            this.isVeganCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.isVeganCheckBox.Name = "isVeganCheckBox";
+            this.isVeganCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.isVeganCheckBox.Size = new System.Drawing.Size(72, 24);
+            this.isVeganCheckBox.TabIndex = 7;
+            this.isVeganCheckBox.Text = "Vegan";
+            this.isVeganCheckBox.UseVisualStyleBackColor = true;
             // 
             // weightTextBox
             // 
-            weightTextBox.Location = new Point(205, 138);
-            weightTextBox.Name = "weightTextBox";
-            weightTextBox.Size = new Size(274, 23);
-            weightTextBox.TabIndex = 9;
+            this.weightTextBox.Location = new System.Drawing.Point(234, 184);
+            this.weightTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.weightTextBox.Name = "weightTextBox";
+            this.weightTextBox.Size = new System.Drawing.Size(313, 27);
+            this.weightTextBox.TabIndex = 9;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(145, 141);
-            label3.Name = "label3";
-            label3.Size = new Size(48, 15);
-            label3.TabIndex = 8;
-            label3.Text = "Weight:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(166, 188);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Weight:";
             // 
             // descriptionTextBox
             // 
-            descriptionTextBox.Location = new Point(205, 182);
-            descriptionTextBox.Multiline = true;
-            descriptionTextBox.Name = "descriptionTextBox";
-            descriptionTextBox.Size = new Size(583, 114);
-            descriptionTextBox.TabIndex = 11;
+            this.descriptionTextBox.Location = new System.Drawing.Point(234, 243);
+            this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(666, 151);
+            this.descriptionTextBox.TabIndex = 11;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(129, 185);
-            label4.Name = "label4";
-            label4.Size = new Size(70, 15);
-            label4.TabIndex = 10;
-            label4.Text = "Description:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(147, 247);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Description:";
             // 
             // applyButton
             // 
-            applyButton.Location = new Point(623, 596);
-            applyButton.Name = "applyButton";
-            applyButton.Size = new Size(75, 23);
-            applyButton.TabIndex = 12;
-            applyButton.Text = "Apply";
-            applyButton.UseVisualStyleBackColor = true;
-            applyButton.Click += applyButton_Click;
+            this.applyButton.Location = new System.Drawing.Point(712, 795);
+            this.applyButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.applyButton.Name = "applyButton";
+            this.applyButton.Size = new System.Drawing.Size(86, 31);
+            this.applyButton.TabIndex = 12;
+            this.applyButton.Text = "Apply";
+            this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(713, 596);
-            cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(75, 23);
-            cancelButton.TabIndex = 13;
-            cancelButton.Text = "Cancel";
-            cancelButton.UseVisualStyleBackColor = true;
-            cancelButton.Click += cancelButton_Click;
+            this.cancelButton.Location = new System.Drawing.Point(815, 795);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(86, 31);
+            this.cancelButton.TabIndex = 13;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(162, 62);
-            label5.Name = "label5";
-            label5.Size = new Size(34, 15);
-            label5.TabIndex = 14;
-            label5.Text = "Type:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(185, 83);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 20);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Type:";
             // 
             // typeComboBox
             // 
-            typeComboBox.FormattingEnabled = true;
-            typeComboBox.Items.AddRange(new object[] { "Hamburger", "Pizza", "Pasta" });
-            typeComboBox.Location = new Point(205, 61);
-            typeComboBox.Name = "typeComboBox";
-            typeComboBox.Size = new Size(274, 23);
-            typeComboBox.TabIndex = 15;
-            typeComboBox.SelectedIndexChanged += typeComboBox_SelectedIndexChanged;
+            this.typeComboBox.FormattingEnabled = true;
+            this.typeComboBox.Items.AddRange(new object[] {
+            "Hamburger",
+            "Pizza",
+            "Pasta"});
+            this.typeComboBox.Location = new System.Drawing.Point(234, 81);
+            this.typeComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.typeComboBox.Name = "typeComboBox";
+            this.typeComboBox.Size = new System.Drawing.Size(313, 28);
+            this.typeComboBox.TabIndex = 15;
+            this.typeComboBox.SelectedIndexChanged += new System.EventHandler(this.typeComboBox_SelectedIndexChanged);
             // 
             // priceTextBox
             // 
-            priceTextBox.Location = new Point(205, 98);
-            priceTextBox.Name = "priceTextBox";
-            priceTextBox.Size = new Size(274, 23);
-            priceTextBox.TabIndex = 4;
+            this.priceTextBox.Location = new System.Drawing.Point(234, 131);
+            this.priceTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(313, 27);
+            this.priceTextBox.TabIndex = 4;
             // 
-            // label6
+            // priceWarningLabel
             // 
-            label6.AutoSize = true;
-            label6.ForeColor = Color.Red;
-            label6.Location = new Point(485, 101);
-            label6.Name = "label6";
-            label6.Size = new Size(155, 15);
-            label6.TabIndex = 16;
-            label6.Text = "Please enter a valid number.";
-            label6.Visible = false;
+            this.priceWarningLabel.AutoSize = true;
+            this.priceWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.priceWarningLabel.Location = new System.Drawing.Point(554, 135);
+            this.priceWarningLabel.Name = "priceWarningLabel";
+            this.priceWarningLabel.Size = new System.Drawing.Size(195, 20);
+            this.priceWarningLabel.TabIndex = 16;
+            this.priceWarningLabel.Text = "Please enter a valid number.";
+            this.priceWarningLabel.Visible = false;
             // 
-            // label7
+            // weightWarningLabel
             // 
-            label7.AutoSize = true;
-            label7.ForeColor = Color.Red;
-            label7.Location = new Point(485, 141);
-            label7.Name = "label7";
-            label7.Size = new Size(155, 15);
-            label7.TabIndex = 17;
-            label7.Text = "Please enter a valid number.";
-            label7.Visible = false;
+            this.weightWarningLabel.AutoSize = true;
+            this.weightWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.weightWarningLabel.Location = new System.Drawing.Point(554, 188);
+            this.weightWarningLabel.Name = "weightWarningLabel";
+            this.weightWarningLabel.Size = new System.Drawing.Size(195, 20);
+            this.weightWarningLabel.TabIndex = 17;
+            this.weightWarningLabel.Text = "Please enter a valid number.";
+            this.weightWarningLabel.Visible = false;
             // 
             // BonusPanel
             // 
-            BonusPanel.ColumnCount = 2;
-            BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66.7979F));
-            BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.2021F));
-            BonusPanel.Location = new Point(26, 337);
-            BonusPanel.Name = "BonusPanel";
-            BonusPanel.RowCount = 1;
-            BonusPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            BonusPanel.Size = new Size(762, 242);
-            BonusPanel.TabIndex = 18;
+            this.BonusPanel.ColumnCount = 2;
+            this.BonusPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.7979F));
+            this.BonusPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.2021F));
+            this.BonusPanel.Location = new System.Drawing.Point(30, 454);
+            this.BonusPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BonusPanel.Name = "BonusPanel";
+            this.BonusPanel.RowCount = 1;
+            this.BonusPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.BonusPanel.Size = new System.Drawing.Size(871, 323);
+            this.BonusPanel.TabIndex = 18;
             // 
             // MenuItemForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(822, 631);
-            Controls.Add(BonusPanel);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(typeComboBox);
-            Controls.Add(label5);
-            Controls.Add(cancelButton);
-            Controls.Add(applyButton);
-            Controls.Add(descriptionTextBox);
-            Controls.Add(label4);
-            Controls.Add(weightTextBox);
-            Controls.Add(label3);
-            Controls.Add(isVeganCheckBox);
-            Controls.Add(enableDishCheckBox);
-            Controls.Add(priceTextBox);
-            Controls.Add(label2);
-            Controls.Add(nameTextBox);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
-            Name = "MenuItemForm";
-            Text = "MenuItemForm";
-            Load += MenuItemForm_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(939, 841);
+            this.Controls.Add(this.BonusPanel);
+            this.Controls.Add(this.weightWarningLabel);
+            this.Controls.Add(this.priceWarningLabel);
+            this.Controls.Add(this.typeComboBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.applyButton);
+            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.weightTextBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.isVeganCheckBox);
+            this.Controls.Add(this.enableDishCheckBox);
+            this.Controls.Add(this.priceTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "MenuItemForm";
+            this.Text = "MenuItemForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -266,8 +281,8 @@
         private Label label5;
         private ComboBox typeComboBox;
         private TextBox priceTextBox;
-        private Label label6;
-        private Label label7;
+        private Label priceWarningLabel;
+        private Label weightWarningLabel;
         private TableLayoutPanel BonusPanel;
     }
 }

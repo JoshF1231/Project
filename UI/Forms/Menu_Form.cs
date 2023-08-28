@@ -20,8 +20,6 @@ namespace Project
         {
             InitializeComponent();
             Branch = null;
-            // tempLabel.Text = "No branch selected";
-            // menuDataGrid.
         }
         public Menu_Form(Branch branch)
         {
@@ -36,20 +34,8 @@ namespace Project
                 //   tempLabel.Text = "Selected branch is:";
             }
             //   test.Text = branch.ToString();
-            resetListBox();
+            updateDataGridMenu();
         }
-        public void resetListBox()
-        {
-            // listBoxDishes.Items.Clear();
-            if (Branch != null && Branch.Menu != null)
-            {
-                for (int i = 0; i < Branch.Menu.Count; i++)
-                {
-                    //     listBoxDishes.Items.Add(Branch.Menu[i].name);
-                }
-            }
-        }
-
         private void addButton_Click(object sender, EventArgs e)
         {
             if (Branch != null)
@@ -62,20 +48,18 @@ namespace Project
 
         private void OpenMenuItemForm()
         {
-            MenuItemForm f;
-            if (Branch != null)
+            MenuItemForm f = new MenuItemForm();
+            if (Branch != null && f.ShowDialog() == DialogResult.OK && f.tempDish != null)
             {
-                f = new MenuItemForm(Branch);
-                MessageBox.Show("WORKED");
+                Branch.Menu.Add(f.tempDish);
+                updateDataGridMenu();
             }
-            else
-            {
-                f = new MenuItemForm();
-            }
-            f.ShowDialog();
-            MessageBox.Show(Branch[0].ToString());
         }
-
+        private void updateDataGridMenu()
+        {
+            BindingList<Dish> updatedMenu = new BindingList<Dish>(Branch.Menu.ToList());
+            branchBindingSource.DataSource = updatedMenu;
+        }
         private void removeButton_Click(object sender, EventArgs e)
         {
             if (Branch != null)
@@ -86,7 +70,7 @@ namespace Project
                 }
             }
             else warning.Visible = true;
-            resetListBox();
+            updateDataGridMenu();
         }
 
         private void dishNameTextbox_KeyDown(object sender, KeyEventArgs e)

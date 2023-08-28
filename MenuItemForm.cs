@@ -14,16 +14,13 @@ namespace Project
 {
     public partial class MenuItemForm : Form
     {
-        public Branch? currBranch;
-        public MenuItemForm(Branch branch)
-        {
-            InitializeComponent();
-            currBranch = branch;
-        }
+        private UserControl currentIngredientControl; // Class-level variable to store the loaded UserControl
+        public Dish? tempDish { get; private set; }
+
         public MenuItemForm()
         {
+            tempDish = null;
             InitializeComponent();
-            currBranch = null;
         }
         private void MenuItemForm_Load(object sender, EventArgs e)
         {
@@ -37,33 +34,69 @@ namespace Project
 
         private void applyButton_Click(object sender, EventArgs e)
         {
-            if (currBranch != null)
+            if (currentIngredientControl == null) return;
             {
-                Dish temp;
                 switch (typeComboBox.SelectedIndex)
                 {
                     case 0:
-                        temp = new Hamburger();
+                        tempDish = new Hamburger();
+                        if (currentIngredientControl is HamburgerUserControl hamburgerControl && tempDish is Hamburger hamburgerDish)
+                        {
+                            hamburgerDish.AddLettuce = hamburgerControl.hasLettuce;
+                            hamburgerDish.AddBacon = hamburgerControl.hasBacon;
+                            hamburgerDish.AddOnion = hamburgerControl.hasOnion;
+                            hamburgerDish.AddPickles = hamburgerControl.hasPickles;
+                            hamburgerDish.AddTomato = hamburgerControl.hasTomato;
+                        }
                         break;
                     case 1:
-                        temp = new Pizza();
-                        break;
+                        tempDish = new Pizza();
+                        if (currentIngredientControl is HamburgerUserControl hamburgerControltemp) // should be pizza
+                            // TODO
+                        {
+
+                        }
+                            break;
                     case 2:
-                        temp = new Pasta();
+                        tempDish = new Pasta();
+                        if (currentIngredientControl is PastaUserControl pastaControl && tempDish is Pasta pastaDish)
+                        {
+                            pastaDish.addMushrooms=pastaControl.hasMushrooms;
+                            pastaDish.addOlives=pastaControl.hasOlives;
+                            pastaDish.addVegetables = pastaControl.hasVegtables;
+                            pastaDish.addtomatoSauce = pastaControl.hasTomatoSauce;
+                        }
                         break;
-                    default: temp = null; break;
+                    default:
+                        tempDish = null;
+                        break;
                 }
-                if (temp != null)
+                if (tempDish != null)
                 {
-                    temp.name = nameTextBox.Text;
-                    temp.description = descriptionTextBox.Text;
-                    temp.Price = double.Parse(priceTextBox.Text);
-                    temp.Weight = double.Parse(weightTextBox.Text);
-                    temp.isVegan = isVeganCheckBox.Checked;
-                    temp.enabled = enableDishCheckBox.Checked;
-                    currBranch.AddDish(temp);
-                    MessageBox.Show(currBranch[0].ToString());
+                    tempDish.name = nameTextBox.Text;
+                    tempDish.description = descriptionTextBox.Text;
+                    double price;
+                    if (double.TryParse(priceTextBox.Text, out price))
+                    {
+                        tempDish.Price = price;
+                    }
+                    else
+                    {
+                        priceWarningLabel.Visible = true;
+                    }
+                    double weight;
+                    if (double.TryParse(priceTextBox.Text, out weight))
+                    {
+                        tempDish.Price = weight;
+                    }
+                    else
+                    {
+                        weightWarningLabel.Visible = true;
+                    }
+                    tempDish.isVegan = isVeganCheckBox.Checked;
+                    tempDish.enabled = enableDishCheckBox.Checked;
                 }
+                DialogResult = DialogResult.OK;
             }
             Close();
         }
@@ -71,27 +104,45 @@ namespace Project
         private void typeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             BonusPanel.Controls.Clear();
-            UserControl ingredientControl;
             switch (typeComboBox.SelectedIndex)
             {
                 case 0:
                     {
-                        ingredientControl = new HamburgerUserControl();
-                        BonusPanel.Controls.Add(ingredientControl, 0, 0);
+                        currentIngredientControl = new HamburgerUserControl();
+                        BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
                         break;
                     }
                 case 1:
                     {
-                        ingredientControl = new PastaUserControl();
-                        BonusPanel.Controls.Add(ingredientControl, 0, 0);
+                        currentIngredientControl = new PastaUserControl();
+                        BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
                         break;
                     }
                 default: {
-                        ingredientControl = new HamburgerUserControl();
+                        currentIngredientControl = new HamburgerUserControl();
                         typeComboBox.SelectedIndex = 0;
                         break; 
                     }
             }
         }
+
+        //private void priceTextBox_Leave(object sender, EventArgs e)
+        //{
+        //    double temp;
+        //    if (!double.TryParse(priceTextBox.Text,out temp))
+        //    {
+        //        priceWarningLabel.Visible = true;
+        //    }
+        //}
+
+        //private void priceTextBox_TextChanged(object sender, EventArgs e)
+        //{
+        //    priceWarningLabel.Visible = false;
+        //}
+
+        //private void weightTextBox_TextChanged(object sender, EventArgs e)
+        //{
+        //    weightWarningLabel.Visible = false;
+        //}
     }
 }

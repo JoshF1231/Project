@@ -6,7 +6,7 @@
     {
         public bool extraCheese {  get; set; }
         public bool addOlives { get; set; }
-        public bool tomatoSauce { get; set; }
+        public bool addtomatoSauce { get; set; }
         public bool addMushrooms { get; set; }
         public bool addVegetables { get; set; }
     
@@ -24,7 +24,7 @@
         {
             this.extraCheese = extraCheese;
             this.addOlives = addOlives;
-            this.tomatoSauce = tomatoSauce;
+            this.addtomatoSauce = tomatoSauce;
             this.addMushrooms = addMushrooms;
             this.addVegetables = addVegetables;
             GetPicture();
