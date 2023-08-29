@@ -68,6 +68,7 @@ namespace Project
         {
             BindingList<Dish> updatedMenu = new BindingList<Dish>(Branch.Menu.ToList());
             branchBindingSource.DataSource = updatedMenu;
+            warning.Visible = false;
         }
         private void removeButton_Click(object sender, EventArgs e)
         {
