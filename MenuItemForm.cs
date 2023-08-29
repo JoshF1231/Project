@@ -133,9 +133,9 @@ namespace Project
                         priceWarningLabel.Visible = true;
                     }
                     double weight;
-                    if (double.TryParse(priceTextBox.Text, out weight))
+                    if (double.TryParse(weightTextBox.Text, out weight))
                     {
-                        tempDish.Price = weight;
+                        tempDish.Weight = weight;
                     }
                     else
                     {

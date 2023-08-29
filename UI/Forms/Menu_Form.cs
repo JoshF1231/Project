@@ -71,15 +71,22 @@ namespace Project
         }
         private void removeButton_Click(object sender, EventArgs e)
         {
-            if (Branch != null)
+            if (Branch != null && menuDataGrid.SelectedCells.Count>0 && Branch.Menu!= null)
             {
-                //    if (Branch.Menu != null && listBoxDishes.Items.Count > 0)
+                int rowIndex = menuDataGrid.SelectedCells[0].RowIndex;
+                Dish? selectedDish = menuDataGrid.Rows[rowIndex].DataBoundItem as Dish;
+                if (selectedDish!= null)
                 {
-                    //        Branch.Menu.Remove(Branch[listBoxDishes.SelectedIndex]);
+                    DialogResult result = MessageBox.Show("Are you sure you want to remove this dish?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (true)
+                    {
+                          Branch.Menu.Remove(selectedDish);
+                        updateDataGridMenu();
+
+                    }
                 }
             }
             else warning.Visible = true;
-            updateDataGridMenu();
         }
 
         private void dishNameTextbox_KeyDown(object sender, KeyEventArgs e)

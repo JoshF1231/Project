@@ -34,13 +34,13 @@
             removeButton = new Button();
             warning = new Label();
             menuDataGrid = new DataGridView();
-            branchBindingSource = new BindingSource(components);
-            menuLabel = new Label();
             name = new DataGridViewTextBoxColumn();
             priceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Weight = new DataGridViewTextBoxColumn();
             isVeganDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
             Enabled = new DataGridViewCheckBoxColumn();
+            branchBindingSource = new BindingSource(components);
+            menuLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)menuDataGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)branchBindingSource).BeginInit();
             SuspendLayout();
@@ -63,6 +63,7 @@
             removeButton.TabIndex = 5;
             removeButton.Text = "Remove";
             removeButton.UseVisualStyleBackColor = true;
+            removeButton.Click += removeButton_Click;
             // 
             // warning
             // 
@@ -105,19 +106,6 @@
             menuDataGrid.TabIndex = 9;
             menuDataGrid.CellDoubleClick += menuDataGrid_CellDoubleClick;
             // 
-            // branchBindingSource
-            // 
-            branchBindingSource.DataMember = "Menu";
-            branchBindingSource.DataSource = typeof(Menu.Branch);
-            // 
-            // menuLabel
-            // 
-            menuLabel.AutoSize = true;
-            menuLabel.Location = new Point(56, 31);
-            menuLabel.Name = "menuLabel";
-            menuLabel.Size = new Size(0, 15);
-            menuLabel.TabIndex = 10;
-            // 
             // name
             // 
             name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -158,6 +146,19 @@
             Enabled.HeaderText = "Enabled";
             Enabled.Name = "Enabled";
             Enabled.ReadOnly = true;
+            // 
+            // branchBindingSource
+            // 
+            branchBindingSource.DataMember = "Menu";
+            branchBindingSource.DataSource = typeof(Menu.Branch);
+            // 
+            // menuLabel
+            // 
+            menuLabel.AutoSize = true;
+            menuLabel.Location = new Point(56, 31);
+            menuLabel.Name = "menuLabel";
+            menuLabel.Size = new Size(0, 15);
+            menuLabel.TabIndex = 10;
             // 
             // Menu_Form
             // 
