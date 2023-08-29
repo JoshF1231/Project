@@ -55,6 +55,15 @@ namespace Project
                 updateDataGridMenu();
             }
         }
+        private void OpenMenuItemForm(Dish selectedDish)
+        {
+            if (selectedDish != null)
+            {
+                MenuItemForm f = new MenuItemForm(selectedDish);
+                f.ShowDialog();
+            }
+        }
+
         private void updateDataGridMenu()
         {
             BindingList<Dish> updatedMenu = new BindingList<Dish>(Branch.Menu.ToList());
@@ -84,6 +93,15 @@ namespace Project
         private void listBoxDishes_SelectedIndexChanged(object sender, EventArgs e)
         {
             //    DishIndexChanged?.Invoke(this, new DishEventArgs(listBoxDishes.SelectedIndex));
+        }
+
+        private void menuDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Dish? dish = menuDataGrid.Rows[e.RowIndex].DataBoundItem as Dish;
+            if (dish != null)
+            {
+                OpenMenuItemForm(dish);
+            }
         }
     }
 }

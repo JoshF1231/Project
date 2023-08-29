@@ -18,12 +18,21 @@ namespace Project.UI.UserControls
             {
                 return checkBoxLettuce.Checked;
             }
+            set {
+                checkBoxLettuce.Checked = value;
+                checkBoxLettuce.Enabled = false;
+            }
         }
         public bool hasPickles
         {
             get
             {
                 return checkBoxPickles.Checked;
+            }
+            set
+            {
+                checkBoxPickles.Checked = value;
+                checkBoxPickles.Enabled = false;
             }
         }
         public bool hasBacon
@@ -32,6 +41,11 @@ namespace Project.UI.UserControls
             {
                 return checkBoxBacon.Checked;
             }
+            set
+            {
+                checkBoxBacon.Checked = value;
+                checkBoxBacon.Enabled = false;
+            }
         }
         public bool hasTomato
         {
@@ -39,12 +53,22 @@ namespace Project.UI.UserControls
             {
                 return checkBoxTomato.Checked;
             }
+            set
+            {
+                checkBoxTomato.Checked = value;
+                checkBoxTomato.Enabled = false;
+            }
         }
         public bool hasOnion
         {
             get
             {
                 return checkBoxOnion.Checked;
+            }
+            set
+            {
+                checkBoxOnion.Checked = value;
+                checkBoxOnion.Enabled = false;
             }
         }
         public HamburgerUserControl()

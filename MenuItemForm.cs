@@ -17,11 +17,59 @@ namespace Project
         private UserControl currentIngredientControl; // Class-level variable to store the loaded UserControl
         public Dish? tempDish { get; private set; }
 
+        public MenuItemForm(Dish? selectedDish)
+        {
+            InitializeComponent();
+            if (selectedDish!= null) { 
+                tempDish = selectedDish;
+                applyButton.Enabled = false;
+                nameTextBox.Text = selectedDish.name;
+                nameTextBox.Enabled = false;
+                typeComboBox.Text = selectedDish.GetType().ToString().Substring(5);
+                typeComboBox.Enabled = false;
+                priceTextBox.Text = selectedDish.Price.ToString();
+                priceTextBox.Enabled = false;
+                weightTextBox.Text = selectedDish.Weight.ToString();
+                weightTextBox.Enabled = false;
+                descriptionTextBox.Text = selectedDish.description;
+                descriptionTextBox.Enabled = false;
+                isVeganCheckBox.Checked = selectedDish.isVegan;
+                isVeganCheckBox.Enabled = false;
+                enableDishCheckBox.Checked = selectedDish.enabled;
+                enableDishCheckBox.Enabled= false;
+                if (selectedDish is Hamburger hamburgerDish)
+                {
+                    HamburgerUserControl? hamburgerUserControl = (HamburgerUserControl)currentIngredientControl;
+                    if (hamburgerUserControl != null)
+                    {
+                        hamburgerUserControl.hasBacon = hamburgerDish.AddBacon;
+                        hamburgerUserControl.hasLettuce = hamburgerDish.AddLettuce;
+                        hamburgerUserControl.hasOnion = hamburgerDish.AddOnion;
+                        hamburgerUserControl.hasTomato = hamburgerDish.AddTomato;
+                        hamburgerUserControl.hasPickles = hamburgerDish.AddPickles;
+                    }
+                }
+                if (selectedDish is Pasta pastaDish)
+                {
+                    PastaUserControl? pastaUserControl = (PastaUserControl)currentIngredientControl;
+                    if (pastaUserControl != null)
+                    {
+                        pastaUserControl.hasTomatoSauce = pastaDish.addtomatoSauce;
+                        pastaUserControl.hasMushrooms = pastaDish.addMushrooms;
+                        pastaUserControl.hasOlives = pastaDish.addOlives;
+                        pastaUserControl.hasVegtables = pastaDish.addVegetables;
+                        pastaUserControl.hasCheese = pastaDish.extraCheese;
+                    }
+                }
+            }
+        }
+
         public MenuItemForm()
         {
-            tempDish = null;
             InitializeComponent();
+            tempDish = null;
         }
+
         private void MenuItemForm_Load(object sender, EventArgs e)
         {
 
@@ -114,12 +162,18 @@ namespace Project
                     }
                 case 1:
                     {
+                        currentIngredientControl = new HamburgerUserControl();
+                        BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
+                        break;
+                    }
+                case 2:
+                    {
                         currentIngredientControl = new PastaUserControl();
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
                         break;
                     }
                 default: {
-                        currentIngredientControl = new HamburgerUserControl();
+                        currentIngredientControl = new PastaUserControl();
                         typeComboBox.SelectedIndex = 0;
                         break; 
                     }
