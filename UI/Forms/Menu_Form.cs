@@ -77,7 +77,7 @@ namespace Project
                 Dish? selectedDish = menuDataGrid.Rows[rowIndex].DataBoundItem as Dish;
                 if (selectedDish!= null)
                 {
-                    DialogResult result = MessageBox.Show("Are you sure you want to remove this dish?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Are you sure you want to remove the dish: " + selectedDish.name+"?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
                     if (result==DialogResult.Yes)
                     {
                         Branch.Menu.Remove(selectedDish);
