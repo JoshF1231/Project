@@ -78,15 +78,19 @@ namespace Project
                 if (selectedDish!= null)
                 {
                     DialogResult result = MessageBox.Show("Are you sure you want to remove this dish?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (true)
+                    if (result==DialogResult.Yes)
                     {
-                          Branch.Menu.Remove(selectedDish);
+                        Branch.Menu.Remove(selectedDish);
                         updateDataGridMenu();
 
                     }
                 }
             }
-            else warning.Visible = true;
+            else if (Branch==null) warning.Visible = true;
+            else if (Branch.Menu.Count==0) {
+                warning.Text = "Empty Menu!";
+                warning.Visible = true;
+            }
         }
 
         private void dishNameTextbox_KeyDown(object sender, KeyEventArgs e)
