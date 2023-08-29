@@ -88,7 +88,7 @@ namespace Project
                 }
             }
             else if (Branch==null) warning.Visible = true;
-            else if (Branch.Menu.Count==0) {
+            else if (Branch.Menu ==null || Branch.Menu.Count==0) {
                 warning.Text = "Empty Menu!";
                 warning.Visible = true;
             }
