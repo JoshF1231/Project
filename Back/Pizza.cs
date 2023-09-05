@@ -8,11 +8,6 @@
         public bool AddTuna { get; set; }
         public bool AddMushrooms { get; set; }
         public bool AddBacon { get; set; }
-
-        public override string GetPicture()
-        {
-            return this.picture;
-        }
         public Pizza(string Name, double Content, double Price, bool isVegan, bool VeganMilk, bool addTomato, bool addOnion, bool addTuna, bool addMushrooms, bool addBacon) : base(Name, Content, isVegan, Price)
         {
             AddTomato = addTomato;

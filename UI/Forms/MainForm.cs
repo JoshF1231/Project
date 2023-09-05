@@ -16,6 +16,7 @@ namespace Project
             InitializeComponent();
             branchLabel.Text = "None";
         }
+
         private void OpenBranchesForm()
         {
             if (this.mainpanel.Controls.Count > 0)
@@ -30,7 +31,6 @@ namespace Project
 
             // Subscribe to the event in the sub-form
             f.BranchIndexChanged += BranchesForm_BranchUpdated;
-
             this.mainpanel.Controls.Add(f);
             this.mainpanel.Tag = f;
             f.Show();
@@ -52,7 +52,6 @@ namespace Project
                 f = new Menu_Form();
             }
             f.DishIndexChanged += DishesForm_DishUpdated;
-
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
             this.mainpanel.Controls.Add(f);
@@ -92,6 +91,7 @@ namespace Project
             {
                 branchesList.branchesListIndex = e.BranchIndex;
                 if (e.BranchIndex >= 0) branchLabel.Text = branchesList[branchesList.branchesListIndex].BranchName;
+                else branchLabel.Text = "None";
             }
             else branchLabel.Text = "None";
             // Update UI elements or perform any necessary actions
@@ -158,6 +158,7 @@ namespace Project
             }
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.Clear();
+            branchLabel.Text = branchesList[branchesList.branchesListIndex].ToString();
         }
     }
 }

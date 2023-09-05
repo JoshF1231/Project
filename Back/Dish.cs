@@ -13,7 +13,8 @@
         public string description = "";
         public double Price {get=>price;set=>price=value;}
         public double Weight { get => weight; set => weight = value; }
-        public abstract string GetPicture();
+        public Image selectedImage {
+            get; set; }
         public override string ToString()
         {
             return name;

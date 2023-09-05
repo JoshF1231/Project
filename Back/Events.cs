@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Menu;
 
 namespace Project
 {
@@ -22,6 +23,15 @@ namespace Project
         public DishEventArgs(int index)
         {
             DishIndex = index;
+        }
+    }
+    public class RemoveDishEventArgs : EventArgs
+    {
+        public Dish? CurrentDish;
+
+        public RemoveDishEventArgs(Dish? dish)
+        {
+            CurrentDish = dish;
         }
     }
 }

@@ -34,7 +34,6 @@
             panel1 = new Panel();
             loadButton = new Button();
             saveButton = new Button();
-            dishesButton = new Button();
             menuButton = new Button();
             Branches = new Button();
             topPanel = new Panel();
@@ -65,7 +64,6 @@
             panel1.BackColor = Color.AliceBlue;
             panel1.Controls.Add(loadButton);
             panel1.Controls.Add(saveButton);
-            panel1.Controls.Add(dishesButton);
             panel1.Controls.Add(menuButton);
             panel1.Controls.Add(Branches);
             panel1.Location = new Point(0, 0);
@@ -106,24 +104,6 @@
             saveButton.TextAlign = ContentAlignment.MiddleRight;
             saveButton.UseVisualStyleBackColor = true;
             saveButton.Click += saveButton_Click;
-            // 
-            // dishesButton
-            // 
-            dishesButton.BackgroundImageLayout = ImageLayout.None;
-            dishesButton.FlatAppearance.BorderColor = Color.Gray;
-            dishesButton.FlatAppearance.BorderSize = 0;
-            dishesButton.FlatStyle = FlatStyle.Flat;
-            dishesButton.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dishesButton.Image = Properties.Resources.test2;
-            dishesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            dishesButton.Location = new Point(3, 135);
-            dishesButton.Name = "dishesButton";
-            dishesButton.Size = new Size(194, 51);
-            dishesButton.TabIndex = 14;
-            dishesButton.Text = "Dishes";
-            dishesButton.TextAlign = ContentAlignment.MiddleRight;
-            dishesButton.UseVisualStyleBackColor = true;
-            dishesButton.Click += dishesButton_Click;
             // 
             // menuButton
             // 
@@ -227,7 +207,6 @@
         private Panel panel1;
         private Panel topPanel;
         private Button Branches;
-        private Button dishesButton;
         private Button menuButton;
         private Panel mainpanel;
         private Button loadButton;

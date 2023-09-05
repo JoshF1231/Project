@@ -1,6 +1,6 @@
 ﻿namespace Project.UI.UserControls
 {
-    partial class MeatBasedUserControl
+    partial class ExtrasUserControl
     {
         /// <summary> 
         /// Required designer variable.

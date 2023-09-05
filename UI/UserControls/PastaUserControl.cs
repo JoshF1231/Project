@@ -21,7 +21,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxTomatoSauce.Checked = value;
-                checkBoxTomatoSauce.Enabled = false;
             }
 
         }
@@ -34,7 +33,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxOlives.Checked = value;
-                checkBoxOlives.Enabled = false;
             }
         }
         public bool hasCheese
@@ -46,7 +44,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxCheese.Checked = value;
-                checkBoxCheese.Enabled = false;
             }
 
         }
@@ -59,7 +56,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxMushrooms.Checked = value;
-                checkBoxMushrooms.Enabled = false;
             }
 
         }
@@ -72,7 +68,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxVegetables.Checked = value;
-                checkBoxVegetables.Enabled = false;
             }
 
         }

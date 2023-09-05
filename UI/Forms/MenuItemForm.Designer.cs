@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            dishPictureBox = new PictureBox();
             label1 = new Label();
             nameTextBox = new TextBox();
             label2 = new Label();
@@ -47,114 +47,107 @@
             weightWarningLabel = new Label();
             BonusPanel = new TableLayoutPanel();
             MeatBasedPanel = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            typeWarningLabel = new Label();
+            imageUploadButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)dishPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // dishPictureBox
             // 
-            pictureBox1.Location = new Point(38, 31);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(159, 161);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            dishPictureBox.Location = new Point(27, 19);
+            dishPictureBox.Name = "dishPictureBox";
+            dishPictureBox.Size = new Size(157, 140);
+            dishPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            dishPictureBox.TabIndex = 0;
+            dishPictureBox.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(226, 39);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(192, 23);
             label1.Name = "label1";
-            label1.Size = new Size(63, 25);
+            label1.Size = new Size(42, 15);
             label1.TabIndex = 1;
             label1.Text = "Name:";
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(292, 34);
-            nameTextBox.Margin = new Padding(4, 5, 4, 5);
+            nameTextBox.Location = new Point(244, 20);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(832, 31);
+            nameTextBox.Size = new Size(544, 23);
             nameTextBox.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(231, 169);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(202, 101);
             label2.Name = "label2";
-            label2.Size = new Size(53, 25);
+            label2.Size = new Size(36, 15);
             label2.TabIndex = 3;
             label2.Text = "Price:";
             // 
             // enableDishCheckBox
             // 
             enableDishCheckBox.AutoSize = true;
-            enableDishCheckBox.Location = new Point(962, 104);
-            enableDishCheckBox.Margin = new Padding(4, 5, 4, 5);
+            enableDishCheckBox.Location = new Point(701, 102);
             enableDishCheckBox.Name = "enableDishCheckBox";
             enableDishCheckBox.RightToLeft = RightToLeft.Yes;
-            enableDishCheckBox.Size = new Size(130, 29);
+            enableDishCheckBox.Size = new Size(87, 19);
             enableDishCheckBox.TabIndex = 5;
             enableDishCheckBox.Text = "Enable Dish";
             enableDishCheckBox.TextAlign = ContentAlignment.MiddleCenter;
             enableDishCheckBox.UseVisualStyleBackColor = true;
+            enableDishCheckBox.CheckedChanged += enableDishCheckBox_CheckedChanged;
             // 
             // isVeganCheckBox
             // 
             isVeganCheckBox.AutoSize = true;
-            isVeganCheckBox.Location = new Point(1005, 75);
-            isVeganCheckBox.Margin = new Padding(4, 5, 4, 5);
+            isVeganCheckBox.Location = new Point(730, 65);
             isVeganCheckBox.Name = "isVeganCheckBox";
             isVeganCheckBox.RightToLeft = RightToLeft.Yes;
-            isVeganCheckBox.Size = new Size(87, 29);
+            isVeganCheckBox.Size = new Size(58, 19);
             isVeganCheckBox.TabIndex = 7;
             isVeganCheckBox.Text = "Vegan";
             isVeganCheckBox.UseVisualStyleBackColor = true;
             // 
             // weightTextBox
             // 
-            weightTextBox.Location = new Point(292, 230);
-            weightTextBox.Margin = new Padding(4, 5, 4, 5);
+            weightTextBox.Location = new Point(244, 136);
             weightTextBox.Name = "weightTextBox";
-            weightTextBox.Size = new Size(390, 31);
+            weightTextBox.Size = new Size(274, 23);
             weightTextBox.TabIndex = 9;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(208, 235);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(190, 139);
             label3.Name = "label3";
-            label3.Size = new Size(72, 25);
+            label3.Size = new Size(48, 15);
             label3.TabIndex = 8;
             label3.Text = "Weight:";
             // 
             // descriptionTextBox
             // 
-            descriptionTextBox.Location = new Point(292, 304);
-            descriptionTextBox.Margin = new Padding(4, 5, 4, 5);
+            descriptionTextBox.Location = new Point(204, 182);
             descriptionTextBox.Multiline = true;
             descriptionTextBox.Name = "descriptionTextBox";
-            descriptionTextBox.Size = new Size(832, 188);
+            descriptionTextBox.Size = new Size(584, 85);
             descriptionTextBox.TabIndex = 11;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(184, 309);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(129, 185);
             label4.Name = "label4";
-            label4.Size = new Size(106, 25);
+            label4.Size = new Size(70, 15);
             label4.TabIndex = 10;
             label4.Text = "Description:";
             // 
             // applyButton
             // 
-            applyButton.Location = new Point(984, 160);
-            applyButton.Margin = new Padding(4, 5, 4, 5);
+            applyButton.Location = new Point(712, 590);
             applyButton.Name = "applyButton";
-            applyButton.Size = new Size(108, 39);
+            applyButton.Size = new Size(76, 23);
             applyButton.TabIndex = 12;
             applyButton.Text = "Apply";
             applyButton.UseVisualStyleBackColor = true;
@@ -162,10 +155,9 @@
             // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(984, 222);
-            cancelButton.Margin = new Padding(4, 5, 4, 5);
+            cancelButton.Location = new Point(603, 590);
             cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(108, 39);
+            cancelButton.Size = new Size(76, 23);
             cancelButton.TabIndex = 13;
             cancelButton.Text = "Cancel";
             cancelButton.UseVisualStyleBackColor = true;
@@ -174,40 +166,38 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(231, 104);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(204, 60);
             label5.Name = "label5";
-            label5.Size = new Size(53, 25);
+            label5.Size = new Size(34, 15);
             label5.TabIndex = 14;
             label5.Text = "Type:";
+            label5.Click += label5_Click;
             // 
             // typeComboBox
             // 
+            typeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             typeComboBox.FormattingEnabled = true;
             typeComboBox.Items.AddRange(new object[] { "Hamburger", "Pizza", "Pasta" });
-            typeComboBox.Location = new Point(292, 101);
-            typeComboBox.Margin = new Padding(4, 5, 4, 5);
+            typeComboBox.Location = new Point(244, 60);
             typeComboBox.Name = "typeComboBox";
-            typeComboBox.Size = new Size(390, 33);
+            typeComboBox.Size = new Size(274, 23);
             typeComboBox.TabIndex = 15;
             typeComboBox.SelectedIndexChanged += typeComboBox_SelectedIndexChanged;
             // 
             // priceTextBox
             // 
-            priceTextBox.Location = new Point(292, 164);
-            priceTextBox.Margin = new Padding(4, 5, 4, 5);
+            priceTextBox.Location = new Point(244, 98);
             priceTextBox.Name = "priceTextBox";
-            priceTextBox.Size = new Size(390, 31);
+            priceTextBox.Size = new Size(274, 23);
             priceTextBox.TabIndex = 4;
             // 
             // priceWarningLabel
             // 
             priceWarningLabel.AutoSize = true;
             priceWarningLabel.ForeColor = Color.Red;
-            priceWarningLabel.Location = new Point(692, 169);
-            priceWarningLabel.Margin = new Padding(4, 0, 4, 0);
+            priceWarningLabel.Location = new Point(524, 99);
             priceWarningLabel.Name = "priceWarningLabel";
-            priceWarningLabel.Size = new Size(233, 25);
+            priceWarningLabel.Size = new Size(155, 15);
             priceWarningLabel.TabIndex = 16;
             priceWarningLabel.Text = "Please enter a valid number.";
             priceWarningLabel.Visible = false;
@@ -216,10 +206,9 @@
             // 
             weightWarningLabel.AutoSize = true;
             weightWarningLabel.ForeColor = Color.Red;
-            weightWarningLabel.Location = new Point(692, 235);
-            weightWarningLabel.Margin = new Padding(4, 0, 4, 0);
+            weightWarningLabel.Location = new Point(524, 139);
             weightWarningLabel.Name = "weightWarningLabel";
-            weightWarningLabel.Size = new Size(233, 25);
+            weightWarningLabel.Size = new Size(155, 15);
             weightWarningLabel.TabIndex = 17;
             weightWarningLabel.Text = "Please enter a valid number.";
             weightWarningLabel.Visible = false;
@@ -229,26 +218,49 @@
             BonusPanel.ColumnCount = 2;
             BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66.7979F));
             BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.2021F));
-            BonusPanel.Location = new Point(38, 568);
-            BonusPanel.Margin = new Padding(4, 5, 4, 5);
+            BonusPanel.Location = new Point(28, 290);
             BonusPanel.Name = "BonusPanel";
             BonusPanel.RowCount = 1;
             BonusPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            BonusPanel.Size = new Size(1086, 429);
+            BonusPanel.Size = new Size(760, 257);
             BonusPanel.TabIndex = 18;
             // 
             // MeatBasedPanel
             // 
-            MeatBasedPanel.Location = new Point(700, 73);
+            MeatBasedPanel.Location = new Point(27, 211);
+            MeatBasedPanel.Margin = new Padding(2);
             MeatBasedPanel.Name = "MeatBasedPanel";
-            MeatBasedPanel.Size = new Size(215, 93);
+            MeatBasedPanel.Size = new Size(150, 56);
             MeatBasedPanel.TabIndex = 19;
+            // 
+            // typeWarningLabel
+            // 
+            typeWarningLabel.AutoSize = true;
+            typeWarningLabel.ForeColor = Color.Red;
+            typeWarningLabel.Location = new Point(524, 63);
+            typeWarningLabel.Name = "typeWarningLabel";
+            typeWarningLabel.Size = new Size(134, 15);
+            typeWarningLabel.TabIndex = 20;
+            typeWarningLabel.Text = "Please select a type first.";
+            typeWarningLabel.Visible = false;
+            // 
+            // imageUploadButton
+            // 
+            imageUploadButton.Location = new Point(27, 165);
+            imageUploadButton.Name = "imageUploadButton";
+            imageUploadButton.Size = new Size(75, 23);
+            imageUploadButton.TabIndex = 21;
+            imageUploadButton.Text = "Upload";
+            imageUploadButton.UseVisualStyleBackColor = true;
+            imageUploadButton.Click += imageUploadButton_Click;
             // 
             // MenuItemForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1174, 1051);
+            ClientSize = new Size(822, 631);
+            Controls.Add(imageUploadButton);
+            Controls.Add(typeWarningLabel);
             Controls.Add(MeatBasedPanel);
             Controls.Add(BonusPanel);
             Controls.Add(weightWarningLabel);
@@ -267,18 +279,17 @@
             Controls.Add(label2);
             Controls.Add(nameTextBox);
             Controls.Add(label1);
-            Controls.Add(pictureBox1);
-            Margin = new Padding(4, 5, 4, 5);
+            Controls.Add(dishPictureBox);
             Name = "MenuItemForm";
             Text = "MenuItemForm";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dishPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox dishPictureBox;
         private Label label1;
         private TextBox nameTextBox;
         private Label label2;
@@ -297,5 +308,7 @@
         private Label weightWarningLabel;
         private TableLayoutPanel BonusPanel;
         private Panel MeatBasedPanel;
+        private Label typeWarningLabel;
+        private Button imageUploadButton;
     }
 }

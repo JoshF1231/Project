@@ -19,38 +19,28 @@ namespace Project
         private UserControl currentFacts;
 
         private UserControl currentDishSort; // Extras if MeatBased;
-        public Dish? tempDish { get; private set; }
-
+        public Dish? currentDish { get; private set; }
+        public Dish? oldDish { get; private set; }
         public MenuItemForm(Dish? selectedDish)
         {
             InitializeComponent();
             if (selectedDish != null)
             {
-                tempDish = selectedDish;
-                applyButton.Enabled = false;
+                dishPictureBox.Image = selectedDish.selectedImage;
+                oldDish = selectedDish;
+                currentDish = selectedDish;
                 nameTextBox.Text = selectedDish.name;
-                nameTextBox.Enabled = false;
                 typeComboBox.Text = selectedDish.GetType().ToString().Substring(5);
-                typeComboBox.Enabled = false;
                 priceTextBox.Text = selectedDish.Price.ToString();
-                priceTextBox.Enabled = false;
                 weightTextBox.Text = selectedDish.Weight.ToString();
-                weightTextBox.Enabled = false;
                 descriptionTextBox.Text = selectedDish.description;
-                descriptionTextBox.Enabled = false;
                 isVeganCheckBox.Checked = selectedDish.isVegan;
-                isVeganCheckBox.Enabled = false;
                 enableDishCheckBox.Checked = selectedDish.enabled;
-                enableDishCheckBox.Enabled = false;
-                if (selectedDish != null)
-                {
-                    Facts? facts = (Facts)currentFacts;
-                }
-
+                Facts? facts = (Facts)currentFacts;
                 if (selectedDish is Hamburger hamburgerDish)
                 {
                     HamburgerUserControl? hamburgerUserControl = (HamburgerUserControl)currentIngredientControl;
-                    MeatBasedUserControl? meatBased = (MeatBasedUserControl)currentDishSort;
+                    ExtrasUserControl? meatBased = (ExtrasUserControl)currentDishSort;
                     if (hamburgerUserControl != null)
                     {
                         hamburgerUserControl.hasBacon = hamburgerDish.AddBacon;
@@ -92,12 +82,11 @@ namespace Project
         public MenuItemForm()
         {
             InitializeComponent();
-            tempDish = null;
+            currentDish = null;
         }
 
         private void MenuItemForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -107,13 +96,19 @@ namespace Project
 
         private void applyButton_Click(object sender, EventArgs e)
         {
+            if (typeComboBox.Text == "")
+            {
+                typeWarningLabel.Visible = true;
+                return;
+            }
+            typeWarningLabel.Visible = false;
             if (currentIngredientControl == null) return;
             {
                 switch (typeComboBox.SelectedIndex)
                 {
                     case 0:
-                        tempDish = new Hamburger();
-                        if (currentIngredientControl is HamburgerUserControl hamburgerControl && currentDishSort is MeatBasedUserControl MeatBasedControl && tempDish is Hamburger hamburgerDish)
+                        currentDish = new Hamburger();
+                        if (currentIngredientControl is HamburgerUserControl hamburgerControl && currentDishSort is ExtrasUserControl MeatBasedControl && currentDish is Hamburger hamburgerDish)
                         {
                             hamburgerDish.AddLettuce = hamburgerControl.hasLettuce;
                             hamburgerDish.AddBacon = hamburgerControl.hasBacon;
@@ -125,9 +120,9 @@ namespace Project
                         }
                         break;
                     case 1:
-                        tempDish = new Pizza();
-                        if (currentIngredientControl is PizzaUserControl pizzaControl && tempDish is Pizza pizzaDish) // should be pizza
-                                                                                                                      // TODO
+                        currentDish = new Pizza();
+                        if (currentIngredientControl is PizzaUserControl pizzaControl && currentDish is Pizza pizzaDish) // should be pizza
+                                                                                                                         // TODO
                         {
                             pizzaDish.AddBacon = pizzaControl.hasBacon;
                             pizzaDish.AddMushrooms = pizzaControl.hasMushrooms;
@@ -137,8 +132,8 @@ namespace Project
                         }
                         break;
                     case 2:
-                        tempDish = new Pasta();
-                        if (currentIngredientControl is PastaUserControl pastaControl && tempDish is Pasta pastaDish)
+                        currentDish = new Pasta();
+                        if (currentIngredientControl is PastaUserControl pastaControl && currentDish is Pasta pastaDish)
                         {
                             pastaDish.addMushrooms = pastaControl.hasMushrooms;
                             pastaDish.addOlives = pastaControl.hasOlives;
@@ -147,17 +142,17 @@ namespace Project
                         }
                         break;
                     default:
-                        tempDish = null;
+                        currentDish = null;
                         break;
                 }
-                if (tempDish != null)
+                if (currentDish != null)
                 {
-                    tempDish.name = nameTextBox.Text;
-                    tempDish.description = descriptionTextBox.Text;
+                    currentDish.name = nameTextBox.Text;
+                    currentDish.description = descriptionTextBox.Text;
                     double price;
                     if (double.TryParse(priceTextBox.Text, out price))
                     {
-                        tempDish.Price = price;
+                        currentDish.Price = price;
                     }
                     else
                     {
@@ -166,14 +161,15 @@ namespace Project
                     double weight;
                     if (double.TryParse(weightTextBox.Text, out weight))
                     {
-                        tempDish.Weight = weight;
+                        currentDish.Weight = weight;
                     }
                     else
                     {
                         weightWarningLabel.Visible = true;
                     }
-                    tempDish.isVegan = isVeganCheckBox.Checked;
-                    tempDish.enabled = enableDishCheckBox.Checked;
+                    currentDish.isVegan = isVeganCheckBox.Checked;
+                    currentDish.enabled = enableDishCheckBox.Checked;
+                    currentDish.selectedImage = dishPictureBox.Image;
                 }
                 DialogResult = DialogResult.OK;
             }
@@ -190,7 +186,7 @@ namespace Project
                     {
                         currentIngredientControl = new HamburgerUserControl();
                         currentFacts = new Facts();
-                        currentDishSort = new MeatBasedUserControl();
+                        currentDishSort = new ExtrasUserControl();
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
                         BonusPanel.Controls.Add(currentFacts, 200, 0);
                         MeatBasedPanel.Controls.Add(currentDishSort);
@@ -218,6 +214,69 @@ namespace Project
                         typeComboBox.SelectedIndex = 0;
                         break;
                     }
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void enableDishCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imageUploadButton_Click(object sender, EventArgs e)
+        {
+            if (typeComboBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a dish type first.");
+                return;
+            }
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Images Files|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.Title = "Select an Image File";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string imagePath = openFileDialog.FileName;
+
+                    if (currentDish == null)
+                    {
+                        // Depending on the selected type, create an instance of the appropriate Dish subclass
+                        switch (typeComboBox.SelectedIndex)
+                        {
+                            case 0:
+                                currentDish = new Hamburger();
+                                break;
+                            case 1:
+                                currentDish = new Pizza();
+                                break;
+                            case 2:
+                                currentDish = new Pasta();
+                                break;
+                            default:
+                                currentDish = null;
+                                break;
+                        }
+                    }
+
+                    if (currentDish != null)
+                    {
+                        currentDish.selectedImage = Image.FromFile(imagePath);
+                        updatePictureBox();
+                    }
+                }
+            }
+        }
+        private void updatePictureBox()
+        {
+            if (currentDish != null)
+            {
+                dishPictureBox.Image = currentDish.selectedImage;
             }
         }
 

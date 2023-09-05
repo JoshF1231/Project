@@ -21,7 +21,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxTomatoPizza.Checked = value;
-                checkBoxTomatoPizza.Enabled = false;
             }
 
         }
@@ -34,7 +33,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxOnionPizza.Checked = value;
-                checkBoxOnionPizza.Enabled = false;
             }
         }
         public bool hasTuna
@@ -46,7 +44,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxTunaPizza.Checked = value;
-                checkBoxTunaPizza.Enabled = false;
             }
 
         }
@@ -59,7 +56,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxMushroomsPizza.Checked = value;
-                checkBoxMushroomsPizza.Enabled = false;
             }
 
         }
@@ -72,7 +68,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxBaconPizza.Checked = value;
-                checkBoxBaconPizza.Enabled = false;
             }
 
         }

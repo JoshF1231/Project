@@ -11,10 +11,6 @@
         public bool addVegetables { get; set; }
     
 
-        public override string GetPicture()
-        {
-            return this.picture;
-        }
         public Pasta()
         {
 
@@ -27,7 +23,6 @@
             this.addtomatoSauce = tomatoSauce;
             this.addMushrooms = addMushrooms;
             this.addVegetables = addVegetables;
-            GetPicture();
         }
     }
 }

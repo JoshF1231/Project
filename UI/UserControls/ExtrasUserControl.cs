@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Project.UI.UserControls
 {
-    public partial class MeatBasedUserControl : UserControl
+    public partial class ExtrasUserControl : UserControl
     {
         public bool hasCheese
         {
@@ -23,7 +23,6 @@ namespace Project.UI.UserControls
             set
             {
                 CheeseCheckBox.Checked = value;
-                CheeseCheckBox.Enabled = false;
             }
 
         }
@@ -37,11 +36,10 @@ namespace Project.UI.UserControls
             set
             {
                 ButterCheckBox.Checked = value;
-                ButterCheckBox.Enabled = false;
             }
 
         }
-        public MeatBasedUserControl()
+        public ExtrasUserControl()
         {
             InitializeComponent();
         }

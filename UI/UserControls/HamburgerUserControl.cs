@@ -21,7 +21,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxLettuce.Checked = value;
-                checkBoxLettuce.Enabled = false;
             }
         }
         public bool hasPickles
@@ -33,7 +32,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxPickles.Checked = value;
-                checkBoxPickles.Enabled = false;
             }
         }
         public bool hasBacon
@@ -45,7 +43,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxBacon.Checked = value;
-                checkBoxBacon.Enabled = false;
             }
         }
         public bool hasTomato
@@ -57,7 +54,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxTomato.Checked = value;
-                checkBoxTomato.Enabled = false;
             }
         }
         public bool hasOnion
@@ -69,7 +65,6 @@ namespace Project.UI.UserControls
             set
             {
                 checkBoxOnion.Checked = value;
-                checkBoxOnion.Enabled = false;
             }
         }
         public HamburgerUserControl()

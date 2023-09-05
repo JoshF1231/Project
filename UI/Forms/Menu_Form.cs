@@ -49,9 +49,9 @@ namespace Project
         private void OpenMenuItemForm()
         {
             MenuItemForm f = new MenuItemForm();
-            if (Branch != null && f.ShowDialog() == DialogResult.OK && f.tempDish != null)
+            if (Branch != null && f.ShowDialog() == DialogResult.OK && f.currentDish != null)
             {
-                Branch.Menu.Add(f.tempDish);
+                Branch.Menu.Add(f.currentDish);
                 updateDataGridMenu();
             }
         }
@@ -60,7 +60,12 @@ namespace Project
             if (selectedDish != null)
             {
                 MenuItemForm f = new MenuItemForm(selectedDish);
-                f.ShowDialog();
+                if (Branch != null && f.ShowDialog() == DialogResult.OK && f.currentDish != null)
+                {
+                    Branch.Menu.Remove(f.oldDish);
+                    Branch.Menu.Add(f.currentDish);
+                    updateDataGridMenu();
+                }
             }
         }
 
@@ -83,7 +88,6 @@ namespace Project
                     {
                         Branch.Menu.Remove(selectedDish);
                         updateDataGridMenu();
-
                     }
                 }
             }
