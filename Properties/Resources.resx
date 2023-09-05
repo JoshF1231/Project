@@ -118,32 +118,38 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="branches" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\branches.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_tuna_601" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-tuna-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_button_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_button_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_mushrooms_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-mushrooms-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BurgerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BurgerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dish" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_tuna_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-tuna-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bacon_1582218__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bacon_1582218 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PizzaIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PizzaIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dish_big" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dish_big.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zucchini_10632229__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zucchini_10632229 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_pasta_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-pasta-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_vegetables_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-vegetables-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BurgerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BurgerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="test2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\test2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DairyIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DairyIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="test1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\test1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,52 +157,52 @@
   <data name="icons8_vegetables_96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-vegetables-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MenuIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DairyIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DairyIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lunch-png-494712" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lunch-png-494712.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_lettuce_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-lettuce-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="zucchini_10632229__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zucchini_10632229 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="branches" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\branches.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_olives_66" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-olives-66.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-cheese-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-cheese-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dish_big" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dish_big.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back_button_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back_button_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BranchIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BranchIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="back_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MeatIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MeatIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_tomato_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-tomato-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_olives_66" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-olives-66.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-onion-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-onion-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="branches1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\branches1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PizzaIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PizzaIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lunch-png-494712" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lunch-png-494712.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-cheese-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cheese-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BranchIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BranchIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_tomato_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-tomato-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dish" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_vegetables_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-vegetables-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_lettuce_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-lettuce-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="test2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\test2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="branches1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\branches1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-tuna-60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-tuna-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

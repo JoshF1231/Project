@@ -12,7 +12,9 @@ namespace Project.UI.UserControls
 {
     public partial class PastaUserControl : UserControl
     {
-        public bool hasTomatoSauce { get
+        public bool hasTomatoSauce
+        {
+            get
             {
                 return checkBoxTomatoSauce.Checked;
             }

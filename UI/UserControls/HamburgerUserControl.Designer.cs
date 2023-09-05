@@ -57,7 +57,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(384, 74);
+            panel1.Size = new Size(399, 74);
             panel1.TabIndex = 13;
             // 
             // HamburgerLabel
@@ -192,7 +192,7 @@
             Controls.Add(IngredientsLabel);
             Controls.Add(panel1);
             Name = "HamburgerUserControl";
-            Size = new Size(384, 390);
+            Size = new Size(399, 390);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLettuce).EndInit();

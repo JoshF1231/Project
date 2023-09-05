@@ -18,7 +18,8 @@ namespace Project.UI.UserControls
             {
                 return checkBoxLettuce.Checked;
             }
-            set {
+            set
+            {
                 checkBoxLettuce.Checked = value;
                 checkBoxLettuce.Enabled = false;
             }

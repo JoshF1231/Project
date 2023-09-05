@@ -11,8 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dairy = Project.UI.UserControls.Dairy;
-using MeatBased = Project.UI.UserControls.MeatBased;
+using MeatBased = Project.UI.UserControls.MeatBasedUserControl;
 
 namespace Project
 {
@@ -61,7 +60,6 @@ namespace Project
         private void DairyPanelButton_Click(object sender, EventArgs e)
         {
             PanelUserControl.Controls.Clear();
-            PanelUserControl.Controls.Add(new Dairy());
             TitlePanel.Controls.Clear();
             TitlePanel.Controls.Add(new DairyTitle());
             TypeBox.DataSource = Enum.GetValues(typeof(eDairy));
@@ -109,8 +107,6 @@ namespace Project
             {
                 PanelIngredients.Controls.Clear();
                 PanelIngredients.Controls.Add(new PastaUserControl());
-                PanelUserControl.Controls.Clear();
-                PanelUserControl.Controls.Add(new Dairy());
                 pictureBoxDishes.Image = imageListDishes.Images[1];
                 richTextBoxFacts.Text = "Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking.";
             }

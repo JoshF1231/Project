@@ -15,12 +15,17 @@ namespace Project
     public partial class MenuItemForm : Form
     {
         private UserControl currentIngredientControl; // Class-level variable to store the loaded UserControl
+
+        private UserControl currentFacts;
+
+        private UserControl currentDishSort; // Extras if MeatBased;
         public Dish? tempDish { get; private set; }
 
         public MenuItemForm(Dish? selectedDish)
         {
             InitializeComponent();
-            if (selectedDish!= null) { 
+            if (selectedDish != null)
+            {
                 tempDish = selectedDish;
                 applyButton.Enabled = false;
                 nameTextBox.Text = selectedDish.name;
@@ -36,10 +41,16 @@ namespace Project
                 isVeganCheckBox.Checked = selectedDish.isVegan;
                 isVeganCheckBox.Enabled = false;
                 enableDishCheckBox.Checked = selectedDish.enabled;
-                enableDishCheckBox.Enabled= false;
+                enableDishCheckBox.Enabled = false;
+                if (selectedDish != null)
+                {
+                    Facts? facts = (Facts)currentFacts;
+                }
+
                 if (selectedDish is Hamburger hamburgerDish)
                 {
                     HamburgerUserControl? hamburgerUserControl = (HamburgerUserControl)currentIngredientControl;
+                    MeatBasedUserControl? meatBased = (MeatBasedUserControl)currentDishSort;
                     if (hamburgerUserControl != null)
                     {
                         hamburgerUserControl.hasBacon = hamburgerDish.AddBacon;
@@ -47,6 +58,8 @@ namespace Project
                         hamburgerUserControl.hasOnion = hamburgerDish.AddOnion;
                         hamburgerUserControl.hasTomato = hamburgerDish.AddTomato;
                         hamburgerUserControl.hasPickles = hamburgerDish.AddPickles;
+                        meatBased.hasButter = hamburgerDish.AddButter;
+                        meatBased.hasCheese = hamburgerDish.AddCheese;
                     }
                 }
                 if (selectedDish is Pasta pastaDish)
@@ -59,6 +72,18 @@ namespace Project
                         pastaUserControl.hasOlives = pastaDish.addOlives;
                         pastaUserControl.hasVegtables = pastaDish.addVegetables;
                         pastaUserControl.hasCheese = pastaDish.extraCheese;
+                    }
+                }
+                if (selectedDish is Pizza pizzaDish)
+                {
+                    PizzaUserControl? pizzaUserControl = (PizzaUserControl)currentIngredientControl;
+                    if (pizzaUserControl != null)
+                    {
+                        pizzaUserControl.hasBacon = pizzaDish.AddBacon;
+                        pizzaUserControl.hasMushrooms = pizzaDish.AddMushrooms;
+                        pizzaUserControl.hasOnions = pizzaDish.AddOnion;
+                        pizzaUserControl.hasTomato = pizzaDish.AddTomato;
+                        pizzaUserControl.hasTuna = pizzaDish.AddTuna;
                     }
                 }
             }
@@ -88,29 +113,35 @@ namespace Project
                 {
                     case 0:
                         tempDish = new Hamburger();
-                        if (currentIngredientControl is HamburgerUserControl hamburgerControl && tempDish is Hamburger hamburgerDish)
+                        if (currentIngredientControl is HamburgerUserControl hamburgerControl && currentDishSort is MeatBasedUserControl MeatBasedControl && tempDish is Hamburger hamburgerDish)
                         {
                             hamburgerDish.AddLettuce = hamburgerControl.hasLettuce;
                             hamburgerDish.AddBacon = hamburgerControl.hasBacon;
                             hamburgerDish.AddOnion = hamburgerControl.hasOnion;
                             hamburgerDish.AddPickles = hamburgerControl.hasPickles;
                             hamburgerDish.AddTomato = hamburgerControl.hasTomato;
+                            hamburgerDish.AddButter = MeatBasedControl.hasButter;
+                            hamburgerDish.AddCheese = MeatBasedControl.hasCheese;
                         }
                         break;
                     case 1:
                         tempDish = new Pizza();
-                        if (currentIngredientControl is HamburgerUserControl hamburgerControltemp) // should be pizza
-                            // TODO
+                        if (currentIngredientControl is PizzaUserControl pizzaControl && tempDish is Pizza pizzaDish) // should be pizza
+                                                                                                                      // TODO
                         {
-
+                            pizzaDish.AddBacon = pizzaControl.hasBacon;
+                            pizzaDish.AddMushrooms = pizzaControl.hasMushrooms;
+                            pizzaDish.AddOnion = pizzaControl.hasOnions;
+                            pizzaDish.AddTomato = pizzaControl.hasTomato;
+                            pizzaDish.AddTuna = pizzaControl.hasTuna;
                         }
-                            break;
+                        break;
                     case 2:
                         tempDish = new Pasta();
                         if (currentIngredientControl is PastaUserControl pastaControl && tempDish is Pasta pastaDish)
                         {
-                            pastaDish.addMushrooms=pastaControl.hasMushrooms;
-                            pastaDish.addOlives=pastaControl.hasOlives;
+                            pastaDish.addMushrooms = pastaControl.hasMushrooms;
+                            pastaDish.addOlives = pastaControl.hasOlives;
                             pastaDish.addVegetables = pastaControl.hasVegtables;
                             pastaDish.addtomatoSauce = pastaControl.hasTomatoSauce;
                         }
@@ -151,31 +182,41 @@ namespace Project
 
         private void typeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            MeatBasedPanel.Controls.Clear();
             BonusPanel.Controls.Clear();
             switch (typeComboBox.SelectedIndex)
             {
                 case 0:
                     {
                         currentIngredientControl = new HamburgerUserControl();
+                        currentFacts = new Facts();
+                        currentDishSort = new MeatBasedUserControl();
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
+                        BonusPanel.Controls.Add(currentFacts, 200, 0);
+                        MeatBasedPanel.Controls.Add(currentDishSort);
                         break;
                     }
                 case 1:
                     {
-                        currentIngredientControl = new HamburgerUserControl();
+                        currentIngredientControl = new PizzaUserControl();
+                        currentFacts = new Facts();
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
+                        BonusPanel.Controls.Add(currentFacts, 200, 0);
                         break;
                     }
                 case 2:
                     {
                         currentIngredientControl = new PastaUserControl();
+                        currentFacts = new Facts();
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
+                        BonusPanel.Controls.Add(currentFacts, 200, 0);
                         break;
                     }
-                default: {
+                default:
+                    {
                         currentIngredientControl = new PastaUserControl();
                         typeComboBox.SelectedIndex = 0;
-                        break; 
+                        break;
                     }
             }
         }
