@@ -49,6 +49,7 @@
             MeatBasedPanel = new Panel();
             typeWarningLabel = new Label();
             imageUploadButton = new Button();
+            nameWarningLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)dishPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -74,7 +75,7 @@
             // 
             nameTextBox.Location = new Point(244, 20);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(544, 23);
+            nameTextBox.Size = new Size(274, 23);
             nameTextBox.TabIndex = 2;
             // 
             // label2
@@ -89,7 +90,7 @@
             // enableDishCheckBox
             // 
             enableDishCheckBox.AutoSize = true;
-            enableDishCheckBox.Location = new Point(701, 102);
+            enableDishCheckBox.Location = new Point(701, 61);
             enableDishCheckBox.Name = "enableDishCheckBox";
             enableDishCheckBox.RightToLeft = RightToLeft.Yes;
             enableDishCheckBox.Size = new Size(87, 19);
@@ -102,7 +103,7 @@
             // isVeganCheckBox
             // 
             isVeganCheckBox.AutoSize = true;
-            isVeganCheckBox.Location = new Point(730, 65);
+            isVeganCheckBox.Location = new Point(730, 24);
             isVeganCheckBox.Name = "isVeganCheckBox";
             isVeganCheckBox.RightToLeft = RightToLeft.Yes;
             isVeganCheckBox.Size = new Size(58, 19);
@@ -254,11 +255,23 @@
             imageUploadButton.UseVisualStyleBackColor = true;
             imageUploadButton.Click += imageUploadButton_Click;
             // 
+            // nameWarningLabel
+            // 
+            nameWarningLabel.AutoSize = true;
+            nameWarningLabel.ForeColor = Color.Red;
+            nameWarningLabel.Location = new Point(524, 24);
+            nameWarningLabel.Name = "nameWarningLabel";
+            nameWarningLabel.Size = new Size(115, 15);
+            nameWarningLabel.TabIndex = 22;
+            nameWarningLabel.Text = "Please enter a name.";
+            nameWarningLabel.Visible = false;
+            // 
             // MenuItemForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(822, 631);
+            Controls.Add(nameWarningLabel);
             Controls.Add(imageUploadButton);
             Controls.Add(typeWarningLabel);
             Controls.Add(MeatBasedPanel);
@@ -310,5 +323,6 @@
         private Panel MeatBasedPanel;
         private Label typeWarningLabel;
         private Button imageUploadButton;
+        private Label nameWarningLabel;
     }
 }

@@ -101,7 +101,11 @@ namespace Project
                 typeWarningLabel.Visible = true;
                 return;
             }
-            typeWarningLabel.Visible = false;
+            if (nameTextBox.Text == "")
+            {
+                nameWarningLabel.Visible = true;
+                return;
+            }
             if (currentIngredientControl == null) return;
             {
                 switch (typeComboBox.SelectedIndex)
@@ -157,6 +161,7 @@ namespace Project
                     else
                     {
                         priceWarningLabel.Visible = true;
+                        return;
                     }
                     double weight;
                     if (double.TryParse(weightTextBox.Text, out weight))
@@ -166,6 +171,7 @@ namespace Project
                     else
                     {
                         weightWarningLabel.Visible = true;
+                        return;
                     }
                     currentDish.isVegan = isVeganCheckBox.Checked;
                     currentDish.enabled = enableDishCheckBox.Checked;
