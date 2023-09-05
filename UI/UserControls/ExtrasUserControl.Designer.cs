@@ -28,59 +28,136 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ButterCheckBox = new CheckBox();
-            label1 = new Label();
+            panel1 = new Panel();
+            ExtrasLabel = new Label();
+            pictureBoxPickles = new PictureBox();
+            pictureBoxLettuce = new PictureBox();
             CheeseCheckBox = new CheckBox();
+            ButterCheckBox = new CheckBox();
+            VeganCheeseLabel = new Label();
+            veganButterLabel = new Label();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPickles).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLettuce).BeginInit();
             SuspendLayout();
             // 
-            // ButterCheckBox
+            // panel1
             // 
-            ButterCheckBox.AutoSize = true;
-            ButterCheckBox.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ButterCheckBox.Location = new Point(115, 27);
-            ButterCheckBox.Name = "ButterCheckBox";
-            ButterCheckBox.Size = new Size(97, 28);
-            ButterCheckBox.TabIndex = 27;
-            ButterCheckBox.Text = "Butter";
-            ButterCheckBox.UseVisualStyleBackColor = true;
+            panel1.BackColor = Color.Goldenrod;
+            panel1.Controls.Add(ExtrasLabel);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(219, 44);
+            panel1.TabIndex = 39;
             // 
-            // label1
+            // ExtrasLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(81, 24);
-            label1.TabIndex = 28;
-            label1.Text = "Extras:";
+            ExtrasLabel.AutoSize = true;
+            ExtrasLabel.Font = new Font("David", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            ExtrasLabel.Location = new Point(66, 7);
+            ExtrasLabel.Margin = new Padding(2, 0, 2, 0);
+            ExtrasLabel.Name = "ExtrasLabel";
+            ExtrasLabel.Size = new Size(96, 32);
+            ExtrasLabel.TabIndex = 0;
+            ExtrasLabel.Text = "Extras";
+            // 
+            // pictureBoxPickles
+            // 
+            pictureBoxPickles.Image = Properties.Resources.buttericon;
+            pictureBoxPickles.Location = new Point(30, 153);
+            pictureBoxPickles.Margin = new Padding(2);
+            pictureBoxPickles.Name = "pictureBoxPickles";
+            pictureBoxPickles.Size = new Size(50, 40);
+            pictureBoxPickles.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPickles.TabIndex = 49;
+            pictureBoxPickles.TabStop = false;
+            // 
+            // pictureBoxLettuce
+            // 
+            pictureBoxLettuce.Image = Properties.Resources.icons8_cheese_64;
+            pictureBoxLettuce.Location = new Point(32, 75);
+            pictureBoxLettuce.Margin = new Padding(2);
+            pictureBoxLettuce.Name = "pictureBoxLettuce";
+            pictureBoxLettuce.Size = new Size(43, 39);
+            pictureBoxLettuce.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxLettuce.TabIndex = 41;
+            pictureBoxLettuce.TabStop = false;
             // 
             // CheeseCheckBox
             // 
             CheeseCheckBox.AutoSize = true;
-            CheeseCheckBox.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CheeseCheckBox.Location = new Point(3, 27);
+            CheeseCheckBox.Location = new Point(86, 81);
+            CheeseCheckBox.Margin = new Padding(2);
             CheeseCheckBox.Name = "CheeseCheckBox";
-            CheeseCheckBox.Size = new Size(106, 28);
-            CheeseCheckBox.TabIndex = 29;
-            CheeseCheckBox.Text = "Cheese";
+            CheeseCheckBox.Size = new Size(89, 19);
+            CheeseCheckBox.TabIndex = 44;
+            CheeseCheckBox.Text = "Add Cheese";
             CheeseCheckBox.UseVisualStyleBackColor = true;
             // 
-            // MeatBased
+            // ButterCheckBox
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            ButterCheckBox.AutoSize = true;
+            ButterCheckBox.Location = new Point(86, 157);
+            ButterCheckBox.Margin = new Padding(2);
+            ButterCheckBox.Name = "ButterCheckBox";
+            ButterCheckBox.Size = new Size(83, 19);
+            ButterCheckBox.TabIndex = 45;
+            ButterCheckBox.Text = "Add Butter";
+            ButterCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // VeganCheeseLabel
+            // 
+            VeganCheeseLabel.AutoSize = true;
+            VeganCheeseLabel.ForeColor = Color.Green;
+            VeganCheeseLabel.Location = new Point(85, 99);
+            VeganCheeseLabel.Name = "VeganCheeseLabel";
+            VeganCheeseLabel.Size = new Size(88, 15);
+            VeganCheeseLabel.TabIndex = 50;
+            VeganCheeseLabel.Text = "* Vegan Cheese";
+            // 
+            // veganButterLabel
+            // 
+            veganButterLabel.AutoSize = true;
+            veganButterLabel.ForeColor = Color.Green;
+            veganButterLabel.Location = new Point(87, 175);
+            veganButterLabel.Name = "veganButterLabel";
+            veganButterLabel.Size = new Size(82, 15);
+            veganButterLabel.TabIndex = 51;
+            veganButterLabel.Text = "* Vegan Butter";
+            // 
+            // ExtrasUserControl
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(CheeseCheckBox);
-            Controls.Add(label1);
+            Controls.Add(veganButterLabel);
+            Controls.Add(VeganCheeseLabel);
+            Controls.Add(panel1);
+            Controls.Add(pictureBoxPickles);
             Controls.Add(ButterCheckBox);
-            Name = "MeatBased";
-            Size = new Size(215, 63);
+            Controls.Add(CheeseCheckBox);
+            Controls.Add(pictureBoxLettuce);
+            Margin = new Padding(2);
+            Name = "ExtrasUserControl";
+            Size = new Size(219, 233);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPickles).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLettuce).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private CheckBox ButterCheckBox;
-        private Label label1;
+
+        private Panel panel1;
+        private Label ExtrasLabel;
+        private PictureBox pictureBoxPickles;
+        private PictureBox pictureBoxLettuce;
         private CheckBox CheeseCheckBox;
+        private CheckBox ButterCheckBox;
+        private Label VeganCheeseLabel;
+        private Label veganButterLabel;
     }
 }

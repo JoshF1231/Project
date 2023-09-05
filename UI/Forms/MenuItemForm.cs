@@ -16,9 +16,9 @@ namespace Project
     {
         private UserControl currentIngredientControl; // Class-level variable to store the loaded UserControl
 
-        private UserControl currentFacts;
+        private UserControl currentExtrasControl;
 
-        private UserControl currentDishSort; // Extras if MeatBased;
+
         public Dish? currentDish { get; private set; }
         public Dish? oldDish { get; private set; }
         public MenuItemForm(Dish? selectedDish)
@@ -36,11 +36,9 @@ namespace Project
                 descriptionTextBox.Text = selectedDish.description;
                 isVeganCheckBox.Checked = selectedDish.isVegan;
                 enableDishCheckBox.Checked = selectedDish.enabled;
-                Facts? facts = (Facts)currentFacts;
                 if (selectedDish is Hamburger hamburgerDish)
                 {
                     HamburgerUserControl? hamburgerUserControl = (HamburgerUserControl)currentIngredientControl;
-                    ExtrasUserControl? meatBased = (ExtrasUserControl)currentDishSort;
                     if (hamburgerUserControl != null)
                     {
                         hamburgerUserControl.hasBacon = hamburgerDish.AddBacon;
@@ -48,8 +46,6 @@ namespace Project
                         hamburgerUserControl.hasOnion = hamburgerDish.AddOnion;
                         hamburgerUserControl.hasTomato = hamburgerDish.AddTomato;
                         hamburgerUserControl.hasPickles = hamburgerDish.AddPickles;
-                        meatBased.hasButter = hamburgerDish.AddButter;
-                        meatBased.hasCheese = hamburgerDish.AddCheese;
                     }
                 }
                 if (selectedDish is Pasta pastaDish)
@@ -82,6 +78,7 @@ namespace Project
         public MenuItemForm()
         {
             InitializeComponent();
+            enableDishCheckBox.Checked = true;
             currentDish = null;
         }
 
@@ -112,15 +109,13 @@ namespace Project
                 {
                     case 0:
                         currentDish = new Hamburger();
-                        if (currentIngredientControl is HamburgerUserControl hamburgerControl && currentDishSort is ExtrasUserControl MeatBasedControl && currentDish is Hamburger hamburgerDish)
+                        if (currentIngredientControl is HamburgerUserControl hamburgerControl && currentDish is Hamburger hamburgerDish)
                         {
                             hamburgerDish.AddLettuce = hamburgerControl.hasLettuce;
                             hamburgerDish.AddBacon = hamburgerControl.hasBacon;
                             hamburgerDish.AddOnion = hamburgerControl.hasOnion;
                             hamburgerDish.AddPickles = hamburgerControl.hasPickles;
                             hamburgerDish.AddTomato = hamburgerControl.hasTomato;
-                            hamburgerDish.AddButter = MeatBasedControl.hasButter;
-                            hamburgerDish.AddCheese = MeatBasedControl.hasCheese;
                         }
                         break;
                     case 1:
@@ -184,34 +179,37 @@ namespace Project
 
         private void typeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MeatBasedPanel.Controls.Clear();
             BonusPanel.Controls.Clear();
             switch (typeComboBox.SelectedIndex)
             {
                 case 0:
                     {
                         currentIngredientControl = new HamburgerUserControl();
-                        currentFacts = new Facts();
-                        currentDishSort = new ExtrasUserControl();
+                        if (currentDish == null)
+                        {
+                            currentDish = new Hamburger();
+                        }
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
-                        BonusPanel.Controls.Add(currentFacts, 200, 0);
-                        MeatBasedPanel.Controls.Add(currentDishSort);
                         break;
                     }
                 case 1:
                     {
                         currentIngredientControl = new PizzaUserControl();
-                        currentFacts = new Facts();
+                        if (currentDish == null)
+                        {
+                            currentDish = new Pizza();
+                        }
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
-                        BonusPanel.Controls.Add(currentFacts, 200, 0);
                         break;
                     }
                 case 2:
                     {
                         currentIngredientControl = new PastaUserControl();
-                        currentFacts = new Facts();
+                        if (currentDish == null)
+                        {
+                            currentDish = new Pasta();
+                        }
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
-                        BonusPanel.Controls.Add(currentFacts, 200, 0);
                         break;
                     }
                 default:
@@ -220,6 +218,17 @@ namespace Project
                         typeComboBox.SelectedIndex = 0;
                         break;
                     }
+            }
+            if (currentDish!= null)
+            {
+                if (currentDish is Dairy) {
+                    currentExtrasControl = new ExtrasUserControl("Dairy");
+                }
+                if (currentDish is MeatBased)
+                {
+                    currentExtrasControl = new ExtrasUserControl();
+                }
+                BonusPanel.Controls.Add(currentExtrasControl, 1, 0);
             }
         }
 

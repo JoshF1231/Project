@@ -154,11 +154,11 @@ namespace Project
                 Stream stream = File.Open(openFileDialog1.FileName, FileMode.Open);
                 var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
                 branchesList = (Branches)binaryFormatter.Deserialize(stream);
+                branchLabel.Text = branchesList[branchesList.branchesListIndex].ToString();
                 stream.Close();
             }
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.Clear();
-            branchLabel.Text = branchesList[branchesList.branchesListIndex].ToString();
         }
     }
 }

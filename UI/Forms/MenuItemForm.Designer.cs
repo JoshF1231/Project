@@ -46,7 +46,6 @@
             priceWarningLabel = new Label();
             weightWarningLabel = new Label();
             BonusPanel = new TableLayoutPanel();
-            MeatBasedPanel = new Panel();
             typeWarningLabel = new Label();
             imageUploadButton = new Button();
             nameWarningLabel = new Label();
@@ -55,9 +54,10 @@
             // 
             // dishPictureBox
             // 
-            dishPictureBox.Location = new Point(27, 19);
+            dishPictureBox.Image = Properties.Resources.noimageselected;
+            dishPictureBox.Location = new Point(28, 13);
             dishPictureBox.Name = "dishPictureBox";
-            dishPictureBox.Size = new Size(157, 140);
+            dishPictureBox.Size = new Size(145, 123);
             dishPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             dishPictureBox.TabIndex = 0;
             dishPictureBox.TabStop = false;
@@ -129,16 +129,16 @@
             // 
             // descriptionTextBox
             // 
-            descriptionTextBox.Location = new Point(204, 182);
+            descriptionTextBox.Location = new Point(244, 182);
             descriptionTextBox.Multiline = true;
             descriptionTextBox.Name = "descriptionTextBox";
-            descriptionTextBox.Size = new Size(584, 85);
+            descriptionTextBox.Size = new Size(274, 85);
             descriptionTextBox.TabIndex = 11;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(129, 185);
+            label4.Location = new Point(164, 185);
             label4.Name = "label4";
             label4.Size = new Size(70, 15);
             label4.TabIndex = 10;
@@ -146,7 +146,7 @@
             // 
             // applyButton
             // 
-            applyButton.Location = new Point(712, 590);
+            applyButton.Location = new Point(712, 553);
             applyButton.Name = "applyButton";
             applyButton.Size = new Size(76, 23);
             applyButton.TabIndex = 12;
@@ -156,7 +156,7 @@
             // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(603, 590);
+            cancelButton.Location = new Point(630, 553);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(76, 23);
             cancelButton.TabIndex = 13;
@@ -217,22 +217,14 @@
             // BonusPanel
             // 
             BonusPanel.ColumnCount = 2;
-            BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66.7979F));
-            BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.2021F));
+            BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 63.55263F));
+            BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36.44737F));
             BonusPanel.Location = new Point(28, 290);
             BonusPanel.Name = "BonusPanel";
             BonusPanel.RowCount = 1;
             BonusPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             BonusPanel.Size = new Size(760, 257);
             BonusPanel.TabIndex = 18;
-            // 
-            // MeatBasedPanel
-            // 
-            MeatBasedPanel.Location = new Point(27, 211);
-            MeatBasedPanel.Margin = new Padding(2);
-            MeatBasedPanel.Name = "MeatBasedPanel";
-            MeatBasedPanel.Size = new Size(150, 56);
-            MeatBasedPanel.TabIndex = 19;
             // 
             // typeWarningLabel
             // 
@@ -247,7 +239,7 @@
             // 
             // imageUploadButton
             // 
-            imageUploadButton.Location = new Point(27, 165);
+            imageUploadButton.Location = new Point(28, 143);
             imageUploadButton.Name = "imageUploadButton";
             imageUploadButton.Size = new Size(75, 23);
             imageUploadButton.TabIndex = 21;
@@ -270,11 +262,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(822, 631);
+            ClientSize = new Size(822, 586);
             Controls.Add(nameWarningLabel);
             Controls.Add(imageUploadButton);
             Controls.Add(typeWarningLabel);
-            Controls.Add(MeatBasedPanel);
             Controls.Add(BonusPanel);
             Controls.Add(weightWarningLabel);
             Controls.Add(priceWarningLabel);
@@ -320,7 +311,6 @@
         private Label priceWarningLabel;
         private Label weightWarningLabel;
         private TableLayoutPanel BonusPanel;
-        private Panel MeatBasedPanel;
         private Label typeWarningLabel;
         private Button imageUploadButton;
         private Label nameWarningLabel;

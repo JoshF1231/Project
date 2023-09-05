@@ -43,5 +43,14 @@ namespace Project.UI.UserControls
         {
             InitializeComponent();
         }
+        public ExtrasUserControl(string dishBase)
+        {
+            InitializeComponent();
+            if (dishBase == "Dairy")
+            {
+                VeganCheeseLabel.Visible = false;
+                veganButterLabel.Visible = false;
+            }
+        }
     }
 }
