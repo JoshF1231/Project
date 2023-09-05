@@ -57,7 +57,7 @@
             dishPictureBox.Image = Properties.Resources.noimageselected;
             dishPictureBox.Location = new Point(28, 13);
             dishPictureBox.Name = "dishPictureBox";
-            dishPictureBox.Size = new Size(145, 123);
+            dishPictureBox.Size = new Size(168, 146);
             dishPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             dishPictureBox.TabIndex = 0;
             dishPictureBox.TabStop = false;
@@ -65,7 +65,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(192, 23);
+            label1.Location = new Point(223, 23);
             label1.Name = "label1";
             label1.Size = new Size(42, 15);
             label1.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(244, 20);
+            nameTextBox.Location = new Point(275, 20);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(274, 23);
             nameTextBox.TabIndex = 2;
@@ -81,7 +81,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(202, 101);
+            label2.Location = new Point(233, 101);
             label2.Name = "label2";
             label2.Size = new Size(36, 15);
             label2.TabIndex = 3;
@@ -113,7 +113,7 @@
             // 
             // weightTextBox
             // 
-            weightTextBox.Location = new Point(244, 136);
+            weightTextBox.Location = new Point(275, 136);
             weightTextBox.Name = "weightTextBox";
             weightTextBox.Size = new Size(274, 23);
             weightTextBox.TabIndex = 9;
@@ -121,7 +121,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(190, 139);
+            label3.Location = new Point(221, 139);
             label3.Name = "label3";
             label3.Size = new Size(48, 15);
             label3.TabIndex = 8;
@@ -129,7 +129,7 @@
             // 
             // descriptionTextBox
             // 
-            descriptionTextBox.Location = new Point(244, 182);
+            descriptionTextBox.Location = new Point(275, 182);
             descriptionTextBox.Multiline = true;
             descriptionTextBox.Name = "descriptionTextBox";
             descriptionTextBox.Size = new Size(274, 85);
@@ -138,7 +138,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(164, 185);
+            label4.Location = new Point(195, 185);
             label4.Name = "label4";
             label4.Size = new Size(70, 15);
             label4.TabIndex = 10;
@@ -167,7 +167,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(204, 60);
+            label5.Location = new Point(235, 60);
             label5.Name = "label5";
             label5.Size = new Size(34, 15);
             label5.TabIndex = 14;
@@ -179,7 +179,7 @@
             typeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             typeComboBox.FormattingEnabled = true;
             typeComboBox.Items.AddRange(new object[] { "Hamburger", "Pizza", "Pasta" });
-            typeComboBox.Location = new Point(244, 60);
+            typeComboBox.Location = new Point(275, 60);
             typeComboBox.Name = "typeComboBox";
             typeComboBox.Size = new Size(274, 23);
             typeComboBox.TabIndex = 15;
@@ -187,7 +187,7 @@
             // 
             // priceTextBox
             // 
-            priceTextBox.Location = new Point(244, 98);
+            priceTextBox.Location = new Point(275, 98);
             priceTextBox.Name = "priceTextBox";
             priceTextBox.Size = new Size(274, 23);
             priceTextBox.TabIndex = 4;
@@ -196,7 +196,7 @@
             // 
             priceWarningLabel.AutoSize = true;
             priceWarningLabel.ForeColor = Color.Red;
-            priceWarningLabel.Location = new Point(524, 99);
+            priceWarningLabel.Location = new Point(555, 99);
             priceWarningLabel.Name = "priceWarningLabel";
             priceWarningLabel.Size = new Size(155, 15);
             priceWarningLabel.TabIndex = 16;
@@ -207,7 +207,7 @@
             // 
             weightWarningLabel.AutoSize = true;
             weightWarningLabel.ForeColor = Color.Red;
-            weightWarningLabel.Location = new Point(524, 139);
+            weightWarningLabel.Location = new Point(555, 139);
             weightWarningLabel.Name = "weightWarningLabel";
             weightWarningLabel.Size = new Size(155, 15);
             weightWarningLabel.TabIndex = 17;
@@ -230,7 +230,7 @@
             // 
             typeWarningLabel.AutoSize = true;
             typeWarningLabel.ForeColor = Color.Red;
-            typeWarningLabel.Location = new Point(524, 63);
+            typeWarningLabel.Location = new Point(555, 63);
             typeWarningLabel.Name = "typeWarningLabel";
             typeWarningLabel.Size = new Size(134, 15);
             typeWarningLabel.TabIndex = 20;
@@ -239,7 +239,7 @@
             // 
             // imageUploadButton
             // 
-            imageUploadButton.Location = new Point(28, 143);
+            imageUploadButton.Location = new Point(73, 165);
             imageUploadButton.Name = "imageUploadButton";
             imageUploadButton.Size = new Size(75, 23);
             imageUploadButton.TabIndex = 21;
@@ -251,7 +251,7 @@
             // 
             nameWarningLabel.AutoSize = true;
             nameWarningLabel.ForeColor = Color.Red;
-            nameWarningLabel.Location = new Point(524, 24);
+            nameWarningLabel.Location = new Point(555, 24);
             nameWarningLabel.Name = "nameWarningLabel";
             nameWarningLabel.Size = new Size(115, 15);
             nameWarningLabel.TabIndex = 22;

@@ -219,9 +219,10 @@ namespace Project
                         break;
                     }
             }
-            if (currentDish!= null)
+            if (currentDish != null)
             {
-                if (currentDish is Dairy) {
+                if (currentDish is Dairy)
+                {
                     currentExtrasControl = new ExtrasUserControl("Dairy");
                 }
                 if (currentDish is MeatBased)
