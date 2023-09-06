@@ -34,13 +34,13 @@
             removeButton = new Button();
             warning = new Label();
             menuDataGrid = new DataGridView();
+            branchBindingSource = new BindingSource(components);
+            menuLabel = new Label();
             name = new DataGridViewTextBoxColumn();
             priceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Weight = new DataGridViewTextBoxColumn();
-            isVeganDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
             Enabled = new DataGridViewCheckBoxColumn();
-            branchBindingSource = new BindingSource(components);
-            menuLabel = new Label();
+            selectedImage = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)menuDataGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)branchBindingSource).BeginInit();
             SuspendLayout();
@@ -81,11 +81,13 @@
             // 
             menuDataGrid.AllowUserToAddRows = false;
             menuDataGrid.AllowUserToDeleteRows = false;
+            menuDataGrid.AllowUserToResizeColumns = false;
+            menuDataGrid.AllowUserToResizeRows = false;
             menuDataGrid.AutoGenerateColumns = false;
             menuDataGrid.BorderStyle = BorderStyle.None;
             menuDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             menuDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            menuDataGrid.Columns.AddRange(new DataGridViewColumn[] { name, priceDataGridViewTextBoxColumn, Weight, isVeganDataGridViewCheckBoxColumn, Enabled });
+            menuDataGrid.Columns.AddRange(new DataGridViewColumn[] { name, priceDataGridViewTextBoxColumn, Weight, Enabled, selectedImage });
             menuDataGrid.DataSource = branchBindingSource;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
@@ -105,6 +107,19 @@
             menuDataGrid.Size = new Size(624, 421);
             menuDataGrid.TabIndex = 9;
             menuDataGrid.CellDoubleClick += menuDataGrid_CellDoubleClick;
+            // 
+            // branchBindingSource
+            // 
+            branchBindingSource.DataMember = "Menu";
+            branchBindingSource.DataSource = typeof(Menu.Branch);
+            // 
+            // menuLabel
+            // 
+            menuLabel.AutoSize = true;
+            menuLabel.Location = new Point(56, 31);
+            menuLabel.Name = "menuLabel";
+            menuLabel.Size = new Size(0, 15);
+            menuLabel.TabIndex = 10;
             // 
             // name
             // 
@@ -131,15 +146,6 @@
             Weight.Name = "Weight";
             Weight.ReadOnly = true;
             // 
-            // isVeganDataGridViewCheckBoxColumn
-            // 
-            isVeganDataGridViewCheckBoxColumn.DataPropertyName = "isVegan";
-            isVeganDataGridViewCheckBoxColumn.HeaderText = "Vegan";
-            isVeganDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            isVeganDataGridViewCheckBoxColumn.Name = "isVeganDataGridViewCheckBoxColumn";
-            isVeganDataGridViewCheckBoxColumn.ReadOnly = true;
-            isVeganDataGridViewCheckBoxColumn.Width = 125;
-            // 
             // Enabled
             // 
             Enabled.DataPropertyName = "enabled";
@@ -147,18 +153,12 @@
             Enabled.Name = "Enabled";
             Enabled.ReadOnly = true;
             // 
-            // branchBindingSource
+            // selectedImage
             // 
-            branchBindingSource.DataMember = "Menu";
-            branchBindingSource.DataSource = typeof(Menu.Branch);
-            // 
-            // menuLabel
-            // 
-            menuLabel.AutoSize = true;
-            menuLabel.Location = new Point(56, 31);
-            menuLabel.Name = "menuLabel";
-            menuLabel.Size = new Size(0, 15);
-            menuLabel.TabIndex = 10;
+            selectedImage.DataPropertyName = "selectedImage";
+            selectedImage.HeaderText = "Image";
+            selectedImage.Name = "selectedImage";
+            selectedImage.ReadOnly = true;
             // 
             // Menu_Form
             // 
@@ -191,10 +191,11 @@
         private BindingSource branchBindingSource;
         private DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn showItemDataGridViewCheckBoxColumn;
+        private DataGridViewCheckBoxColumn isVeganDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn Weight;
-        private DataGridViewCheckBoxColumn isVeganDataGridViewCheckBoxColumn;
         private DataGridViewCheckBoxColumn Enabled;
+        private DataGridViewImageColumn selectedImage;
     }
 }

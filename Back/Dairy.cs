@@ -3,27 +3,16 @@
     [Serializable]
     public abstract class Dairy : Dish
     {
-        private string dairyType = "None";
-        public string DairyType { get => dairyType; set => dairyType = value; }
-        public string? DairySource { get; set; }
-        
-        public bool VeganMilk { get; set; }
+
+        public bool extraCheese { get; set; }
+        public bool extraButter { get; set; }
 
         public Dairy()
         {
-
         }
-        protected Dairy(string Name, double Content, bool isVegan, double Price) : base(Name, Content, isVegan, Price)
+        protected Dairy(string Name="", double Weight=0, double Price=0) : base(Name, Weight, Price)
         {
-            if(isVegan)
-            {
-                this.VeganMilk = true;
-                DairyType = "Vegan";
-            }
-            else
-            {
-                this.VeganMilk = false;
-            }
+
         }
 
 

@@ -33,7 +33,6 @@
             nameTextBox = new TextBox();
             label2 = new Label();
             enableDishCheckBox = new CheckBox();
-            isVeganCheckBox = new CheckBox();
             weightTextBox = new TextBox();
             label3 = new Label();
             descriptionTextBox = new TextBox();
@@ -90,7 +89,7 @@
             // enableDishCheckBox
             // 
             enableDishCheckBox.AutoSize = true;
-            enableDishCheckBox.Location = new Point(701, 61);
+            enableDishCheckBox.Location = new Point(701, 24);
             enableDishCheckBox.Name = "enableDishCheckBox";
             enableDishCheckBox.RightToLeft = RightToLeft.Yes;
             enableDishCheckBox.Size = new Size(87, 19);
@@ -99,17 +98,6 @@
             enableDishCheckBox.TextAlign = ContentAlignment.MiddleCenter;
             enableDishCheckBox.UseVisualStyleBackColor = true;
             enableDishCheckBox.CheckedChanged += enableDishCheckBox_CheckedChanged;
-            // 
-            // isVeganCheckBox
-            // 
-            isVeganCheckBox.AutoSize = true;
-            isVeganCheckBox.Location = new Point(730, 24);
-            isVeganCheckBox.Name = "isVeganCheckBox";
-            isVeganCheckBox.RightToLeft = RightToLeft.Yes;
-            isVeganCheckBox.Size = new Size(58, 19);
-            isVeganCheckBox.TabIndex = 7;
-            isVeganCheckBox.Text = "Vegan";
-            isVeganCheckBox.UseVisualStyleBackColor = true;
             // 
             // weightTextBox
             // 
@@ -277,7 +265,6 @@
             Controls.Add(label4);
             Controls.Add(weightTextBox);
             Controls.Add(label3);
-            Controls.Add(isVeganCheckBox);
             Controls.Add(enableDishCheckBox);
             Controls.Add(priceTextBox);
             Controls.Add(label2);
@@ -298,7 +285,6 @@
         private TextBox nameTextBox;
         private Label label2;
         private CheckBox enableDishCheckBox;
-        private CheckBox isVeganCheckBox;
         private TextBox weightTextBox;
         private Label label3;
         private TextBox descriptionTextBox;

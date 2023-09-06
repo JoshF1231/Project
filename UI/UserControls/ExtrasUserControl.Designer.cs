@@ -91,9 +91,9 @@
             CheeseCheckBox.Location = new Point(86, 81);
             CheeseCheckBox.Margin = new Padding(2);
             CheeseCheckBox.Name = "CheeseCheckBox";
-            CheeseCheckBox.Size = new Size(89, 19);
+            CheeseCheckBox.Size = new Size(93, 19);
             CheeseCheckBox.TabIndex = 44;
-            CheeseCheckBox.Text = "Add Cheese";
+            CheeseCheckBox.Text = "Extra Cheese";
             CheeseCheckBox.UseVisualStyleBackColor = true;
             // 
             // ButterCheckBox
@@ -102,9 +102,9 @@
             ButterCheckBox.Location = new Point(86, 157);
             ButterCheckBox.Margin = new Padding(2);
             ButterCheckBox.Name = "ButterCheckBox";
-            ButterCheckBox.Size = new Size(83, 19);
+            ButterCheckBox.Size = new Size(87, 19);
             ButterCheckBox.TabIndex = 45;
-            ButterCheckBox.Text = "Add Butter";
+            ButterCheckBox.Text = "Extra Butter";
             ButterCheckBox.UseVisualStyleBackColor = true;
             // 
             // VeganCheeseLabel

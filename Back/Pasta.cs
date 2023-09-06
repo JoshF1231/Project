@@ -4,7 +4,7 @@
 
     public class Pasta : Dairy
     {
-        public bool extraCheese {  get; set; }
+        public bool addCheese {  get; set; }
         public bool addOlives { get; set; }
         public bool addtomatoSauce { get; set; }
         public bool addMushrooms { get; set; }
@@ -16,9 +16,9 @@
 
         }
 
-        public Pasta(string Name, double Content, double Price, bool isVegan, bool VeganMilk, bool extraCheese, bool addOlives, bool tomatoSauce, bool addMushrooms, bool addVegetables) : base(Name, Content, isVegan, Price)
+        public Pasta(string Name, double Content, double Price, bool extraCheese, bool addOlives, bool tomatoSauce, bool addMushrooms, bool addVegetables) : base(Name, Content, Price)
         {
-            this.extraCheese = extraCheese;
+            this.addCheese = extraCheese;
             this.addOlives = addOlives;
             this.addtomatoSauce = tomatoSauce;
             this.addMushrooms = addMushrooms;

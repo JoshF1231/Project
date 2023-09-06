@@ -14,9 +14,19 @@ namespace Project
         {
             branchesList = new Branches();
             InitializeComponent();
-            branchLabel.Text = "None";
+            updateSelectedBranch();
+            //branchLabel.Text = "None";
         }
 
+
+        private void updateSelectedBranch()
+        {
+            if (branchesList != null && branchesList.branchesListIndex>=0)
+            {
+                branchLabel.Text = branchesList[branchesList.branchesListIndex].ToString();
+            }
+            else { branchLabel.Text = "None"; }
+        }
         private void OpenBranchesForm()
         {
             if (this.mainpanel.Controls.Count > 0)
@@ -90,10 +100,8 @@ namespace Project
             if (branchesList != null)
             {
                 branchesList.branchesListIndex = e.BranchIndex;
-                if (e.BranchIndex >= 0) branchLabel.Text = branchesList[branchesList.branchesListIndex].BranchName;
-                else branchLabel.Text = "None";
             }
-            else branchLabel.Text = "None";
+            updateSelectedBranch();
             // Update UI elements or perform any necessary actions
         }
         private void DishesForm_DishUpdated(object sender, DishEventArgs e)
@@ -154,7 +162,7 @@ namespace Project
                 Stream stream = File.Open(openFileDialog1.FileName, FileMode.Open);
                 var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
                 branchesList = (Branches)binaryFormatter.Deserialize(stream);
-                branchLabel.Text = branchesList[branchesList.branchesListIndex].ToString();
+                updateSelectedBranch();
                 stream.Close();
             }
             if (this.mainpanel.Controls.Count > 0)

@@ -16,7 +16,7 @@ namespace Project
     {
         private UserControl currentIngredientControl; // Class-level variable to store the loaded UserControl
 
-        private UserControl currentExtrasControl;
+        private ExtrasUserControl currentExtrasControl;
 
 
         public Dish? currentDish { get; private set; }
@@ -34,7 +34,6 @@ namespace Project
                 priceTextBox.Text = selectedDish.Price.ToString();
                 weightTextBox.Text = selectedDish.Weight.ToString();
                 descriptionTextBox.Text = selectedDish.description;
-                isVeganCheckBox.Checked = selectedDish.isVegan;
                 enableDishCheckBox.Checked = selectedDish.enabled;
                 if (selectedDish is Hamburger hamburgerDish)
                 {
@@ -72,6 +71,19 @@ namespace Project
                         pizzaUserControl.hasTuna = pizzaDish.AddTuna;
                     }
                 }
+                if (currentExtrasControl != null) { 
+                    if (selectedDish is Dairy dairyDish)
+                        {
+                        currentExtrasControl.extraButter = dairyDish.extraButter;
+                        currentExtrasControl.extraCheese= dairyDish.extraCheese;
+                    }
+                    if (selectedDish is MeatBased meatDish)
+                    {
+                        currentExtrasControl.extraButter = meatDish.AddVeganButter;
+                        currentExtrasControl.extraCheese = meatDish.AddVeganCheese;
+                    }
+                }
+
             }
         }
 
@@ -146,6 +158,16 @@ namespace Project
                 }
                 if (currentDish != null)
                 {
+                    if (currentDish is Dairy dairyDish)
+                    {
+                        dairyDish.extraButter = currentExtrasControl.extraButter;
+                        dairyDish.extraCheese = currentExtrasControl.extraCheese;
+                    }
+                    if (currentDish is MeatBased meatDish)
+                    {
+                        meatDish.AddVeganButter = currentExtrasControl.extraButter;
+                        meatDish.AddVeganCheese = currentExtrasControl.extraCheese;
+                    }
                     currentDish.name = nameTextBox.Text;
                     currentDish.description = descriptionTextBox.Text;
                     double price;
@@ -168,11 +190,10 @@ namespace Project
                         weightWarningLabel.Visible = true;
                         return;
                     }
-                    currentDish.isVegan = isVeganCheckBox.Checked;
                     currentDish.enabled = enableDishCheckBox.Checked;
                     currentDish.selectedImage = dishPictureBox.Image;
+                    DialogResult = DialogResult.OK;
                 }
-                DialogResult = DialogResult.OK;
             }
             Close();
         }
@@ -185,30 +206,21 @@ namespace Project
                 case 0:
                     {
                         currentIngredientControl = new HamburgerUserControl();
-                        if (currentDish == null)
-                        {
-                            currentDish = new Hamburger();
-                        }
+                        currentDish = new Hamburger();
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
                         break;
                     }
                 case 1:
                     {
                         currentIngredientControl = new PizzaUserControl();
-                        if (currentDish == null)
-                        {
-                            currentDish = new Pizza();
-                        }
+                        currentDish = new Pizza();
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
                         break;
                     }
                 case 2:
                     {
                         currentIngredientControl = new PastaUserControl();
-                        if (currentDish == null)
-                        {
-                            currentDish = new Pasta();
-                        }
+                        currentDish = new Pasta();
                         BonusPanel.Controls.Add(currentIngredientControl, 0, 0);
                         break;
                     }

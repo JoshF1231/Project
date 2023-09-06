@@ -20,20 +20,12 @@ namespace Project
         {
             InitializeComponent();
             Branch = null;
+            updateDataGridMenu();
         }
         public Menu_Form(Branch branch)
         {
             InitializeComponent();
             Branch = branch;
-            if (Branch == null)
-            {
-                //   tempLabel.Text = "No branch selected";
-            }
-            else
-            {
-                //   tempLabel.Text = "Selected branch is:";
-            }
-            //   test.Text = branch.ToString();
             updateDataGridMenu();
         }
         private void addButton_Click(object sender, EventArgs e)
@@ -46,6 +38,30 @@ namespace Project
             //resetListBox();  --dont forget to replace
         }
 
+        private void adjustImageSize()
+        {
+            if (Branch != null)
+            {
+                foreach (DataGridViewColumn column in menuDataGrid.Columns)
+                {
+                    if (column is DataGridViewImageColumn)
+                    {
+                        ((DataGridViewImageColumn)column).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    }
+                }
+            }
+        }
+
+        private void adjustCellHeight()
+        {
+            if (Branch != null) { 
+            menuDataGrid.DefaultCellStyle.Font = new Font("Arial", 14);
+            foreach (DataGridViewRow row in menuDataGrid.Rows)
+            {
+                row.Height = 70;
+            }
+            }
+        }
         private void OpenMenuItemForm()
         {
             MenuItemForm f = new MenuItemForm();
@@ -53,7 +69,10 @@ namespace Project
             {
                 Branch.Menu.Add(f.currentDish);
                 updateDataGridMenu();
+
+
             }
+
         }
         private void OpenMenuItemForm(Dish selectedDish)
         {
@@ -65,34 +84,41 @@ namespace Project
                     Branch.Menu.Remove(f.oldDish);
                     Branch.Menu.Add(f.currentDish);
                     updateDataGridMenu();
+
                 }
             }
         }
 
         private void updateDataGridMenu()
         {
+            if (Branch!= null) { 
             BindingList<Dish> updatedMenu = new BindingList<Dish>(Branch.Menu.ToList());
             branchBindingSource.DataSource = updatedMenu;
+            }
             warning.Visible = false;
+            adjustImageSize();
+            adjustCellHeight();
         }
         private void removeButton_Click(object sender, EventArgs e)
         {
-            if (Branch != null && menuDataGrid.SelectedCells.Count>0 && Branch.Menu!= null)
+            if (Branch != null && menuDataGrid.SelectedCells.Count > 0 && Branch.Menu != null)
             {
                 int rowIndex = menuDataGrid.SelectedCells[0].RowIndex;
                 Dish? selectedDish = menuDataGrid.Rows[rowIndex].DataBoundItem as Dish;
-                if (selectedDish!= null)
+                if (selectedDish != null)
                 {
-                    DialogResult result = MessageBox.Show("Are you sure you want to remove the dish: " + selectedDish.name+"?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
-                    if (result==DialogResult.Yes)
+                    DialogResult result = MessageBox.Show("Are you sure you want to remove the dish: " + selectedDish.name + "?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
                     {
                         Branch.Menu.Remove(selectedDish);
                         updateDataGridMenu();
+
                     }
                 }
             }
-            else if (Branch==null) warning.Visible = true;
-            else if (Branch.Menu ==null || Branch.Menu.Count==0) {
+            else if (Branch == null) warning.Visible = true;
+            else if (Branch.Menu == null || Branch.Menu.Count == 0)
+            {
                 warning.Text = "Empty Menu!";
                 warning.Visible = true;
             }

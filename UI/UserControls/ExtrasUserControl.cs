@@ -14,7 +14,7 @@ namespace Project.UI.UserControls
 {
     public partial class ExtrasUserControl : UserControl
     {
-        public bool hasCheese
+        public bool extraCheese
         {
             get
             {
@@ -27,7 +27,7 @@ namespace Project.UI.UserControls
 
         }
 
-        public bool hasButter
+        public bool extraButter
         {
             get
             {
