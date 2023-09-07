@@ -34,13 +34,12 @@
             removeButton = new Button();
             warning = new Label();
             menuDataGrid = new DataGridView();
-            branchBindingSource = new BindingSource(components);
-            menuLabel = new Label();
             name = new DataGridViewTextBoxColumn();
             priceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Weight = new DataGridViewTextBoxColumn();
-            Enabled = new DataGridViewCheckBoxColumn();
             selectedImage = new DataGridViewImageColumn();
+            branchBindingSource = new BindingSource(components);
+            menuLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)menuDataGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)branchBindingSource).BeginInit();
             SuspendLayout();
@@ -87,7 +86,7 @@
             menuDataGrid.BorderStyle = BorderStyle.None;
             menuDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             menuDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            menuDataGrid.Columns.AddRange(new DataGridViewColumn[] { name, priceDataGridViewTextBoxColumn, Weight, Enabled, selectedImage });
+            menuDataGrid.Columns.AddRange(new DataGridViewColumn[] { name, priceDataGridViewTextBoxColumn, Weight, selectedImage });
             menuDataGrid.DataSource = branchBindingSource;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
@@ -108,6 +107,39 @@
             menuDataGrid.TabIndex = 9;
             menuDataGrid.CellDoubleClick += menuDataGrid_CellDoubleClick;
             // 
+            // name
+            // 
+            name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            name.DataPropertyName = "name";
+            name.HeaderText = "Name";
+            name.MinimumWidth = 6;
+            name.Name = "name";
+            name.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            priceDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Weight
+            // 
+            Weight.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Weight.DataPropertyName = "Weight";
+            Weight.HeaderText = "Weight";
+            Weight.Name = "Weight";
+            Weight.ReadOnly = true;
+            // 
+            // selectedImage
+            // 
+            selectedImage.DataPropertyName = "selectedImage";
+            selectedImage.HeaderText = "Image";
+            selectedImage.Name = "selectedImage";
+            selectedImage.ReadOnly = true;
+            // 
             // branchBindingSource
             // 
             branchBindingSource.DataMember = "Menu";
@@ -120,45 +152,6 @@
             menuLabel.Name = "menuLabel";
             menuLabel.Size = new Size(0, 15);
             menuLabel.TabIndex = 10;
-            // 
-            // name
-            // 
-            name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            name.DataPropertyName = "name";
-            name.HeaderText = "Name";
-            name.MinimumWidth = 6;
-            name.Name = "name";
-            name.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            priceDataGridViewTextBoxColumn.ReadOnly = true;
-            priceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Weight
-            // 
-            Weight.DataPropertyName = "Weight";
-            Weight.HeaderText = "Weight";
-            Weight.Name = "Weight";
-            Weight.ReadOnly = true;
-            // 
-            // Enabled
-            // 
-            Enabled.DataPropertyName = "enabled";
-            Enabled.HeaderText = "Enabled";
-            Enabled.Name = "Enabled";
-            Enabled.ReadOnly = true;
-            // 
-            // selectedImage
-            // 
-            selectedImage.DataPropertyName = "selectedImage";
-            selectedImage.HeaderText = "Image";
-            selectedImage.Name = "selectedImage";
-            selectedImage.ReadOnly = true;
             // 
             // Menu_Form
             // 
@@ -195,7 +188,6 @@
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn Weight;
-        private DataGridViewCheckBoxColumn Enabled;
         private DataGridViewImageColumn selectedImage;
     }
 }

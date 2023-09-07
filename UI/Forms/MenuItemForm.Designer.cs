@@ -32,7 +32,6 @@
             label1 = new Label();
             nameTextBox = new TextBox();
             label2 = new Label();
-            enableDishCheckBox = new CheckBox();
             weightTextBox = new TextBox();
             label3 = new Label();
             descriptionTextBox = new TextBox();
@@ -86,19 +85,6 @@
             label2.TabIndex = 3;
             label2.Text = "Price:";
             // 
-            // enableDishCheckBox
-            // 
-            enableDishCheckBox.AutoSize = true;
-            enableDishCheckBox.Location = new Point(701, 24);
-            enableDishCheckBox.Name = "enableDishCheckBox";
-            enableDishCheckBox.RightToLeft = RightToLeft.Yes;
-            enableDishCheckBox.Size = new Size(87, 19);
-            enableDishCheckBox.TabIndex = 5;
-            enableDishCheckBox.Text = "Enable Dish";
-            enableDishCheckBox.TextAlign = ContentAlignment.MiddleCenter;
-            enableDishCheckBox.UseVisualStyleBackColor = true;
-            enableDishCheckBox.CheckedChanged += enableDishCheckBox_CheckedChanged;
-            // 
             // weightTextBox
             // 
             weightTextBox.Location = new Point(275, 136);
@@ -134,7 +120,7 @@
             // 
             // applyButton
             // 
-            applyButton.Location = new Point(712, 553);
+            applyButton.Location = new Point(634, 551);
             applyButton.Name = "applyButton";
             applyButton.Size = new Size(76, 23);
             applyButton.TabIndex = 12;
@@ -144,7 +130,7 @@
             // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(630, 553);
+            cancelButton.Location = new Point(552, 551);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(76, 23);
             cancelButton.TabIndex = 13;
@@ -205,13 +191,13 @@
             // BonusPanel
             // 
             BonusPanel.ColumnCount = 2;
-            BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 63.55263F));
-            BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36.44737F));
+            BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.3947372F));
+            BonusPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.6052628F));
             BonusPanel.Location = new Point(28, 290);
             BonusPanel.Name = "BonusPanel";
             BonusPanel.RowCount = 1;
             BonusPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            BonusPanel.Size = new Size(760, 257);
+            BonusPanel.Size = new Size(682, 257);
             BonusPanel.TabIndex = 18;
             // 
             // typeWarningLabel
@@ -250,7 +236,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(822, 586);
+            ClientSize = new Size(736, 586);
             Controls.Add(nameWarningLabel);
             Controls.Add(imageUploadButton);
             Controls.Add(typeWarningLabel);
@@ -265,7 +251,6 @@
             Controls.Add(label4);
             Controls.Add(weightTextBox);
             Controls.Add(label3);
-            Controls.Add(enableDishCheckBox);
             Controls.Add(priceTextBox);
             Controls.Add(label2);
             Controls.Add(nameTextBox);
@@ -284,7 +269,6 @@
         private Label label1;
         private TextBox nameTextBox;
         private Label label2;
-        private CheckBox enableDishCheckBox;
         private TextBox weightTextBox;
         private Label label3;
         private TextBox descriptionTextBox;

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Project.UI.UserControls
 {
-    public partial class ExtrasUserControl : UserControl
+    public partial class DairyExtrasUserControl : UserControl
     {
         public bool extraCheese
         {
@@ -39,18 +39,9 @@ namespace Project.UI.UserControls
             }
 
         }
-        public ExtrasUserControl()
+        public DairyExtrasUserControl()
         {
             InitializeComponent();
-        }
-        public ExtrasUserControl(string dishBase)
-        {
-            InitializeComponent();
-            if (dishBase == "Dairy")
-            {
-                VeganCheeseLabel.Visible = false;
-                veganButterLabel.Visible = false;
-            }
         }
     }
 }

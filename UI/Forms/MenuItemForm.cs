@@ -16,8 +16,7 @@ namespace Project
     {
         private UserControl currentIngredientControl; // Class-level variable to store the loaded UserControl
 
-        private ExtrasUserControl currentExtrasControl;
-
+        private UserControl currentExtrasControl;
 
         public Dish? currentDish { get; private set; }
         public Dish? oldDish { get; private set; }
@@ -34,7 +33,6 @@ namespace Project
                 priceTextBox.Text = selectedDish.Price.ToString();
                 weightTextBox.Text = selectedDish.Weight.ToString();
                 descriptionTextBox.Text = selectedDish.description;
-                enableDishCheckBox.Checked = selectedDish.enabled;
                 if (selectedDish is Hamburger hamburgerDish)
                 {
                     HamburgerUserControl? hamburgerUserControl = (HamburgerUserControl)currentIngredientControl;
@@ -71,16 +69,27 @@ namespace Project
                         pizzaUserControl.hasTuna = pizzaDish.AddTuna;
                     }
                 }
-                if (currentExtrasControl != null) { 
-                    if (selectedDish is Dairy dairyDish)
-                        {
-                        currentExtrasControl.extraButter = dairyDish.extraButter;
-                        currentExtrasControl.extraCheese= dairyDish.extraCheese;
-                    }
-                    if (selectedDish is MeatBased meatDish)
+                if (currentExtrasControl != null)
+                {
+                    if (selectedDish is Dairy dairyDish && currentExtrasControl is DairyExtrasUserControl dairyExtrasUserControl)
                     {
-                        currentExtrasControl.extraButter = meatDish.AddVeganButter;
-                        currentExtrasControl.extraCheese = meatDish.AddVeganCheese;
+                        dairyExtrasUserControl.extraButter = dairyDish.extraButter;
+                        dairyExtrasUserControl.extraCheese = dairyDish.extraCheese;
+                    }
+                    if (selectedDish is MeatBased meatDish && currentExtrasControl is MeatExtrasUserControl meatExtrasUserControl)
+                    {
+                        if (meatDish.Doneness == DonenessLevel.Rare)
+                        {
+                            meatExtrasUserControl.rare = true;
+                        }
+                        if (meatDish.Doneness == DonenessLevel.Medium)
+                        {
+                            meatExtrasUserControl.medium = true;
+                        }
+                        if (meatDish.Doneness == DonenessLevel.WellDone)
+                        {
+                            meatExtrasUserControl.wellDone = true;
+                        }
                     }
                 }
 
@@ -90,7 +99,6 @@ namespace Project
         public MenuItemForm()
         {
             InitializeComponent();
-            enableDishCheckBox.Checked = true;
             currentDish = null;
         }
 
@@ -158,15 +166,25 @@ namespace Project
                 }
                 if (currentDish != null)
                 {
-                    if (currentDish is Dairy dairyDish)
+                    if (currentDish is Dairy dairyDish && currentExtrasControl is DairyExtrasUserControl dairyExtrasUserControl)
                     {
-                        dairyDish.extraButter = currentExtrasControl.extraButter;
-                        dairyDish.extraCheese = currentExtrasControl.extraCheese;
+                        dairyDish.extraButter = dairyExtrasUserControl.extraButter;
+                        dairyDish.extraCheese = dairyExtrasUserControl.extraCheese;
                     }
-                    if (currentDish is MeatBased meatDish)
+                    if (currentDish is MeatBased meatDish && currentExtrasControl is MeatExtrasUserControl meatExtrasUserControl)
                     {
-                        meatDish.AddVeganButter = currentExtrasControl.extraButter;
-                        meatDish.AddVeganCheese = currentExtrasControl.extraCheese;
+                        if (meatExtrasUserControl.rare)
+                        {
+                            meatDish.Doneness = DonenessLevel.Rare;
+                        }
+                        if (meatExtrasUserControl.medium)
+                        {
+                            meatDish.Doneness = DonenessLevel.Medium;
+                        }
+                        if (meatExtrasUserControl.wellDone)
+                        {
+                            meatDish.Doneness = DonenessLevel.WellDone;
+                        }
                     }
                     currentDish.name = nameTextBox.Text;
                     currentDish.description = descriptionTextBox.Text;
@@ -190,7 +208,6 @@ namespace Project
                         weightWarningLabel.Visible = true;
                         return;
                     }
-                    currentDish.enabled = enableDishCheckBox.Checked;
                     currentDish.selectedImage = dishPictureBox.Image;
                     DialogResult = DialogResult.OK;
                 }
@@ -235,11 +252,11 @@ namespace Project
             {
                 if (currentDish is Dairy)
                 {
-                    currentExtrasControl = new ExtrasUserControl("Dairy");
+                    currentExtrasControl = new DairyExtrasUserControl();
                 }
                 if (currentDish is MeatBased)
                 {
-                    currentExtrasControl = new ExtrasUserControl();
+                    currentExtrasControl = new MeatExtrasUserControl();
                 }
                 BonusPanel.Controls.Add(currentExtrasControl, 1, 0);
             }

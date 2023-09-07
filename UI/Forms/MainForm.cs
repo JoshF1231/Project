@@ -67,31 +67,7 @@ namespace Project
             this.mainpanel.Controls.Add(f);
             this.mainpanel.Tag = f;
             f.Show();
-        }
-        private void OpenDishesForm()
-        {
-            if (this.mainpanel.Controls.Count > 0)
-                this.mainpanel.Controls.Clear();
-
-            DishesForm f;
-
-            if (branchesList != null &&
-                branchesList.branchesListIndex >= 0 && branchesList.branchesListIndex < branchesList.listOfBranches.Count &&
-                branchesList[branchesList.branchesListIndex] != null &&
-                branchesList.dishIndex >= 0 && branchesList.dishIndex < branchesList[branchesList.branchesListIndex].Menu.Count)
-            {
-                f = new DishesForm(branchesList[branchesList.branchesListIndex]);
-            }
-            else
-            {
-                f = new DishesForm();
-            }
-
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.mainpanel.Controls.Add(f);
-            this.mainpanel.Tag = f;
-            f.Show();
+            f.updateDataGridMenu();
         }
 
         private void BranchesForm_BranchUpdated(object sender, BranchEventArgs e)
@@ -114,13 +90,6 @@ namespace Project
         private void Branches_Click(object sender, EventArgs e)
         {
             OpenBranchesForm();
-        }
-
-        private void dishesButton_Click(object sender, EventArgs e)
-        {
-            OpenDishesForm(); // needs to be modified to be similar to menu and branches
-            // needs to be sent with DishesForm f = new DishesForm(mainDish); . mainDish variable holds
-            // the current dish selected from menu
         }
 
         private void menuButton_Click(object sender, EventArgs e)

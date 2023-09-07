@@ -1,6 +1,6 @@
 ﻿namespace Project.UI.UserControls
 {
-    partial class ExtrasUserControl
+    partial class DairyExtrasUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -34,8 +34,6 @@
             pictureBoxLettuce = new PictureBox();
             CheeseCheckBox = new CheckBox();
             ButterCheckBox = new CheckBox();
-            VeganCheeseLabel = new Label();
-            veganButterLabel = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPickles).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLettuce).BeginInit();
@@ -107,32 +105,10 @@
             ButterCheckBox.Text = "Extra Butter";
             ButterCheckBox.UseVisualStyleBackColor = true;
             // 
-            // VeganCheeseLabel
-            // 
-            VeganCheeseLabel.AutoSize = true;
-            VeganCheeseLabel.ForeColor = Color.Green;
-            VeganCheeseLabel.Location = new Point(85, 99);
-            VeganCheeseLabel.Name = "VeganCheeseLabel";
-            VeganCheeseLabel.Size = new Size(88, 15);
-            VeganCheeseLabel.TabIndex = 50;
-            VeganCheeseLabel.Text = "* Vegan Cheese";
-            // 
-            // veganButterLabel
-            // 
-            veganButterLabel.AutoSize = true;
-            veganButterLabel.ForeColor = Color.Green;
-            veganButterLabel.Location = new Point(87, 175);
-            veganButterLabel.Name = "veganButterLabel";
-            veganButterLabel.Size = new Size(82, 15);
-            veganButterLabel.TabIndex = 51;
-            veganButterLabel.Text = "* Vegan Butter";
-            // 
             // ExtrasUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(veganButterLabel);
-            Controls.Add(VeganCheeseLabel);
             Controls.Add(panel1);
             Controls.Add(pictureBoxPickles);
             Controls.Add(ButterCheckBox);
@@ -157,7 +133,5 @@
         private PictureBox pictureBoxLettuce;
         private CheckBox CheeseCheckBox;
         private CheckBox ButterCheckBox;
-        private Label VeganCheeseLabel;
-        private Label veganButterLabel;
     }
 }

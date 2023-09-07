@@ -54,12 +54,13 @@ namespace Project
 
         private void adjustCellHeight()
         {
-            if (Branch != null) { 
-            menuDataGrid.DefaultCellStyle.Font = new Font("Arial", 14);
-            foreach (DataGridViewRow row in menuDataGrid.Rows)
+            if (Branch != null)
             {
-                row.Height = 70;
-            }
+                menuDataGrid.DefaultCellStyle.Font = new Font("Arial", 14);
+                foreach (DataGridViewRow row in menuDataGrid.Rows)
+                {
+                    row.Height = 70;
+                }
             }
         }
         private void OpenMenuItemForm()
@@ -69,8 +70,6 @@ namespace Project
             {
                 Branch.Menu.Add(f.currentDish);
                 updateDataGridMenu();
-
-
             }
 
         }
@@ -79,21 +78,24 @@ namespace Project
             if (selectedDish != null)
             {
                 MenuItemForm f = new MenuItemForm(selectedDish);
-                if (Branch != null && f.ShowDialog() == DialogResult.OK && f.currentDish != null)
+                if (Branch != null && f.ShowDialog() == DialogResult.OK && f.currentDish != null && Branch.Menu != null)
                 {
-                    Branch.Menu.Remove(f.oldDish);
-                    Branch.Menu.Add(f.currentDish);
+                    int index = Branch.Menu.IndexOf(selectedDish);
+                    if (index != -1)
+                    {
+                        Branch.Menu[index] = f.currentDish;
+                    }
                     updateDataGridMenu();
-
                 }
             }
         }
 
-        private void updateDataGridMenu()
+        public void updateDataGridMenu()
         {
-            if (Branch!= null) { 
-            BindingList<Dish> updatedMenu = new BindingList<Dish>(Branch.Menu.ToList());
-            branchBindingSource.DataSource = updatedMenu;
+            if (Branch != null && Branch.Menu != null)
+            {
+                BindingList<Dish> updatedMenu = new BindingList<Dish>(Branch.Menu.ToList());
+                branchBindingSource.DataSource = updatedMenu;
             }
             warning.Visible = false;
             adjustImageSize();
@@ -145,5 +147,6 @@ namespace Project
                 OpenMenuItemForm(dish);
             }
         }
+
     }
 }

@@ -9,7 +9,7 @@
         public bool AddPickles { get; set; }
         public bool AddBacon { get; set; }
 
-        public Hamburger(string Name, double Content, double Price, bool addCheese, bool addButter, bool tomato, bool onion, bool lettuce, bool pickles, bool bacon) : base(Name, Content, Price, addButter, addCheese)
+        public Hamburger(string Name, double Content, double Price, bool addCheese, bool addButter, bool tomato, bool onion, bool lettuce, bool pickles, bool bacon) : base(Name, Content, Price)
         {
             AddTomato = tomato;
             AddOnion = onion;
