@@ -1,15 +1,19 @@
 using Menu;
 using System;
 using System.Collections.Specialized;
+using System.Media;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using NAudio.Wave;
 namespace Project
 {
 
     public partial class MainForm : Form
     {
         public Branches? branchesList { get; set; }
+        private WaveOutEvent waveOut;
+        private AudioFileReader audioFile;
         public MainForm()
         {
             branchesList = new Branches();
@@ -21,7 +25,7 @@ namespace Project
 
         private void updateSelectedBranch()
         {
-            if (branchesList != null && branchesList.branchesListIndex>=0)
+            if (branchesList != null && branchesList.branchesListIndex >= 0)
             {
                 branchLabel.Text = branchesList[branchesList.branchesListIndex].ToString();
             }
@@ -136,6 +140,40 @@ namespace Project
             }
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.Clear();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            waveOut = new WaveOutEvent();
+            audioFile = null;
+            string fileName = "Resources\\Theme.mp3";
+            string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+            try
+            {
+                audioFile = new AudioFileReader(fullPath);
+                waveOut.Init(audioFile);
+                waveOut.Play();
+                waveOut.Volume = 0.3f;
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            if (audioFile != null)
+            {
+                waveOut.Play();
+            }
+        }
+
+        private void pauseButton_Click(object sender, EventArgs e)
+        {
+            if (audioFile != null)
+            {
+                waveOut.Pause();
+            }
         }
     }
 }

@@ -37,11 +37,15 @@
             menuButton = new Button();
             Branches = new Button();
             topPanel = new Panel();
+            pauseButton = new PictureBox();
+            playButton = new PictureBox();
             branchLabel = new Label();
             headerLabel = new Label();
             mainpanel = new Panel();
             panel1.SuspendLayout();
             topPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pauseButton).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playButton).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -142,6 +146,8 @@
             // topPanel
             // 
             topPanel.BackColor = Color.AliceBlue;
+            topPanel.Controls.Add(pauseButton);
+            topPanel.Controls.Add(playButton);
             topPanel.Controls.Add(branchLabel);
             topPanel.Controls.Add(headerLabel);
             topPanel.Dock = DockStyle.Top;
@@ -149,6 +155,28 @@
             topPanel.Name = "topPanel";
             topPanel.Size = new Size(946, 35);
             topPanel.TabIndex = 11;
+            // 
+            // pauseButton
+            // 
+            pauseButton.Image = Properties.Resources.pause;
+            pauseButton.Location = new Point(919, 8);
+            pauseButton.Name = "pauseButton";
+            pauseButton.Size = new Size(20, 20);
+            pauseButton.SizeMode = PictureBoxSizeMode.StretchImage;
+            pauseButton.TabIndex = 3;
+            pauseButton.TabStop = false;
+            pauseButton.Click += pauseButton_Click;
+            // 
+            // playButton
+            // 
+            playButton.Image = Properties.Resources.play1;
+            playButton.Location = new Point(896, 8);
+            playButton.Name = "playButton";
+            playButton.Size = new Size(20, 20);
+            playButton.SizeMode = PictureBoxSizeMode.StretchImage;
+            playButton.TabIndex = 2;
+            playButton.TabStop = false;
+            playButton.Click += playButton_Click;
             // 
             // branchLabel
             // 
@@ -194,9 +222,12 @@
             Controls.Add(mainpanel);
             Name = "MainForm";
             Text = "Form1";
+            Load += MainForm_Load;
             panel1.ResumeLayout(false);
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pauseButton).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playButton).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -213,5 +244,7 @@
         private Button saveButton;
         private Label branchLabel;
         private Label headerLabel;
+        private PictureBox pauseButton;
+        private PictureBox playButton;
     }
 }
