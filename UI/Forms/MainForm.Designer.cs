@@ -166,6 +166,8 @@
             pauseButton.TabIndex = 3;
             pauseButton.TabStop = false;
             pauseButton.Click += pauseButton_Click;
+            pauseButton.MouseEnter += pauseButton_MouseHover;
+            pauseButton.MouseLeave += pauseButton_MouseLeave;
             // 
             // playButton
             // 
@@ -177,6 +179,8 @@
             playButton.TabIndex = 2;
             playButton.TabStop = false;
             playButton.Click += playButton_Click;
+            playButton.MouseEnter += playButton_MouseEnter;
+            playButton.MouseLeave += playButton_MouseLeave;
             // 
             // branchLabel
             // 

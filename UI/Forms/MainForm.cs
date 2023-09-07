@@ -175,5 +175,32 @@ namespace Project
                 waveOut.Pause();
             }
         }
+
+        private void playButton_MouseHover(object sender, EventArgs e)
+        {
+            playButton.BackColor = Color.Gray;
+        }
+
+        private void playButton_MouseLeave(object sender, EventArgs e)
+        {
+            playButton.BackColor = Color.AliceBlue;
+
+        }
+
+        private void pauseButton_MouseHover(object sender, EventArgs e)
+        {
+            pauseButton.BackColor = Color.Gray;
+        }
+
+        private void pauseButton_MouseLeave(object sender, EventArgs e)
+        {
+            pauseButton.BackColor = Color.AliceBlue;
+
+        }
+
+        private void playButton_MouseEnter(object sender, EventArgs e)
+        {
+            playButton.BackColor = Color.Gray;
+        }
     }
 }
