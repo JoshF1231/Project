@@ -12,8 +12,10 @@ namespace Project.UI.UserControls
 {
     public partial class MeatExtrasUserControl : UserControl
     {
-        public bool rare {
-            get {
+        public bool rare
+        {
+            get
+            {
                 return rareButton.Checked;
             }
             set

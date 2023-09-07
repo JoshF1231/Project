@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeatExtrasUserControl));
             panel1 = new Panel();
             ExtrasLabel = new Label();
             pictureBoxPickles = new PictureBox();
@@ -68,7 +67,7 @@
             // 
             // pictureBoxPickles
             // 
-            pictureBoxPickles.Image = (Image)resources.GetObject("pictureBoxPickles.Image");
+            pictureBoxPickles.Image = Properties.Resources.medium;
             pictureBoxPickles.Location = new Point(26, 110);
             pictureBoxPickles.Margin = new Padding(2);
             pictureBoxPickles.Name = "pictureBoxPickles";
@@ -79,7 +78,7 @@
             // 
             // pictureBoxLettuce
             // 
-            pictureBoxLettuce.Image = (Image)resources.GetObject("pictureBoxLettuce.Image");
+            pictureBoxLettuce.Image = Properties.Resources.rare;
             pictureBoxLettuce.Location = new Point(26, 49);
             pictureBoxLettuce.Margin = new Padding(2);
             pictureBoxLettuce.Name = "pictureBoxLettuce";
@@ -90,7 +89,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.well_done;
             pictureBox1.Location = new Point(26, 169);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
