@@ -181,9 +181,9 @@
             // branchLabel
             // 
             branchLabel.AutoSize = true;
-            branchLabel.BackColor = Color.LightSlateGray;
+            branchLabel.BackColor = Color.AliceBlue;
             branchLabel.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            branchLabel.Location = new Point(188, 7);
+            branchLabel.Location = new Point(178, 8);
             branchLabel.Name = "branchLabel";
             branchLabel.RightToLeft = RightToLeft.No;
             branchLabel.Size = new Size(50, 19);
@@ -221,7 +221,7 @@
             Controls.Add(textBox1);
             Controls.Add(mainpanel);
             Name = "MainForm";
-            Text = "Form1";
+            Text = "Menu Creator";
             Load += MainForm_Load;
             panel1.ResumeLayout(false);
             topPanel.ResumeLayout(false);

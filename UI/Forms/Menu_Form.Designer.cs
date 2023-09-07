@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             addButton = new Button();
             removeButton = new Button();
             warning = new Label();
@@ -67,9 +67,9 @@
             // warning
             // 
             warning.AutoSize = true;
-            warning.BackColor = Color.White;
+            warning.BackColor = Color.LightSteelBlue;
             warning.ForeColor = Color.IndianRed;
-            warning.Location = new Point(654, 43);
+            warning.Location = new Point(617, 45);
             warning.Name = "warning";
             warning.Size = new Size(110, 15);
             warning.TabIndex = 8;
@@ -88,14 +88,14 @@
             menuDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             menuDataGrid.Columns.AddRange(new DataGridViewColumn[] { name, priceDataGridViewTextBoxColumn, Weight, selectedImage });
             menuDataGrid.DataSource = branchBindingSource;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            menuDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            menuDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             menuDataGrid.Location = new Point(12, 69);
             menuDataGrid.Name = "menuDataGrid";
             menuDataGrid.ReadOnly = true;
@@ -158,7 +158,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(797, 496);
+            ClientSize = new Size(750, 496);
             ControlBox = false;
             Controls.Add(menuLabel);
             Controls.Add(menuDataGrid);
