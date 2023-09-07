@@ -325,6 +325,11 @@ namespace Project
             }
         }
 
+        private void MenuItemForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
         //private void priceTextBox_Leave(object sender, EventArgs e)
         //{
         //    double temp;

@@ -257,7 +257,8 @@
             Controls.Add(label1);
             Controls.Add(dishPictureBox);
             Name = "MenuItemForm";
-            Text = "MenuItemForm";
+            Text = "Dish";
+            Load += MenuItemForm_Load_1;
             ((System.ComponentModel.ISupportInitialize)dishPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
