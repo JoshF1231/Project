@@ -141,10 +141,12 @@ namespace Project
 
         private void menuDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex>=0 && Branch!= null && Branch.Menu != null && Branch.Menu.Count>0) {
             Dish? dish = menuDataGrid.Rows[e.RowIndex].DataBoundItem as Dish;
             if (dish != null)
             {
                 OpenMenuItemForm(dish);
+            }
             }
         }
 

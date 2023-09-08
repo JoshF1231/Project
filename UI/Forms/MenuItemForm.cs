@@ -1,4 +1,5 @@
 ﻿using Menu;
+using Microsoft.VisualBasic.Devices;
 using Project.UI.UserControls;
 using System;
 using System.Collections.Generic;
@@ -329,6 +330,7 @@ namespace Project
         {
 
         }
+
 
         //private void priceTextBox_Leave(object sender, EventArgs e)
         //{
